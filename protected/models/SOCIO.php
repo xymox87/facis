@@ -93,7 +93,7 @@ class SOCIO extends CActiveRecord
 			'I_ESTADO_CIVIL' => 'Estado Civil',
 			'N_OCUPACION' => 'Ocupacion',
 			'O_TARJETA_PROFESIONAL' => 'Numero de Tarjeta Profesional',
-			'I_GENERO' => 'I Genero',
+			'I_GENERO' => 'Genero',
 			'O_DIRECCION_DOMICILIO' => 'Direccion Domicilio',
 			'O_DIRECCION_TRABAJO' => 'Direccion Trabajo',
 			'O_CORREO_ELECTRONICO' => 'Correo Electronico',

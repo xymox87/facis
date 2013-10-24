@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List SOCIO', 'url'=>array('index')),
-	array('label'=>'Create SOCIO', 'url'=>array('create')),
+	array('label'=>'Lista de socios', 'url'=>array('admin')),
+	array('label'=>'Crear Socio', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,11 +26,10 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Socios</h1>
+<h1>Gestion de socios</h1>
 
 <p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+Opciones de ordenamiento (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>)
 </p>
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
@@ -48,21 +47,21 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'K_IDENTIFICACION',
 		'N_NOMBRE',
 		'N_APELLIDO',
-		'I_ESTADO_CIVIL',
-		'N_OCUPACION',
+		//I_ESTADO_CIVIL',
+		//'N_OCUPACION',
 		'O_TARJETA_PROFESIONAL',
-		/*
-		'I_GENERO',
-		'O_DIRECCION_DOMICILIO',
-		'O_DIRECCION_TRABAJO',
+		
+		//'I_GENERO',
+		//'O_DIRECCION_DOMICILIO',
+		//'O_DIRECCION_TRABAJO',
 		'O_CORREO_ELECTRONICO',
 		'O_TELEFONO_DOMICILIO',
 		'O_TELEFONO_TRABAJO',
 		'O_TELEFONO_CELULAR',
 		'F_INGRESO',
-		'F_RETIRO',
-		'O_CAUSAL_RETIRO',
-		*/
+		//'F_RETIRO',
+		//'O_CAUSAL_RETIRO',
+		
 		array(
 			'class'=>'CButtonColumn',
 		),
