@@ -66,7 +66,7 @@ class SOCIOController extends Controller {
         if (isset($_POST['SOCIO'])) {
             $model->attributes = $_POST['SOCIO'];
             $model->K_IDENTIFICACION = $_POST['SOCIO']['K_IDENTIFICACION'];
-            if ($model->save(false))
+            if ($model->save())
                 $this->redirect(array('view', 'id' => $model->K_IDENTIFICACION));
         }
 
