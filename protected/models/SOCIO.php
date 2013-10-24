@@ -87,22 +87,22 @@ class SOCIO extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'K_IDENTIFICACION' => 'K Identificacion',
-			'N_NOMBRE' => 'N Nombre',
-			'N_APELLIDO' => 'N Apellido',
-			'I_ESTADO_CIVIL' => 'I Estado Civil',
-			'N_OCUPACION' => 'N Ocupacion',
-			'O_TARJETA_PROFESIONAL' => 'O Tarjeta Profesional',
+			'K_IDENTIFICACION' => 'Nuemro de identificacion',
+			'N_NOMBRE' => 'Nombre',
+			'N_APELLIDO' => 'Apellido',
+			'I_ESTADO_CIVIL' => 'Estado Civil',
+			'N_OCUPACION' => 'Ocupacion',
+			'O_TARJETA_PROFESIONAL' => 'Numero de Tarjeta Profesional',
 			'I_GENERO' => 'I Genero',
-			'O_DIRECCION_DOMICILIO' => 'O Direccion Domicilio',
-			'O_DIRECCION_TRABAJO' => 'O Direccion Trabajo',
-			'O_CORREO_ELECTRONICO' => 'O Correo Electronico',
-			'O_TELEFONO_DOMICILIO' => 'O Telefono Domicilio',
-			'O_TELEFONO_TRABAJO' => 'O Telefono Trabajo',
-			'O_TELEFONO_CELULAR' => 'O Telefono Celular',
-			'F_INGRESO' => 'F Ingreso',
-			'F_RETIRO' => 'F Retiro',
-			'O_CAUSAL_RETIRO' => 'O Causal Retiro',
+			'O_DIRECCION_DOMICILIO' => 'Direccion Domicilio',
+			'O_DIRECCION_TRABAJO' => 'Direccion Trabajo',
+			'O_CORREO_ELECTRONICO' => 'Correo Electronico',
+			'O_TELEFONO_DOMICILIO' => 'Telefono Domicilio',
+			'O_TELEFONO_TRABAJO' => 'Telefono Trabajo',
+			'O_TELEFONO_CELULAR' => 'Telefono Celular',
+			'F_INGRESO' => 'Fecha Ingreso',
+			'F_RETIRO' => 'Fecha Retiro',
+			'O_CAUSAL_RETIRO' => 'Causal Retiro',
 		);
 	}
 
