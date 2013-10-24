@@ -101,6 +101,7 @@ abstract class CDbSchema extends CComponent
 			}
 			else
 				$this->_tables[$name]=$table=$this->loadTable($realName);
+                        
 
 			if(isset($qcDuration))  // re-enable query caching
 				$this->_connection->queryCachingDuration=$qcDuration;

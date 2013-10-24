@@ -2306,6 +2306,7 @@ class CActiveRecordMetaData
 		$this->_model=$model;
 
 		$tableName=$model->tableName();
+                //var_dump($model->getDbConnection()->;die();
 		if(($table=$model->getDbConnection()->getSchema()->getTable($tableName))===null)
 			throw new CDbException(Yii::t('yii','The table "{table}" for active record class "{class}" cannot be found in the database.',
 				array('{class}'=>get_class($model),'{table}'=>$tableName)));

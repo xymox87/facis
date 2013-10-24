@@ -34,9 +34,9 @@ return array(
         // uncomment the following to enable URLs in path-format
         'db' => array(
             'class' => 'CDbConnection',
-            'connectionString' => 'oci:facis=127.0.0.1/xe',
-            'username' => 'facis',
-            'password' => 'facis'
+            'connectionString' => 'oci:facis:127.0.0.1/XE',
+            'username' => 'fas',
+            'password' => 'fas'
         ),
         'urlManager' => array(
             'urlFormat' => 'path',
