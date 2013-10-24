@@ -70,13 +70,32 @@ class APORTEController extends Controller
 		if(isset($_POST['APORTE']))
 		{
 			$model->attributes=$_POST['APORTE'];
-			if($model->save())
+                        $descaporte = new DESCRIPCIONAPORTE;
+                        $v_maxaporte = CHtml::listData($descaporte->findAll(),'K_DESCAPORTE','V_MAXAPORTE');
+                        $v_minaporte = CHtml::listData($descaporte->findAll(),'K_DESCAPORTE','V_MINAPORTE');
+                        $q_dias = CHtml::listData($descaporte->findAll(),'K_DESCAPORTE','Q_DIAS');
+                        $n_descaporte = (int)$descaporte->count();
+                        $f_aporte = $model->attributes['F_CONSIGNACION'];
+                        $dia = "";
+                        for($i=0;$i<strlen($f_aporte);$i++)
+                            if($f_aporte{$i} != "/")
+                                $dia = $dia.$f_aporte{$i};
+                            else
+                                break;
+                        if((float)$model->attributes["V_APORTE"] <= (float)$v_maxaporte[$n_descaporte-1] && 
+                           (float)$model->attributes["V_APORTE"] >= (float)$v_minaporte[$n_descaporte-1]){
+                            if((int)$q_dias[count($q_dias)-1]<(int)$dia);//FALTA LA COLUMNA DE MULTA
+                            $model->K_FPAGO=(string)$n_descaporte;
+                            $model->K_NUMCONSIGNACION=$_POST['APORTE']['K_NUMCONSIGNACION'];
+                            if($model->save())
 				$this->redirect(array('view','id'=>$model->K_NUMCONSIGNACION));
+                        }else
+                            print false; //NECESITO SACAR UN MENSAJE DE ERROR O ALGO                        
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
-		));
+                ));
 	}
 
 	/**
