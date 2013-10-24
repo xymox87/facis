@@ -1037,3 +1037,132 @@ Stack trace:
 REQUEST_URI=/facis/index.php/site/socio
 HTTP_REFERER=http://localhost/facis/index.php/site/socio
 ---
+2013/10/24 06:45:16 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (72)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 06:45:17 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."SOCIO"."N_NOMBRE")
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO", "F_RETIRO", "O_CAUSAL_RETIRO", "K_IDENTIFICACION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (74)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 06:45:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."SOCIO"."N_NOMBRE")
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO", "F_RETIRO", "O_CAUSAL_RETIRO", "K_IDENTIFICACION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID' in C:\xampp\htdocs\Facis\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\Facis\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\Facis\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php(74): CActiveRecord->save(false)
+#3 C:\xampp\htdocs\Facis\framework\web\actions\CInlineAction.php(49): SOCIOController->actionCreate()
+#4 C:\xampp\htdocs\Facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\Facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\Facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\Facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\Facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\Facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\Facis\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\Facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\Facis\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\Facis\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/create')
+#14 C:\xampp\htdocs\Facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\Facis\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/facis/index.php/socio/create
+HTTP_REFERER=http://localhost/facis/index.php/socio/create
+---
+2013/10/24 06:45:36 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (72)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 06:45:36 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."SOCIO"."N_NOMBRE")
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO", "F_RETIRO", "O_CAUSAL_RETIRO", "K_IDENTIFICACION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (74)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 06:47:58 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (72)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 06:47:58 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."SOCIO"."N_NOMBRE")
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO", "F_RETIRO", "O_CAUSAL_RETIRO", "K_IDENTIFICACION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (74)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 07:01:28 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (72)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 07:01:28 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."SOCIO"."N_NOMBRE")
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO", "F_RETIRO", "O_CAUSAL_RETIRO", "K_IDENTIFICACION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (74)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 07:01:28 [error] [exception.CException] exception 'CException' with message 'Property "SOCIOController.controller" is not defined.' in C:\xampp\htdocs\Facis\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php(83): CComponent->__get('controller')
+#1 C:\xampp\htdocs\Facis\framework\web\actions\CInlineAction.php(49): SOCIOController->actionCreate()
+#2 C:\xampp\htdocs\Facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\Facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\Facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\Facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\Facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\Facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\Facis\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\Facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\Facis\framework\web\CWebApplication.php(282): CController->run('create')
+#11 C:\xampp\htdocs\Facis\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/create')
+#12 C:\xampp\htdocs\Facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\Facis\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/socio/create
+HTTP_REFERER=http://localhost/facis/index.php/socio/create
+---
+2013/10/24 07:02:45 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (72)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 07:02:45 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."SOCIO"."N_NOMBRE")
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO", "F_RETIRO", "O_CAUSAL_RETIRO", "K_IDENTIFICACION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (74)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 07:05:37 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (72)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 07:05:37 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."SOCIO"."N_NOMBRE")
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO", "F_RETIRO", "O_CAUSAL_RETIRO", "K_IDENTIFICACION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (74)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 07:12:23 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (72)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 07:12:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."SOCIO"."N_NOMBRE")
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO", "F_RETIRO", "O_CAUSAL_RETIRO", "K_IDENTIFICACION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (74)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 07:57:14 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (72)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 07:57:14 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."SOCIO"."N_NOMBRE")
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO", "F_RETIRO", "O_CAUSAL_RETIRO", "K_IDENTIFICACION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (74)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 08:12:49 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (72)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 08:12:50 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1861 OCIStmtExecute: ORA-01861: literal does not match format string
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO", "F_RETIRO", "O_CAUSAL_RETIRO", "K_IDENTIFICACION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (74)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 08:12:50 [error] [php] Undefined variable: data (C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php:89)
+Stack trace:
+#0 C:\xampp\htdocs\Facis\framework\web\filters\CFilterChain.php(133): SOCIOController->runAction()
+#1 C:\xampp\htdocs\Facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\Facis\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\Facis\framework\web\filters\CInlineFilter.php(58): SOCIOController->filterAccessControl()
+#4 C:\xampp\htdocs\Facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\Facis\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\Facis\framework\web\CController.php(265): SOCIOController->runActionWithFilters()
+#7 C:\xampp\htdocs\Facis\framework\web\CWebApplication.php(282): SOCIOController->run()
+#8 C:\xampp\htdocs\Facis\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\Facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Facis\index.php(13): CWebApplication->run()
+REQUEST_URI=/facis/index.php/socio/create
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (89)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 08:14:18 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (72)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 08:14:18 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."SOCIO"."O_DIRECCION_DOMICILIO")
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO", "F_RETIRO", "O_CAUSAL_RETIRO", "K_IDENTIFICACION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (74)
+in C:\xampp\htdocs\Facis\index.php (13)
