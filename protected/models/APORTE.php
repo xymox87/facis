@@ -46,7 +46,7 @@ class APORTE extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('V_APORTE, F_CONSIGNACION, K_DESCAPORTE, K_IDENTIFICACION, K_CUENTA, K_FPAGO', 'required'),
+			array('V_APORTE,K_NUMCONSIGNACION, F_CONSIGNACION, K_IDENTIFICACION, K_CUENTA, K_FPAGO', 'required'),
 			array('K_DESCAPORTE, K_IDENTIFICACION, K_CUENTA, K_FPAGO', 'numerical', 'integerOnly'=>true),
 			array('V_APORTE', 'numerical'),
 			// The following rule is used by search().
@@ -76,13 +76,13 @@ class APORTE extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'V_APORTE' => 'V Aporte',
-			'F_CONSIGNACION' => 'F Consignacion',
-			'K_NUMCONSIGNACION' => 'K Numconsignacion',
+			'V_APORTE' => 'Valor del aporte',
+			'F_CONSIGNACION' => 'Fecha de consignacion',
+			'K_NUMCONSIGNACION' => 'Numero de la consignacion',
 			'K_DESCAPORTE' => 'K Descaporte',
-			'K_IDENTIFICACION' => 'K Identificacion',
-			'K_CUENTA' => 'K Cuenta',
-			'K_FPAGO' => 'K Fpago',
+			'K_IDENTIFICACION' => 'Numero de identificacion del socio',
+			'K_CUENTA' => 'Numero de cuenta',
+			'K_FPAGO' => 'Forma de pago',
 		);
 	}
 
