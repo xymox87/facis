@@ -76,10 +76,10 @@ class PAGO extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'F_PAGO' => 'F Pago',
-			'K_NUMCONSIGNACION' => 'K Numconsignacion',
-			'V_PAGO' => 'V Pago',
-			'K_CUENTA' => 'K Cuenta',
+			'F_PAGO' => 'Fecha de pago',
+			'K_NUMCONSIGNACION' => 'Numero de consignacion',
+			'V_PAGO' => 'Valor de pago',
+			'K_CUENTA' => 'Numero de pago',
 			'K_FPAGO' => 'K Fpago',
 			'Q_NUMCUOTA' => 'Q Numcuota',
 			'K_ID_CREDITO' => 'K Id Credito',

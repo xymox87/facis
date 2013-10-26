@@ -3012,6 +3012,37 @@ REQUEST_URI=/facis/index.php/socio/create
 in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (78)
 in C:\xampp\htdocs\FACIS\index.php (13)
 2013/10/26 10:41:00 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\FACIS\framework\web\CController.php:336
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/26 10:26:47 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (114)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/26 10:28:21 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (114)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/26 10:28:45 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (114)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/26 10:28:58 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (114)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/26 10:29:11 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (114)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/26 10:29:54 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (114)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/26 11:13:28 [warning] [application] Failed to set unsafe attribute "F_ULTIMO_PAGO" of "CREDITO".
+in C:\xampp\htdocs\Facis\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/26 11:13:28 [warning] [application] Failed to set unsafe attribute "V_ULTIMO_PAGO" of "CREDITO".
+in C:\xampp\htdocs\Facis\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/26 11:13:28 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."CREDITO"."K_ID_CREDITO")
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "CREDITO" ("F_APROBACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "K_IDENTIFICACION", "Q_CUOTA") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
+in C:\xampp\htdocs\Facis\protected\controllers\CREDITOController.php (69)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/26 11:13:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."CREDITO"."K_ID_CREDITO")
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "CREDITO" ("F_APROBACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "K_IDENTIFICACION", "Q_CUOTA") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7) RETURNING "K_ID_CREDITO" INTO :RETURN_ID' in C:\xampp\htdocs\Facis\framework\db\CDbCommand.php:357
 Stack trace:
 #0 C:\xampp\htdocs\FACIS\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
 #1 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
