@@ -44,9 +44,13 @@ class SOCIOController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
-        $this->render('view', array(
-            'model' => $this->loadModel($id),
-        ));
+        try {
+            $this->render('view', array(
+                'model' => $this->loadModel($id),
+            ));
+        } catch (Exception $e) {
+            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+        }
     }
 
     /**
@@ -60,18 +64,18 @@ class SOCIOController extends Controller {
         // $this->performAjaxValidation($model);
         try {
             if (isset($_POST['SOCIO'])) {
-                            $model->attributes=$_POST['SOCIO'];
-                            $model->K_IDENTIFICACION=$_POST['SOCIO']['K_IDENTIFICACION'];
+                $model->attributes = $_POST['SOCIO'];
+                $model->K_IDENTIFICACION = $_POST['SOCIO']['K_IDENTIFICACION'];
                 if ($model->save())
-                                    $this->redirect(array('view','id'=>$model->K_IDENTIFICACION));
+                    $this->redirect(array('view', 'id' => $model->K_IDENTIFICACION));
 
-                            $datos=$_POST['SOCIO'];  
+                $datos = $_POST['SOCIO'];
                 $fecha_inicio = $this->actionFecha($datos['F_AFILIACION']);
-                            $fecha_final=  $this->actionFecha($datos['F_AFILIACION']);
-                            if($fecha_inicio<=$fecha_final){
-                                     
-                            }
-                            
+                $fecha_final = $this->actionFecha($datos['F_AFILIACION']);
+                if ($fecha_inicio <= $fecha_final) {
+                    
+                }
+
                 //if()
             }
 
@@ -80,11 +84,7 @@ class SOCIOController extends Controller {
                 'model' => $model,
             ));
         } catch (Exception $e) {
-            var_dump($model->getErrors());
-            Yii::app()->clientScript->registerScript(1, 'alert("Los datos no son validos o faltan campos")');
-            $this->render('create', array(
-                'model' => $model,
-            ));
+            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
         }
     }
 
@@ -108,17 +108,19 @@ class SOCIOController extends Controller {
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
-                
-                    if(isset($_POST['SOCIO']))     
-                    {
-                            $model->attributes=$_POST['SOCIO'];
-                            if($model->save())
-                                $this->redirect(array('view','id'=>$model->K_IDENTIFICACION));                                                                
-                    }
+        try {
+            if (isset($_POST['SOCIO'])) {
+                $model->attributes = $_POST['SOCIO'];
+                if ($model->save())
+                    $this->redirect(array('view', 'id' => $model->K_IDENTIFICACION));
+            }
 
-                    $this->render('update',array(
-                            'model'=>$model,
-                    ));                
+            $this->render('update', array(
+                'model' => $model,
+            ));
+        } catch (Exception $e) {
+            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+        }
     }
 
     /**
@@ -127,39 +129,47 @@ class SOCIOController extends Controller {
      * @param integer $id the ID of the model to be deleted
      */
     public function actionDelete($id) {
-        $this->loadModel($id)->delete();
+        try {
+            $this->loadModel($id)->delete();
 
-        // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-        if (!isset($_GET['ajax']))
-            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+            // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+            if (!isset($_GET['ajax']))
+                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+        } catch (Exception $e) {
+            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+        }
     }
 
     /**
      * Lists all models.
      */
     public function actionIndex() {
-        /* Yii::app()->db->setActive(false);
-          Yii::app()->db->username = "facis";
-          Yii::app()->db->password = "facis";
-          Yii::app()->db->setActive(true); */
-        $dataProvider = new CActiveDataProvider('SOCIO');
-        $this->render('index', array(
-            'dataProvider' => $dataProvider,
-        ));
+        try {
+            $dataProvider = new CActiveDataProvider('SOCIO');
+            $this->render('index', array(
+                'dataProvider' => $dataProvider,
+            ));
+        } catch (Exception $e) {
+            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+        }
     }
 
     /**
      * Manages all models.
      */
     public function actionAdmin() {
-        $model = new SOCIO();
-        $model->unsetAttributes();  // clear any default values
-        if (isset($_GET['SOCIO']))
-            $model->attributes = $_GET['SOCIO'];
+        try {
+            $model = new SOCIO();
+            $model->unsetAttributes();  // clear any default values
+            if (isset($_GET['SOCIO']))
+                $model->attributes = $_GET['SOCIO'];
 
-        $this->render('admin', array(
-            'model' => $model,
-        ));
+            $this->render('admin', array(
+                'model' => $model,
+            ));
+        } catch (Exception $e) {
+            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+        }
     }
 
     /**
@@ -170,10 +180,14 @@ class SOCIOController extends Controller {
      * @throws CHttpException
      */
     public function loadModel($id) {
-        $model = SOCIO::model()->findByPk($id);
-        if ($model === null)
-            throw new CHttpException(404, 'The requested page does not exist.');
-        return $model;
+        try {
+            $model = SOCIO::model()->findByPk($id);
+            if ($model === null)
+                throw new CHttpException(404, 'The requested page does not exist.');
+            return $model;
+        } catch (Exception $e) {
+            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+        }
     }
 
     /**
@@ -181,9 +195,13 @@ class SOCIOController extends Controller {
      * @param SOCIO $model the model to be validated
      */
     protected function performAjaxValidation($model) {
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'socio-form') {
-            echo CActiveForm::validate($model);
-            Yii::app()->end();
+        try {
+            if (isset($_POST['ajax']) && $_POST['ajax'] === 'socio-form') {
+                echo CActiveForm::validate($model);
+                Yii::app()->end();
+            }
+        } catch (Exception $e) {
+            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
         }
     }
 

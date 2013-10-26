@@ -3011,3 +3011,407 @@ Stack trace:
 REQUEST_URI=/facis/index.php/socio/create
 in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (78)
 in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:41:00 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\FACIS\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/view')
+#10 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/facis/index.php/socio/view
+---
+2013/10/26 10:41:56 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (177)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:45:08 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (177)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:45:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Page not found.' in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php:52
+Stack trace:
+#0 [internal function]: SOCIOController->actionView('561651')
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SOCIOController), Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SOCIOController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/view')
+#13 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/facis/index.php/socio/561651
+HTTP_REFERER=http://localhost/facis/index.php/socio/
+---
+2013/10/26 10:45:38 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:45:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Page not found.' in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php:53
+Stack trace:
+#0 [internal function]: SOCIOController->actionView('561651')
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SOCIOController), Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SOCIOController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/view')
+#13 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/facis/index.php/socio/561651
+HTTP_REFERER=http://localhost/facis/index.php/socio/
+---
+2013/10/26 10:46:04 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:46:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Page not found.' in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php:53
+Stack trace:
+#0 [internal function]: SOCIOController->actionView('561651')
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SOCIOController), Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SOCIOController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/view')
+#13 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/facis/index.php/socio/561651
+HTTP_REFERER=http://localhost/facis/index.php/socio/
+---
+2013/10/26 10:46:09 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:46:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Page not found.' in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php:53
+Stack trace:
+#0 [internal function]: SOCIOController->actionView('561651')
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SOCIOController), Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SOCIOController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/view')
+#13 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/facis/index.php/socio/561651
+HTTP_REFERER=http://localhost/facis/index.php/socio/
+---
+2013/10/26 10:46:20 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:46:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Page not found.' in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php:53
+Stack trace:
+#0 [internal function]: SOCIOController->actionView('561651')
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SOCIOController), Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SOCIOController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/view')
+#13 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/facis/index.php/socio/561651
+HTTP_REFERER=http://localhost/facis/index.php/socio/
+---
+2013/10/26 10:46:22 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:46:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Page not found.' in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php:53
+Stack trace:
+#0 [internal function]: SOCIOController->actionView('561651')
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SOCIOController), Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SOCIOController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/view')
+#13 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/facis/index.php/socio/561651
+HTTP_REFERER=http://localhost/facis/index.php/socio/
+---
+2013/10/26 10:46:45 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:46:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Page not found.' in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php:53
+Stack trace:
+#0 [internal function]: SOCIOController->actionView('561651')
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SOCIOController), Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SOCIOController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/view')
+#13 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/facis/index.php/socio/561651
+HTTP_REFERER=http://localhost/facis/index.php/socio/
+---
+2013/10/26 10:46:59 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:46:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Page not found.' in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php:53
+Stack trace:
+#0 [internal function]: SOCIOController->actionView('561651')
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SOCIOController), Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SOCIOController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/view')
+#13 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/facis/index.php/socio/561651
+HTTP_REFERER=http://localhost/facis/index.php/socio/
+---
+2013/10/26 10:47:05 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:47:16 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:47:18 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:47:30 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:47:38 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:47:55 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:48:02 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:48:10 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:48:15 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:48:31 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:48:50 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:48:57 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (178)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:50:25 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY000]: General error: 1031 OCIStmtExecute: ORA-01031: insufficient privileges
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: WITH USER_SQL AS (SELECT * FROM "SOCIO" "t" WHERE "t"."K_IDENTIFICACION"=561651),
+	PAGINATION AS (SELECT USER_SQL.*, rownum as rowNumId FROM USER_SQL)
+SELECT *
+FROM PAGINATION
+ WHERE rownum <= 1.
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (177)
+in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (49)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/26 10:50:25 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php:52
+Stack trace:
+#0 [internal function]: SOCIOController->actionView('561651')
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SOCIOController), Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SOCIOController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/view')
+#13 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/facis/index.php/socio/561651
+HTTP_REFERER=http://localhost/facis/index.php/socio/
+---
