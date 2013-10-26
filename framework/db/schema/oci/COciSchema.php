@@ -186,7 +186,7 @@ FROM ALL_TAB_COLUMNS A
 inner join ALL_OBJECTS B ON b.owner = a.owner and ltrim(B.OBJECT_NAME) = ltrim(A.TABLE_NAME)
 LEFT JOIN user_col_comments com ON (A.table_name = com.table_name AND A.column_name = com.column_name)
 WHERE
-    a.owner = '{$schemaName}'
+    a.owner = 'FACIS'
 	and (b.object_type = 'TABLE' or b.object_type = 'VIEW')
 	and b.object_name = '{$tableName}'
 ORDER by a.column_id
