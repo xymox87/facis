@@ -147,6 +147,14 @@ class SOCIOController extends Controller {
      * Manages all models.
      */
     public function actionAdmin() {
+
+        Yii::app()->session["username"] = $this->username;
+        Yii::app()->session["password"] = $this->password;
+        var_dump(Yii::app()->sess);
+        /* Yii::app()->db->setActive(false);
+          Yii::app()->db->username = "facis";
+          Yii::app()->db->password = "facis";
+          Yii::app()->db->setActive(true); */
         $model = new SOCIO('search');
         $model->unsetAttributes();  // clear any default values
         if (isset($_GET['SOCIO']))
