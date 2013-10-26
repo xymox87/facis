@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List SOCIO', 'url'=>array('index')),
-	array('label'=>'Manage SOCIO', 'url'=>array('admin')),
+	array('label'=>'Lista de Socios', 'url'=>array('index')),
+	array('label'=>'Gestion de Socios', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create SOCIO</h1>
+<h1>Crear Socio</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

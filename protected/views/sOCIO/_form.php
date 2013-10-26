@@ -11,7 +11,7 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son requeridos.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -31,10 +31,18 @@
 		<?php echo $form->textField($model,'N_APELLIDO',array('size'=>50,'maxlength'=>50)); ?>
 		<?php echo $form->error($model,'N_APELLIDO'); ?>
 	</div>
+                <?php
+                    $listE["S"]="Soltero";
+                    $listE["C"]="Casado";
+                    $listE["D"]="Divorciado";                   
+                    $listE["V"]="Viudo";                   
+                    $listE["P"]="Separado";                   
+                ?>
 
 	<div class="row">
+                
 		<?php echo $form->labelEx($model,'I_ESTADO_CIVIL'); ?>
-		<?php echo $form->textField($model,'I_ESTADO_CIVIL',array('size'=>1,'maxlength'=>1)); ?>
+            	<?php echo CHtml::dropDownList('SOCIO[I_ESTADO_CIVIL]',$model->I_ESTADO_CIVIL,$listE);?>
 		<?php echo $form->error($model,'I_ESTADO_CIVIL'); ?>
 	</div>
 
@@ -51,8 +59,14 @@
 	</div>
 
 	<div class="row">
+                <?php 
+                    $listG["m"]="Masculino";
+                    $listG["f"]="Femenino";
+                ?>
 		<?php echo $form->labelEx($model,'I_GENERO'); ?>
-		<?php echo $form->textField($model,'I_GENERO',array('size'=>1,'maxlength'=>1)); ?>
+                <?php //echo CHtml::dropDownList('SOCIO[I_ESTADO_CIVIL]',$model->I_ESTADO_CIVIL,$listE);?>
+		<?php echo CHtml::dropDownList('SOCIO[I_GENERO]', $model->I_GENERO, $listG); ?>
+                <?php //echo $form->textField($model,'I_GENERO',array('size'=>1,'maxlength'=>1)); ?>
 		<?php echo $form->error($model,'I_GENERO'); ?>
 	</div>
 
@@ -94,13 +108,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'F_INGRESO'); ?>
-		<?php echo $form->textField($model,'F_INGRESO'); ?>
+		<?php echo $form->textField($model,'F_INGRESO'); ?><p class="note">Formato DD/MM/AA</p>
+		<?php //echo $this->renderPartial('application.views.partials.fecha', array('model'=>$model,'name'=>'F_INGRESO')); ?>
 		<?php echo $form->error($model,'F_INGRESO'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'F_RETIRO'); ?>
-		<?php echo $form->textField($model,'F_RETIRO'); ?>
+		<?php echo $form->textField($model,'F_RETIRO'); ?><p class="note">Formato DD/MM/AA</p>
 		<?php echo $form->error($model,'F_RETIRO'); ?>
 	</div>
 
