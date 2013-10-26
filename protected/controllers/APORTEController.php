@@ -82,11 +82,12 @@ class APORTEController extends Controller
                                 $dia = $dia.$f_aporte{$i};
                             else
                                 break;
-                        if((float)$model->attributes["V_APORTE"] <= (float)$v_maxaporte[$n_descaporte-1] && 
-                           (float)$model->attributes["V_APORTE"] >= (float)$v_minaporte[$n_descaporte-1]){
+                        if((float)$model->attributes["V_APORTE"] <= (float)$v_maxaporte[(string)($n_descaporte)] && 
+                           (float)$model->attributes["V_APORTE"] >= (float)$v_minaporte[(string)($n_descaporte)]){
                             if((int)$q_dias[count($q_dias)-1]<(int)$dia);//FALTA LA COLUMNA DE MULTA
                             $model->K_FPAGO=(string)$n_descaporte;
                             $model->K_NUMCONSIGNACION=$_POST['APORTE']['K_NUMCONSIGNACION'];
+                            print "paso";
                             if($model->save())
 				$this->redirect(array('view','id'=>$model->K_NUMCONSIGNACION));
                         }else

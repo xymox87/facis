@@ -71,7 +71,7 @@ class SOCIOController extends Controller
                     {
                             $model->attributes=$_POST['SOCIO'];
                             $model->K_IDENTIFICACION=$_POST['SOCIO']['K_IDENTIFICACION'];
-                        	if($model->save(false))
+                        	if($model->save())
 				$this->redirect(array('view','id'=>$model->K_IDENTIFICACION));
                             
                             $datos=$_POST['SOCIO'];    
@@ -85,6 +85,7 @@ class SOCIOController extends Controller
                     	'model'=>$model,
                     ));}
                 catch (Exception $e){
+                    var_dump($model->getErrors());
                      Yii::app()->clientScript->registerScript(1, 'alert("Los datos no son validos o faltan campos")');                          
                      $this->render('create',array(
                     	'model'=>$model,
