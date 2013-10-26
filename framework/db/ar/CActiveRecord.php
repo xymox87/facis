@@ -69,6 +69,7 @@ abstract class CActiveRecord extends CModel
 	 */
 	public function __construct($scenario='insert')
 	{
+            DynamicConnection::connect();
 		if($scenario===null) // internally used by populateRecord() and model()
 			return;
 
