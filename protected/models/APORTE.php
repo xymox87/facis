@@ -49,9 +49,8 @@ class APORTE extends CActiveRecord
 			array('V_APORTE,K_NUMCONSIGNACION, F_CONSIGNACION, K_IDENTIFICACION, K_CUENTA, K_FPAGO', 'required'),
 			array('K_DESCAPORTE, K_IDENTIFICACION, K_CUENTA, K_FPAGO', 'numerical', 'integerOnly'=>true),
 			array('V_APORTE', 'numerical'),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
 			array('V_APORTE, F_CONSIGNACION, K_NUMCONSIGNACION, K_DESCAPORTE, K_IDENTIFICACION, K_CUENTA, K_FPAGO', 'safe', 'on'=>'search'),
+			
 		);
 	}
 
