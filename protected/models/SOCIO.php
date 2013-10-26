@@ -26,6 +26,7 @@
  * @property CREDITO[] $cREDITOs
  * @property GANANCIA[] $gANANCIAs
  */
+
 class SOCIO extends CActiveRecord
 {
 	/**
@@ -141,8 +142,8 @@ class SOCIO extends CActiveRecord
 		));
 	}
         public function fechas($F_INGRESO,$F_RETIRO) {
-            if($F_RETIRO<$F_INGRESO)
-                $this->addError('F_INGRESO','Debe ser anterior a la fecha de retiro.');
+            if($F_INGRESO<$F_RETIRO)
+                $this->addError('F_RETIRO','Debe ser posterior a la fecha de ingreso.');
             
         }
 }
