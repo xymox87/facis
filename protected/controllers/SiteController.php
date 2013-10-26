@@ -27,7 +27,6 @@ class SiteController extends Controller {
     public function actionIndex() {
         // renders the view file 'protected/views/site/index.php'
         // using the default layout 'protected/views/layouts/main.php'
-        var_dump(Yii::app()->db);
 
         $this->render('index');
     }
@@ -74,10 +73,10 @@ class SiteController extends Controller {
         $model = new LoginForm;
      //   Yii::app()->run($this->config("facis2", "facis2"));
      //   var_dump($this->config());
-        Yii::app()->db->setActive(false);
+      /*  Yii::app()->db->setActive(false);
         Yii::app()->db->username="fas";
         Yii::app()->db->password="fas";
-        Yii::app()->db->setActive(true);
+        Yii::app()->db->setActive(true);*/
         
         // if it is ajax validation request
         if (isset($_POST['ajax']) && $_POST['ajax'] === 'login-form') {

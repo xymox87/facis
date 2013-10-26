@@ -30,12 +30,8 @@ class SOCIOController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update'),
+                'actions' => array('create', 'update', 'admin', 'delete'),
                 'users' => array('@'),
-            ),
-            array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete'),
-                'users' => array('admin'),
             ),
             array('deny', // deny all users
                 'users' => array('*'),
@@ -62,41 +58,42 @@ class SOCIOController extends Controller {
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
-                try {
-        if (isset($_POST['SOCIO'])) {
-                            $model->attributes=$_POST['SOCIO'];
-                            $model->K_IDENTIFICACION=$_POST['SOCIO']['K_IDENTIFICACION'];
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->K_IDENTIFICACION));
-                            
-                            $datos=$_POST['SOCIO'];    
-                            $fecha_inicio=  $this->actionFecha($datos['F_AFILIACION']);
-                            echo $datos.$fecha_inicio;
-                            //if()
-        }
-                    
+        try {
+            if (isset($_POST['SOCIO'])) {
+                $model->attributes = $_POST['SOCIO'];
+                $model->K_IDENTIFICACION = $_POST['SOCIO']['K_IDENTIFICACION'];
+                if ($model->save())
+                    $this->redirect(array('view', 'id' => $model->K_IDENTIFICACION));
 
-                    $this->render('create',array(
-                    	'model'=>$model,
-                    ));}
-                catch (Exception $e){
-                    var_dump($model->getErrors());
-                     Yii::app()->clientScript->registerScript(1, 'alert("Los datos no son validos o faltan campos")');                          
-                     $this->render('create',array(
-                    	'model'=>$model,
-                    ));
-                }
-	}
+                $datos = $_POST['SOCIO'];
+                $fecha_inicio = $this->actionFecha($datos['F_AFILIACION']);
+                echo $datos . $fecha_inicio;
+                //if()
+            }
 
-        public function actionFecha($fecha){
-            $valoresfecha = explode ("/",$fecha);  
-                $diafecha   = $valoresfecha[0];  
-                $mesfecha  = $valoresfecha[1];  
-                $anyofecha   = "20".$valoresfecha[2]; 
-                  $listofecha=$diafecha."-".$mesfecha."-".$anyofecha;
-                 $fecha_final=strtotime($listofecha);
-                 return $fecha_final;
+
+            $this->render('create', array(
+                'model' => $model,
+            ));
+        } catch (Exception $e) {
+            var_dump($model->getErrors());
+            Yii::app()->clientScript->registerScript(1, 'alert("Los datos no son validos o faltan campos")');
+            $this->render('create', array(
+                'model' => $model,
+            ));
         }
+    }
+
+    public function actionFecha($fecha) {
+        $valoresfecha = explode("/", $fecha);
+        $diafecha = $valoresfecha[0];
+        $mesfecha = $valoresfecha[1];
+        $anyofecha = "20" . $valoresfecha[2];
+        $listofecha = $diafecha . "-" . $mesfecha . "-" . $anyofecha;
+        $fecha_final = strtotime($listofecha);
+        return $fecha_final;
+    }
+
     /**
      * Updates a particular model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -136,10 +133,10 @@ class SOCIOController extends Controller {
      * Lists all models.
      */
     public function actionIndex() {
-        /*Yii::app()->db->setActive(false);
-        Yii::app()->db->username = "facis";
-        Yii::app()->db->password = "facis";
-        Yii::app()->db->setActive(true);*/
+        /* Yii::app()->db->setActive(false);
+          Yii::app()->db->username = "facis";
+          Yii::app()->db->password = "facis";
+          Yii::app()->db->setActive(true); */
         $dataProvider = new CActiveDataProvider('SOCIO');
         $this->render('index', array(
             'dataProvider' => $dataProvider,

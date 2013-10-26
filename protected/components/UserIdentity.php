@@ -19,9 +19,11 @@ class UserIdentity extends CUserIdentity
 	{
 		$users=array(
 			// username => password
-			'demo'=>'demo',
-			'admin'=>'admin',
+			$this->username=>$this->password
 		);
+                Yii::app()->session["username"]=$this->username;
+                Yii::app()->session["password"]=$this->password;
+                
 		if(!isset($users[$this->username]))
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
 		elseif($users[$this->username]!==$this->password)
