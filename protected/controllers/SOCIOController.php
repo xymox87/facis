@@ -69,14 +69,18 @@ class SOCIOController extends Controller
                 try {
                     if(isset($_POST['SOCIO']))
                     {
-                            $model->attributes=$_POST['SOCIO'];
-                            $model->K_IDENTIFICACION=$_POST['SOCIO']['K_IDENTIFICACION'];
-                        	if($model->save(false))
-				$this->redirect(array('view','id'=>$model->K_IDENTIFICACION));
-                            
-                            $datos=$_POST['SOCIO'];    
+                             $model->attributes=$_POST['SOCIO'];
+                                $model->K_IDENTIFICACION=$_POST['SOCIO']['K_IDENTIFICACION'];
+                                    if($model->save(false))
+                                    $this->redirect(array('view','id'=>$model->K_IDENTIFICACION));
+
+                            $datos=$_POST['SOCIO'];  
                             $fecha_inicio=  $this->actionFecha($datos['F_AFILIACION']);
-                            echo $datos.$fecha_inicio;
+                            $fecha_final=  $this->actionFecha($datos['F_AFILIACION']);
+                            if($fecha_inicio<=$fecha_final){
+                                     
+                            }
+                            
                             //if()
                     }
                     
