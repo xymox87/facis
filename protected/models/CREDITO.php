@@ -33,6 +33,7 @@ class CREDITO extends CActiveRecord
 			array('V_CREDITO, V_SALDO, Q_CUOTAS, K_IDENTIFICACION, Q_CUOTA', 'numerical', 'integerOnly'=>true),
 			array('I_ESTADO', 'length', 'max'=>1),
 			array('K_ID_CREDITO, F_APROBACION, F_DESEMBOLSO, F_ULTIMO_PAGO, V_ULTIMO_PAGO, V_CREDITO, V_SALDO, I_ESTADO, Q_CUOTAS, K_IDENTIFICACION, Q_CUOTA', 'safe', 'on'=>'search'),
+			//array ('F_APROBACION, F_DESEMBOLSO, F_ULTIMO_PAGO',  )
 		);
 	}
 
