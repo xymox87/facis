@@ -36,7 +36,8 @@ return array(
             'class' => 'CDbConnection',
             'connectionString' => 'oci:xe=127.0.0.1/orcl',
             'username' => 'facis',
-            'password' => 'facis'
+            'password' => 'facis',
+            'tablePrefix'=>'facis'
         ),
         'urlManager' => array(
             'urlFormat' => 'path',
