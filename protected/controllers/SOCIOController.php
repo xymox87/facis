@@ -117,17 +117,17 @@ class SOCIOController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+                
+                    if(isset($_POST['SOCIO']))     
+                    {
+                            $model->attributes=$_POST['SOCIO'];
+                            if($model->save())
+                                $this->redirect(array('view','id'=>$model->K_IDENTIFICACION));                                                                
+                    }
 
-		if(isset($_POST['SOCIO']))
-		{
-			$model->attributes=$_POST['SOCIO'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->K_IDENTIFICACION));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
+                    $this->render('update',array(
+                            'model'=>$model,
+                    ));                
 	}
 
 	/**

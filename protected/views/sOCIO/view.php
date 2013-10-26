@@ -8,11 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List SOCIO', 'url'=>array('index')),
-	array('label'=>'Create SOCIO', 'url'=>array('create')),
-	array('label'=>'Update SOCIO', 'url'=>array('update', 'id'=>$model->K_IDENTIFICACION)),
-	array('label'=>'Delete SOCIO', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->K_IDENTIFICACION),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage SOCIO', 'url'=>array('admin')),
+	//array('label'=>'List SOCIO', 'url'=>array('index')),
+    array('label'=>'Gestionar socio', 'url'=>array('admin')),
+	array('label'=>'Crear SOCIO', 'url'=>array('create')),
+	array('label'=>'Modificar SOCIO', 'url'=>array('update', 'id'=>$model->K_IDENTIFICACION)),
+	array('label'=>'Eliminar socio', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->K_IDENTIFICACION),'confirm'=>'Are you sure you want to delete this item?')),
+	
 );
 ?>
 
