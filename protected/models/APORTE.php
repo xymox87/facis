@@ -50,7 +50,8 @@ class APORTE extends CActiveRecord
 			array('K_DESCAPORTE, K_IDENTIFICACION, K_CUENTA, K_FPAGO', 'numerical', 'integerOnly'=>true),
 			array('V_APORTE', 'numerical'),
 			array('V_APORTE, F_CONSIGNACION, K_NUMCONSIGNACION, K_DESCAPORTE, K_IDENTIFICACION, K_CUENTA, K_FPAGO', 'safe', 'on'=>'search'),
-			
+			array('V_APORTE','validacionValorAporte'),
+                        array('F_CONSIGNACION','validacionValorAporte'),
 		);
 	}
 

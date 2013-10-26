@@ -1,0 +1,23 @@
+2013/10/26 20:10:21 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 2290 OCIStmtExecute: ORA-02290: restricción de control (FACIS.CHK_I_GENERO) violada
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("K_IDENTIFICACION", "N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\facis\protected\controllers\SOCIOController.php (69)
+in C:\xampp\htdocs\facis\index.php (13)
+2013/10/26 20:10:21 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acciÃ³n.' in C:\xampp\htdocs\facis\protected\controllers\SOCIOController.php:87
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): SOCIOController->actionCreate()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/create')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/socio/create
+HTTP_REFERER=http://localhost/facis/index.php/socio/create
+---
