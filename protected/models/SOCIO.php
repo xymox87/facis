@@ -61,10 +61,11 @@ class SOCIO extends CActiveRecord
 			array('O_TELEFONO_DOMICILIO, O_TELEFONO_TRABAJO, O_TELEFONO_CELULAR', 'length', 'max'=>15),
 			array('O_CAUSAL_RETIRO', 'length', 'max'=>256),
 			array('F_RETIRO', 'safe'),
-                        array('F_RETIRO','fechas','on'=>'update' ),
+                        
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('K_IDENTIFICACION, N_NOMBRE, N_APELLIDO, I_ESTADO_CIVIL, N_OCUPACION, O_TARJETA_PROFESIONAL, I_GENERO, O_DIRECCION_DOMICILIO, O_DIRECCION_TRABAJO, O_CORREO_ELECTRONICO, O_TELEFONO_DOMICILIO, O_TELEFONO_TRABAJO, O_TELEFONO_CELULAR, F_INGRESO, F_RETIRO, O_CAUSAL_RETIRO', 'safe', 'on'=>'search'),
+                        array('F_RETIRO','fechas','on'=>'update' ),
 		);
 	}
 
