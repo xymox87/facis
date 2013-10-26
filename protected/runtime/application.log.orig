@@ -2698,6 +2698,61 @@ in C:\xampp\htdocs\Facis\index.php (13)
  (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO", "F_RETIRO", "O_CAUSAL_RETIRO", "K_IDENTIFICACION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID.
 in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (74)
 in C:\xampp\htdocs\Facis\index.php (13)
+<<<<<<< HEAD
+2013/10/24 21:50:09 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (118)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 22:00:41 [error] [php] Undefined variable: datos (C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php:73)
+#0 C:\xampp\htdocs\Facis\framework\web\filters\CFilterChain.php(133): SOCIOController->runAction()
+#1 C:\xampp\htdocs\Facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\Facis\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\Facis\framework\web\filters\CInlineFilter.php(58): SOCIOController->filterAccessControl()
+#4 C:\xampp\htdocs\Facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\Facis\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\Facis\framework\web\CController.php(265): SOCIOController->runActionWithFilters()
+#7 C:\xampp\htdocs\Facis\framework\web\CWebApplication.php(282): SOCIOController->run()
+#8 C:\xampp\htdocs\Facis\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\Facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Facis\index.php(13): CWebApplication->run()
+REQUEST_URI=/facis/index.php/socio/create
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (73)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 22:02:03 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (72)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 22:02:03 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (FACIS.PK_K_IDENTIFICACION) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO", "F_RETIRO", "O_CAUSAL_RETIRO", "K_IDENTIFICACION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (74)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 22:14:24 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (72)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 22:14:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (FACIS.PK_K_IDENTIFICACION) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO", "F_RETIRO", "O_CAUSAL_RETIRO", "K_IDENTIFICACION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (74)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 22:14:41 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (72)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 22:14:41 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (FACIS.PK_K_IDENTIFICACION) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO", "F_RETIRO", "O_CAUSAL_RETIRO", "K_IDENTIFICACION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (74)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 22:15:36 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (72)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 22:15:36 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (FACIS.PK_K_IDENTIFICACION) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO", "F_RETIRO", "O_CAUSAL_RETIRO", "K_IDENTIFICACION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (74)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 22:16:42 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (72)
+in C:\xampp\htdocs\Facis\index.php (13)
+2013/10/24 22:16:42 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (FACIS.PK_K_IDENTIFICACION) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "SOCIO" ("N_NOMBRE", "N_APELLIDO", "I_ESTADO_CIVIL", "N_OCUPACION", "O_TARJETA_PROFESIONAL", "I_GENERO", "O_DIRECCION_DOMICILIO", "O_DIRECCION_TRABAJO", "O_CORREO_ELECTRONICO", "O_TELEFONO_DOMICILIO", "O_TELEFONO_TRABAJO", "O_TELEFONO_CELULAR", "F_INGRESO", "F_RETIRO", "O_CAUSAL_RETIRO", "K_IDENTIFICACION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15) RETURNING "K_IDENTIFICACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\Facis\protected\controllers\SOCIOController.php (74)
+in C:\xampp\htdocs\Facis\index.php (13)
+=======
 #9 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(98): APORTEController->render()
 #10 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionCreate()
 #11 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams()
@@ -3064,7 +3119,6 @@ Stack trace:
 #1 C:\xampp\htdocs\FACIS\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
 #2 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(93): CActiveRecord->save()
 #3 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionCreate()
->>>>>>> master
 #4 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
 #5 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
 #6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
@@ -3073,21 +3127,6 @@ Stack trace:
 #9 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
 #10 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
 #11 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-<<<<<<< HEAD
-#12 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('')
-#13 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio')
-#14 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#15 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
-#16 {main}
-REQUEST_URI=/facis/index.php/socio
----
-2013/10/24 06:37:27 [error] [exception.CDbException] exception 'CDbException' with message 'The table "SOCIO" for active record class "SOCIO" cannot be found in the database.' in C:\xampp\htdocs\FACIS\framework\db\ar\CActiveRecord.php:2311
-Stack trace:
-#0 C:\xampp\htdocs\FACIS\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(SOCIO))
-#1 C:\xampp\htdocs\FACIS\framework\web\CActiveDataProvider.php(74): CActiveRecord::model('SOCIO')
-#2 C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php(121): CActiveDataProvider->__construct('SOCIO')
-#3 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): SOCIOController->actionIndex()
-=======
 #12 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
 #13 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/create')
 #14 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
@@ -3107,7 +3146,6 @@ Stack trace:
 #1 C:\xampp\htdocs\FACIS\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
 #2 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(93): CActiveRecord->save()
 #3 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionCreate()
->>>>>>> master
 #4 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
 #5 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
 #6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
@@ -3116,21 +3154,6 @@ Stack trace:
 #9 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
 #10 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
 #11 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-<<<<<<< HEAD
-#12 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('')
-#13 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio')
-#14 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#15 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
-#16 {main}
-REQUEST_URI=/facis/index.php/socio
----
-2013/10/24 07:46:02 [error] [exception.CDbException] exception 'CDbException' with message 'The table "SOCIO" for active record class "SOCIO" cannot be found in the database.' in C:\xampp\htdocs\FACIS\framework\db\ar\CActiveRecord.php:2311
-Stack trace:
-#0 C:\xampp\htdocs\FACIS\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(SOCIO))
-#1 C:\xampp\htdocs\FACIS\framework\web\CActiveDataProvider.php(74): CActiveRecord::model('SOCIO')
-#2 C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php(121): CActiveDataProvider->__construct('SOCIO')
-#3 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): SOCIOController->actionIndex()
-=======
 #12 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
 #13 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/create')
 #14 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
@@ -3150,7 +3173,6 @@ Stack trace:
 #1 C:\xampp\htdocs\FACIS\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
 #2 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(92): CActiveRecord->save()
 #3 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionCreate()
->>>>>>> master
 #4 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
 #5 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
 #6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
@@ -3159,9 +3181,42 @@ Stack trace:
 #9 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
 #10 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
 #11 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-<<<<<<< HEAD
-#12 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('')
-#13 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio')
+#12 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/create')
+#14 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/facis/index.php/aporte/create
+HTTP_REFERER=http://localhost/facis/index.php/aporte/create
+---
+2013/10/24 22:58:34 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."APORTE"."K_DESCAPORTE")
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "APORTE" ("K_NUMCONSIGNACION", "V_APORTE", "F_CONSIGNACION", "K_IDENTIFICACION", "K_CUENTA", "K_FPAGO") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5) RETURNING "K_NUMCONSIGNACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (92)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/10/24 22:58:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."APORTE"."K_DESCAPORTE")
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "APORTE" ("K_NUMCONSIGNACION", "V_APORTE", "F_CONSIGNACION", "K_IDENTIFICACION", "K_CUENTA", "K_FPAGO") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5) RETURNING "K_NUMCONSIGNACION" INTO :RETURN_ID' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(92): CActiveRecord->save()
+#3 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionCreate()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/create')
+#14 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/facis/index.php/aporte/create
+HTTP_REFERER=http://localhost/facis/index.php/aporte/create
+---
+>>>>>>> 175d97274ad560932c2c22182e4e4a59bdf7fd6a
 #14 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
 #15 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
 #16 {main}
@@ -3230,17 +3285,6 @@ Stack trace:
 #15 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
 #16 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
 #17 {main}
-REQUEST_URI=/facis/index.php/socio/create
----
-2013/10/24 14:32:03 [warning] [application] Failed to set unsafe attribute "K_IDENTIFICACION" of "SOCIO".
-in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php (67)
-in C:\xampp\htdocs\FACIS\index.php (13)
-=======
-#12 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
-#13 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/create')
-#14 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#15 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
-#16 {main}
 REQUEST_URI=/facis/index.php/aporte/create
 HTTP_REFERER=http://localhost/facis/index.php/aporte/create
 ---

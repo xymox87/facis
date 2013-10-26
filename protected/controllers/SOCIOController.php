@@ -60,14 +60,18 @@ class SOCIOController extends Controller {
         // $this->performAjaxValidation($model);
         try {
             if (isset($_POST['SOCIO'])) {
-                $model->attributes = $_POST['SOCIO'];
-                $model->K_IDENTIFICACION = $_POST['SOCIO']['K_IDENTIFICACION'];
+                            $model->attributes=$_POST['SOCIO'];
+                            $model->K_IDENTIFICACION=$_POST['SOCIO']['K_IDENTIFICACION'];
                 if ($model->save())
-                    $this->redirect(array('view', 'id' => $model->K_IDENTIFICACION));
+                                    $this->redirect(array('view','id'=>$model->K_IDENTIFICACION));
 
-                $datos = $_POST['SOCIO'];
+                            $datos=$_POST['SOCIO'];  
                 $fecha_inicio = $this->actionFecha($datos['F_AFILIACION']);
-                echo $datos . $fecha_inicio;
+                            $fecha_final=  $this->actionFecha($datos['F_AFILIACION']);
+                            if($fecha_inicio<=$fecha_final){
+                                     
+                            }
+                            
                 //if()
             }
 
@@ -104,16 +108,17 @@ class SOCIOController extends Controller {
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
+                
+                    if(isset($_POST['SOCIO']))     
+                    {
+                            $model->attributes=$_POST['SOCIO'];
+                            if($model->save())
+                                $this->redirect(array('view','id'=>$model->K_IDENTIFICACION));                                                                
+                    }
 
-        if (isset($_POST['SOCIO'])) {
-            $model->attributes = $_POST['SOCIO'];
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->K_IDENTIFICACION));
-        }
-
-        $this->render('update', array(
-            'model' => $model,
-        ));
+                    $this->render('update',array(
+                            'model'=>$model,
+                    ));                
     }
 
     /**

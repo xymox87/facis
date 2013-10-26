@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Lista de Socios', 'url'=>array('index')),
+	array('label'=>'Lista de Socios', 'url'=>array('admin')),
 	array('label'=>'Gestion de Socios', 'url'=>array('admin')),
 );
 ?>

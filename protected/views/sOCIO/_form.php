@@ -112,7 +112,7 @@
 		<?php //echo $this->renderPartial('application.views.partials.fecha', array('model'=>$model,'name'=>'F_INGRESO')); ?>
 		<?php echo $form->error($model,'F_INGRESO'); ?>
 	</div>
-
+        <?php if(!$model->isNewRecord){ ?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'F_RETIRO'); ?>
 		<?php echo $form->textField($model,'F_RETIRO'); ?><p class="note">Formato DD/MM/AA</p>
@@ -125,6 +125,7 @@
 		<?php echo $form->error($model,'O_CAUSAL_RETIRO'); ?>
 	</div>
 
+        <?php } ?>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
