@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create APORTE', 'url'=>array('create')),
-	array('label'=>'Manage APORTE', 'url'=>array('admin')),
+	array('label'=>'Crear aporte', 'url'=>array('create')),
+	array('label'=>'Gestionar aportes', 'url'=>array('admin')),
 );
 ?>
 

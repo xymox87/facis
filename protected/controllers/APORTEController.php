@@ -67,17 +67,18 @@ class APORTEController extends Controller {
             if (isset($_POST['APORTE'])) {
                 $descaporte = new DESCRIPCIONAPORTE;
                 $model->attributes = $_POST['APORTE'];
+                date_default_timezone_set("America/Bogota");
+                $model->F_CONSIGNACION = date("j/n/y");
                 $model->K_DESCAPORTE = (int) $descaporte->count();
-                $model->K_NUMCONSIGNACION = $_POST['APORTE']['K_NUMCONSIGNACION'];
+                //$model->K_NUMCONSIGNACION = $_POST['APORTE']['K_NUMCONSIGNACION'];
                 if ($model->save())
                     $this->redirect(array('view', 'id' => $model->K_NUMCONSIGNACION));                     
             }
-
             $this->render('create', array(
                 'model' => $model,
             ));
         } catch (Exception $e) {
-            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500, $e->getMessage());
         }
     }
 

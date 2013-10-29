@@ -29,7 +29,7 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
+				array('label'=>'Inicio', 'url'=>array('/site/index')),
 				array('label'=>'Gestion de socios', 'url'=>array('/socio/admin')),
 				array('label'=>'Gestion de Aportes', 'url'=>array('/aporte/admin')),
 				array('label'=>'Gestion de Credito', 'url'=>array('/credito/admin')),

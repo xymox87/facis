@@ -25,13 +25,14 @@
 		<?php echo $form->textField($model,'V_APORTE'); ?>
 		<?php echo $form->error($model,'V_APORTE'); ?>
 	</div>
-
+        
+        <!--
 	<div class="row">
 		<?php echo $form->labelEx($model,'F_CONSIGNACION'); ?>
 		<?php echo $form->textField($model,'F_CONSIGNACION'); ?>
 		<?php echo $form->error($model,'F_CONSIGNACION'); ?>
 	</div>
-
+        -->
 	
 
 	<div class="row">
