@@ -79,7 +79,7 @@ class APORTE extends CActiveRecord
 			'V_APORTE' => 'Valor del aporte',
 			'F_CONSIGNACION' => 'Fecha de consignacion',
 			'K_NUMCONSIGNACION' => 'Numero de la consignacion',
-			'K_DESCAPORTE' => 'K Descaporte',
+			'K_DESCAPORTE' => 'descripcion aporte',
 			'K_IDENTIFICACION' => 'Numero de identificacion del socio',
 			'K_CUENTA' => 'Numero de cuenta',
 			'K_FPAGO' => 'Forma de pago',

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 a:1:{s:34:"Yii.CSecurityManager.validationkey";s:32:"6467546b180a58c538fd44e92996a047";}
+=======
+a:1:{s:34:"Yii.CSecurityManager.validationkey";s:32:"697f9e202206b108587a6ee037ae3f9e";}
+>>>>>>> rafael/master
