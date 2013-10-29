@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List APORTE', 'url'=>array('index')),
-	array('label'=>'Create APORTE', 'url'=>array('create')),
+	array('label'=>'Listar aportes', 'url'=>array('index')),
+	array('label'=>'Crear aportes', 'url'=>array('create')),
 	array('label'=>'Update APORTE', 'url'=>array('update', 'id'=>$model->K_NUMCONSIGNACION)),
 	array('label'=>'Delete APORTE', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->K_NUMCONSIGNACION),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage APORTE', 'url'=>array('admin')),
+	array('label'=>'Gestionar aportes', 'url'=>array('admin')),
 );
 ?>
 

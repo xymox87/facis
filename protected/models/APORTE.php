@@ -46,11 +46,12 @@ class APORTE extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('V_APORTE,K_NUMCONSIGNACION, F_CONSIGNACION, K_IDENTIFICACION, K_CUENTA, K_FPAGO', 'required'),
+			array('V_APORTE, K_NUMCONSIGNACION, K_IDENTIFICACION, K_CUENTA, K_FPAGO', 'required'),
 			array('K_DESCAPORTE, K_IDENTIFICACION, K_CUENTA, K_FPAGO', 'numerical', 'integerOnly'=>true),
 			array('V_APORTE', 'numerical'),
 			array('V_APORTE, F_CONSIGNACION, K_NUMCONSIGNACION, K_DESCAPORTE, K_IDENTIFICACION, K_CUENTA, K_FPAGO', 'safe', 'on'=>'search'),
-			
+			array('V_APORTE','ValidacionValorAporte'),
+                        array('F_CONSIGNACION','ValidacionFechaAporte'),
 		);
 	}
 

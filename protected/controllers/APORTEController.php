@@ -67,35 +67,20 @@ class APORTEController extends Controller {
             if (isset($_POST['APORTE'])) {
                 $model->attributes = $_POST['APORTE'];
                 $descaporte = new DESCRIPCIONAPORTE;
-                $v_maxaporte = CHtml::listData($descaporte->findAll(), 'K_DESCAPORTE', 'V_MAXAPORTE');
-                $v_minaporte = CHtml::listData($descaporte->findAll(), 'K_DESCAPORTE', 'V_MINAPORTE');
-                $q_dias = CHtml::listData($descaporte->findAll(), 'K_DESCAPORTE', 'Q_DIAS');
-                $n_descaporte = (int) $descaporte->count();
-                $f_aporte = $model->attributes['F_CONSIGNACION'];
-                $dia = "";
-                for ($i = 0; $i < strlen($f_aporte); $i++)
-                    if ($f_aporte{$i} != "/")
-                        $dia = $dia . $f_aporte{$i};
-                    else
-                        break;
-                if ((float) $model->attributes["V_APORTE"] <= (float) $v_maxaporte[(string) ($n_descaporte)] &&
-                        (float) $model->attributes["V_APORTE"] >= (float) $v_minaporte[(string) ($n_descaporte)]) {
-                    if ((int) $q_dias[count($q_dias) - 1] < (int) $dia)
+                $model->attributes = $_POST['APORTE'];
+                date_default_timezone_set("America/Bogota");
+                $model->F_CONSIGNACION = date("j/n/y");
+                $model->K_DESCAPORTE = (int) $descaporte->count();
+                //$model->K_NUMCONSIGNACION = $_POST['APORTE']['K_NUMCONSIGNACION'];
                         ; //FALTA LA COLUMNA DE MULTA
-                    $model->K_FPAGO = (string) $n_descaporte;
-                    $model->K_NUMCONSIGNACION = $_POST['APORTE']['K_NUMCONSIGNACION'];
-                    print "paso";
-                    if ($model->save())
-                        $this->redirect(array('view', 'id' => $model->K_NUMCONSIGNACION));
-                }else
-                    print false; //NECESITO SACAR UN MENSAJE DE ERROR O ALGO                        
+                if ($model->save())
+                    $this->redirect(array('view', 'id' => $model->K_NUMCONSIGNACION));                     
             }
-
             $this->render('create', array(
                 'model' => $model,
             ));
         } catch (Exception $e) {
-            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500, $e->getMessage());
         }
     }
 
@@ -206,5 +191,6 @@ class APORTEController extends Controller {
             throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
         }
     }
+
 
 }

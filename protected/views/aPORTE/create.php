@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List APORTE', 'url'=>array('index')),
-	array('label'=>'Manage APORTE', 'url'=>array('admin')),
+	array('label'=>'Listar aportes', 'url'=>array('index')),
+	array('label'=>'Gestionar aportes', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create APORTE</h1>
+<h1>Crear aporte</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
