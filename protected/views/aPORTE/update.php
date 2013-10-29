@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List APORTE', 'url'=>array('index')),
-	array('label'=>'Create APORTE', 'url'=>array('create')),
-	array('label'=>'View APORTE', 'url'=>array('view', 'id'=>$model->K_NUMCONSIGNACION)),
-	array('label'=>'Manage APORTE', 'url'=>array('admin')),
+	array('label'=>'Listar aportes', 'url'=>array('index')),
+	array('label'=>'Crear aporte', 'url'=>array('create')),
+	array('label'=>'Ver aportes', 'url'=>array('view', 'id'=>$model->K_NUMCONSIGNACION)),
+	array('label'=>'Gestionar aportes', 'url'=>array('admin')),
 );
 ?>
 

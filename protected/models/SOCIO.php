@@ -26,6 +26,7 @@
  * @property CREDITO[] $cREDITOs
  * @property GANANCIA[] $gANANCIAs
  */
+
 class SOCIO extends CActiveRecord
 {
 	/**
@@ -54,16 +55,18 @@ class SOCIO extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('N_NOMBRE, N_APELLIDO, I_ESTADO_CIVIL, N_OCUPACION, O_TARJETA_PROFESIONAL, I_GENERO, O_DIRECCION_DOMICILIO, O_DIRECCION_TRABAJO, O_CORREO_ELECTRONICO, O_TELEFONO_DOMICILIO, O_TELEFONO_TRABAJO, O_TELEFONO_CELULAR, F_INGRESO', 'required'),
+			array('K_IDENTIFICACION, N_NOMBRE, N_APELLIDO, I_ESTADO_CIVIL, N_OCUPACION, O_TARJETA_PROFESIONAL, I_GENERO, O_DIRECCION_DOMICILIO, O_DIRECCION_TRABAJO, O_CORREO_ELECTRONICO, O_TELEFONO_DOMICILIO, O_TELEFONO_TRABAJO, O_TELEFONO_CELULAR, F_INGRESO', 'required'),
 			array('N_NOMBRE, N_APELLIDO, N_OCUPACION, O_DIRECCION_DOMICILIO, O_DIRECCION_TRABAJO, O_CORREO_ELECTRONICO', 'length', 'max'=>50),
 			array('I_ESTADO_CIVIL, I_GENERO', 'length', 'max'=>1),
 			array('O_TARJETA_PROFESIONAL', 'length', 'max'=>20),
 			array('O_TELEFONO_DOMICILIO, O_TELEFONO_TRABAJO, O_TELEFONO_CELULAR', 'length', 'max'=>15),
 			array('O_CAUSAL_RETIRO', 'length', 'max'=>256),
 			array('F_RETIRO', 'safe'),
+                        
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('K_IDENTIFICACION, N_NOMBRE, N_APELLIDO, I_ESTADO_CIVIL, N_OCUPACION, O_TARJETA_PROFESIONAL, I_GENERO, O_DIRECCION_DOMICILIO, O_DIRECCION_TRABAJO, O_CORREO_ELECTRONICO, O_TELEFONO_DOMICILIO, O_TELEFONO_TRABAJO, O_TELEFONO_CELULAR, F_INGRESO, F_RETIRO, O_CAUSAL_RETIRO', 'safe', 'on'=>'search'),
+                        array('F_RETIRO','fechas','on'=>'update' ),
 		);
 	}
 
@@ -87,7 +90,7 @@ class SOCIO extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'K_IDENTIFICACION' => 'Nuemro de identificacion',
+			'K_IDENTIFICACION' => 'Numero de identificacion',
 			'N_NOMBRE' => 'Nombre',
 			'N_APELLIDO' => 'Apellido',
 			'I_ESTADO_CIVIL' => 'Estado Civil',
@@ -138,4 +141,9 @@ class SOCIO extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        public function fechas($F_INGRESO,$F_RETIRO) {
+            if($F_INGRESO<$F_RETIRO)
+                $this->addError('F_RETIRO','Debe ser posterior a la fecha de ingreso.');
+            
+        }
 }

@@ -16,7 +16,7 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'F_APROBACION'); ?>
+		<?php echo $form->labelEx($model,'Fecha de Aprobacion '); ?>
 		<?php echo $form->textField($model,'F_APROBACION'); ?>
 		<?php echo $form->error($model,'F_APROBACION'); ?>
 	</div>
@@ -50,11 +50,16 @@
 		<?php echo $form->textField($model,'V_SALDO'); ?>
 		<?php echo $form->error($model,'V_SALDO'); ?>
 	</div>
+				<?php
+                    $listE["A"]="Aprobado";
+                    $listE["V"]="Vigente";
+                    $listE["C"]="Cancelado";                   
+                  ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'I_ESTADO'); ?>
-		<?php echo $form->textField($model,'I_ESTADO',array('size'=>1,'maxlength'=>1)); ?>
-		<?php echo $form->error($model,'I_ESTADO'); ?>
+			<?php echo CHtml::dropDownList('CREDITO[I_ESTADO]',$model->I_ESTADO,$listE);?>
+				<?php echo $form->error($model,'I_ESTADO'); ?>
 	</div>
 
 	<div class="row">

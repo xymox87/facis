@@ -9,10 +9,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List SOCIO', 'url'=>array('index')),
-	array('label'=>'Create SOCIO', 'url'=>array('create')),
-	array('label'=>'View SOCIO', 'url'=>array('view', 'id'=>$model->K_IDENTIFICACION)),
-	array('label'=>'Manage SOCIO', 'url'=>array('admin')),
+	array('label'=>'Gestionar socios', 'url'=>array('admin')),
+	array('label'=>'Crear socio', 'url'=>array('create')),
+	array('label'=>'Ver socio', 'url'=>array('view', 'id'=>$model->K_IDENTIFICACION)),
 );
 ?>
 
