@@ -6,17 +6,21 @@ class validacionFechaAporte extends CValidator{
         $descaporte = new DESCRIPCIONAPORTE;
         $q_dias = CHtml::listData($descaporte->findAll(), 'K_DESCAPORTE', 'Q_DIAS');
         $n_descaporte = (int) $descaporte->count();
-        $f_aporte = $object->model()->F_CONSIGNACION;
+        $dia = (int) $this->obtenerDiaAporte($object->$attribute);
+        $dia_maximo = (int) $q_dias[(string) $n_descaporte];
+        if ($dia_maximo < $dia && $object->V_MULTA == NULL)
+            $this->addError($object,$attribute,"Debe ingrsarse un valor para la multa: Dia maximo de pago: $dia_maximo. Dia encontrado: $dia");
+    }
+    
+    public function obtenerDiaAporte($f_aporte){
         $dia = "";
         for ($i = 0; $i < strlen($f_aporte); $i++)
             if ($f_aporte{$i} != "/")
                 $dia = $dia . $f_aporte{$i};
             else
                 break;
-        if ((int) $q_dias[(string) $n_descaporte] <= (int) $dia)
-            return true;
-        else
-            return false;
+        return $dia;
     }
-
 }
+
+?>
