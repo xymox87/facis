@@ -100,4 +100,10 @@ class PLANPAGOS extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        public function generar($id_credito, $cuotas, $fechaDesembolso){
+            for($i=0; $i < $cuotas; $i++){
+                
+            }
+        }
 }

@@ -99,4 +99,21 @@ class DESCRIPCIONTIPOCREDITO extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        public function obtenerIdDescripcionActual($tipo_credito){
+            return (int)array_shift(CHtml::listData($this->findAllBySql("SELECT k_id_descripcion FROM descripcion_tipo_credito "
+                    ."WHERE f_establecimiento IN (SELECT max(f_establecimiento) "
+                    ."FROM descripcion_tipo_credito WHERE k_identificador=".(int)$tipo_credito
+                    .") AND k_identificador=".(int)$tipo_credito,
+                    array('K_ID_DESCRIPCION')),"K_ID_DESCRIPCION", "K_ID_DESCRIPCION"));
+        }
+
+        public function obtenerValorAportesRequerido($tipo_credito){
+            return (double)array_shift(CHtml::listData($this->findAllBySql("SELECT v_aporte_minimo FROM descripcion_tipo_credito "
+                    ."WHERE f_establecimiento IN (SELECT max(f_establecimiento) "
+                    ."FROM descripcion_tipo_credito WHERE k_identificador=".(int)$tipo_credito
+                    .") AND k_identificador=".(int)$tipo_credito,
+                    array('K_ID_DESCRIPCION')),"K_ID_DESCRIPCION", "K_ID_DESCRIPCION"));
+        }
+        
 }

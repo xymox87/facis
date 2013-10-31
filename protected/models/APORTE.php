@@ -109,4 +109,35 @@ class APORTE extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        public function obtenerAportesTotalesSocio($identificacion){
+            return (double)array_shift(CHtml::listData($this->findBySql("SELECT SUM(v_aporte) AS SUMA "
+                    . "FROM aporte WHERE identificacion=".(int)$identificacion,array('SUMA')), "SUMA", "SUMA"));
+        }
+        
+        public function obtenerAportesTotales(){
+            return (double)array_shift(CHtml::listData($this->findBySql(
+                    "SELECT SUM(v_aporte) AS SUMA FROM aporte",array('SUMA')),
+                    "SUMA", "SUMA"));
+        }
+        
+        public function obtenerFechaUltimoAporte($identificacion){
+            return array_shift(CHtml::listData($this->findBySql(
+                    "SELECT MAX(f_consignacion) AS FECHA FROM aporte "
+                    . "GROUP BY (k_identificacion) HAVING (k_identificacion="
+                    . (int)$identificacion.")",
+                    array('FECHA')),
+                    "FECHA", "FECHA"));
+        }
+        
+        public function obtenerIdDescApUltimoAporte($identificacion){
+            return (int)array_shift(CHtml::listData($this->findBySql(
+                    "SELECT k_descaporte FROM aporte WHERE f_consignacion IN("
+                    . "SELECT MAX(f_consignacion) AS FECHA FROM aporte "
+                    . "GROUP BY (k_identificacion) HAVING (k_identificacion="
+                    . (int)$identificacion.")) AND k_identificacion="
+                    . (int)$identificacion,
+                    array('K_DESCAPORTE')),
+                    "K_DESCAPORTE", "K_DESCAPORTE"));
+        }
 }

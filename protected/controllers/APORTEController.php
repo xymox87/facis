@@ -70,11 +70,6 @@ class APORTEController extends Controller {
                 date_default_timezone_set("America/Bogota");
                 $model->F_CONSIGNACION = date("j/n/y");
                 $model->K_DESCAPORTE = (int) $descaporte->count();
-                //$model->K_NUMCONSIGNACION = $_POST['APORTE']['K_NUMCONSIGNACION'];
-<<<<<<< HEAD
-=======
-                        ; //FALTA LA COLUMNA DE MULTA
->>>>>>> 80fb4a069f925fdbe2a09cee1e48e0d2faf5dc54
                 if ($model->save())
                     $this->redirect(array('view', 'id' => $model->K_NUMCONSIGNACION));                     
             }

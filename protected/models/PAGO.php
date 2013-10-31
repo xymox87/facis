@@ -109,4 +109,10 @@ class PAGO extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        public function obtenerValorTodosPagos(){
+            return (double)array_shift(CHtml::listData($this->findBySql(
+                    "SELECT SUM(v_pago) AS SUMA FROM pago",array('SUMA')),
+                    "SUMA", "SUMA"));
+        }
 }

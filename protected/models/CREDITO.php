@@ -29,11 +29,14 @@ class CREDITO extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('F_APROBACION, F_DESEMBOLSO, V_CREDITO, V_SALDO, I_ESTADO, Q_CUOTAS, K_IDENTIFICACION, Q_CUOTA', 'required'),
+			array('F_DESEMBOLSO, K_IDENTIFICADOR,F_APROBACION, V_CREDITO, Q_CUOTAS, K_IDENTIFICACION', 'required'),
 			array('V_CREDITO, V_SALDO, Q_CUOTAS, K_IDENTIFICACION, Q_CUOTA', 'numerical', 'integerOnly'=>true),
 			array('I_ESTADO', 'length', 'max'=>1),
 			array('K_ID_CREDITO, F_APROBACION, F_DESEMBOLSO, F_ULTIMO_PAGO, V_ULTIMO_PAGO, V_CREDITO, V_SALDO, I_ESTADO, Q_CUOTAS, K_IDENTIFICACION, Q_CUOTA', 'safe', 'on'=>'search'),
-			//array ('F_APROBACION, F_DESEMBOLSO, F_ULTIMO_PAGO',  )
+                        array('K_IDENTIFICACION','ValidacionAportesAlDia'),
+                        //array('K_IDENTIFICACION','ValidacionCreditoTCredito'),
+                        array('K_IDENTIFICACION','ValidacionNCreditos'),
+                        array('V_CREDITO','ValidacionCapitalDisponible'),
 		);
 	}
 
@@ -59,15 +62,15 @@ class CREDITO extends CActiveRecord
 		return array(
 			'K_ID_CREDITO' => 'Credito',
 			'F_APROBACION' => 'Aprobacion',
-			'F_DESEMBOLSO' => 'Desembolso',
-			'F_ULTIMO_PAGO' => 'Fecha Ultimo Pago',
-			'V_ULTIMO_PAGO' => 'Valor Ultimo Pago',
-			'V_CREDITO' => 'V Credito',
+			'F_DESEMBOLSO' => 'Fecha de desembolso',
+			'F_ULTIMO_PAGO' => 'Fecha del ultimo pago',
+			'V_ULTIMO_PAGO' => 'Valor del ultimo pago',
+			'V_CREDITO' => 'Valor del credito',
 			'V_SALDO' => 'Saldo',
 			'I_ESTADO' => 'Estado',
 			'Q_CUOTAS' => 'Cuotas',
-			'K_IDENTIFICACION' => 'Identificacion',
-			'Q_CUOTA' => 'Cuota',
+			'K_IDENTIFICACION' => 'Identificacion del socio',
+			'Q_CUOTA' => 'Cuota actual',
 		);
 	}
 
@@ -98,4 +101,18 @@ class CREDITO extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        public function numeroCreditosSocio($identificacion){
+            $creditos = CHtml::listData($this->findBySql("SELECT count(*) FROM credito "
+                    . "GROUP BY (k_identificacion) HAVING (k_identificacion="
+                    . (int)$identificacion.")"
+                    , array('K_IDENTIFICACION')), 'K_IDENTIFICACION', 'K_IDENTIFICACION');
+            return count($creditos);
+        }
+        
+        public function obtenerValorTodosCreditos(){
+            return (double)array_shift(CHtml::listData($this->findBySql(
+                    "SELECT SUM(v_credito) AS SUMA FROM credito",array("SUMA"))
+                    ,"SUMA","SUMA"));
+        }
 }
