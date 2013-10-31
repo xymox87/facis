@@ -71,13 +71,16 @@ class CREDITOController extends Controller {
                 $model->F_APROBACION = date("j/n/y");
                 $model->V_SALDO = -$model->V_CREDITO;
                 $model->I_ESTADO = 'vigente';
-                $model_planPagos->generar($model->K_ID_CREDITO,$model->Q_CUOTAS, $model->F_DESEMBOLSO);
                 $model_descripcion->K_IDENTIFICADOR = $_POST['TIPO_CREDITO']['K_IDENTIFICADOR'];
                 $model_descripcion->K_ID_CREDITO = $model->K_ID_CREDITO;
                 $model_descripcion->K_ID_DESCRIPCION = (string)DESCRIPCIONTIPOCREDITO::model()->obtenerIdDescripcionActual($_POST['TIPO_CREDITO']['K_IDENTIFICADOR']);
                 if ($model->save()){
                     $model_descripcion->save();
-                    $model_planPagos->save();
+                    $model_planPagos->generar($model->K_ID_CREDITO,
+                            $model->Q_CUOTAS, 
+                            $model->F_DESEMBOLSO,
+                            DESCRIPCIONTIPOCREDITO::model()->obtenerInteresDescripcionActual($_POST['TIPO_CREDITO']['K_IDENTIFICADOR']),
+                            $model->V_CREDITO);
                     $this->redirect(array('view', 'id' => $model->K_ID_CREDITO));
                 }
             }

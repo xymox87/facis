@@ -15,11 +15,23 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'F_PAGO'); ?>
-		<?php echo $form->textField($model,'F_PAGO'); ?>
-		<?php echo $form->error($model,'F_PAGO'); ?>
+        <div class="row">
+		<?php echo $form->labelEx($model,'K_ID_CREDITO'); ?>
+		<?php echo $form->textField($model,'K_ID_CREDITO'); ?>
+		<?php echo $form->error($model,'K_ID_CREDITO'); ?>
 	</div>
+        
+        <div class="row">
+		<?php echo $form->labelEx($model,'K_NUMCONSIGNACION'); ?>
+		<?php echo $form->textField($model,'K_NUMCONSIGNACION'); ?>
+		<?php echo $form->error($model,'K_NUMCONSIGNACION'); ?>
+	</div>
+        
+	<!--<div class="row">
+		<?php //echo $form->labelEx($model,'F_PAGO'); ?>
+		<?php //echo $form->textField($model,'F_PAGO'); ?>
+		<?php //echo $form->error($model,'F_PAGO'); ?>
+	</div>-->
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'V_PAGO'); ?>
@@ -29,28 +41,22 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'K_CUENTA'); ?>
-		<?php echo $form->textField($model,'K_CUENTA'); ?>
+		<?php echo CHtml::dropDownList('APORTE[K_CUENTA]',$model->K_CUENTA,CHtml::listData(CUENTA::model()->findAll(), "K_CUENTA", "K_CUENTA")); ?>
 		<?php echo $form->error($model,'K_CUENTA'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'K_FPAGO'); ?>
-		<?php echo $form->textField($model,'K_FPAGO'); ?>
+		<?php echo CHtml::dropDownList("APORTE[K_FPAGO]",$model->K_FPAGO,CHtml::listData(FORMAPAGO::model()->findAll(),'K_FPAGO',"N_FPAGO")); ?>
 		<?php echo $form->error($model,'K_FPAGO'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'Q_NUMCUOTA'); ?>
-		<?php echo $form->textField($model,'Q_NUMCUOTA'); ?>
-		<?php echo $form->error($model,'Q_NUMCUOTA'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'K_ID_CREDITO'); ?>
-		<?php echo $form->textField($model,'K_ID_CREDITO'); ?>
-		<?php echo $form->error($model,'K_ID_CREDITO'); ?>
-	</div>
-
+	<!--<div class="row">
+		<?php //echo $form->labelEx($model,'Q_NUMCUOTA'); ?>
+		<?php //echo $form->textField($model,'Q_NUMCUOTA'); ?>
+		<?php //echo $form->error($model,'Q_NUMCUOTA'); ?>
+	</div>-->
+        
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

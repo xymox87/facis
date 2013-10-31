@@ -101,9 +101,22 @@ class PLANPAGOS extends CActiveRecord
 		));
 	}
         
-        public function generar($id_credito, $cuotas, $fechaDesembolso){
-            for($i=0; $i < $cuotas; $i++){
-                
+        public function generar($id_credito, $cuotas, $fechaDesembolso,$interes,$capitalInicial){
+            $objetoFecha = new Fecha;
+            $objetoFecha->setZonaHoraria("America/Bogota");
+            $this->K_ID_CREDITO = $id_credito;
+            $this->V_XINTERES = 0;
+            $this->V_XCAPITAL = 0;
+            $fecha = $objetoFecha->arrayFecha($fechaDesembolso);
+            $fecha['d']=5;
+            for($i=1; $i <= (int)$cuotas; $i++){
+                $fecha['m'] = ($fecha['m'] + 1)%12;
+                $fecha['a'] = ($fecha['a'] + 1)%100;
+                $this->Q_CUOTA=$i;
+                $this->F_ACONSIGNAR = $objetoFecha->arrayFechaToString($fecha);
+                $this->V_XINTERES = $this->V_XINTERES + (double)$capitalInicial*(double)$interes*(double)$cuotas/12;
+                $this->V_XCAPITAL = $this->V_XCAPITAL + (double)$capitalInicial/(double)$cuotas;
+                $this->save();
             }
         }
 }

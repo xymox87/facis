@@ -46,7 +46,7 @@ class PAGO extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('F_PAGO, V_PAGO, K_CUENTA, K_FPAGO, Q_NUMCUOTA, K_ID_CREDITO', 'required'),
+			array('K_NUMCONSIGNACION, V_PAGO, K_CUENTA, K_FPAGO, K_ID_CREDITO', 'required'),
 			array('K_CUENTA, K_FPAGO, Q_NUMCUOTA, K_ID_CREDITO', 'numerical', 'integerOnly'=>true),
 			array('V_PAGO', 'numerical'),
 			// The following rule is used by search().
@@ -78,11 +78,11 @@ class PAGO extends CActiveRecord
 		return array(
 			'F_PAGO' => 'Fecha de pago',
 			'K_NUMCONSIGNACION' => 'Numero de consignacion',
-			'V_PAGO' => 'Valor de pago',
-			'K_CUENTA' => 'Numero de pago',
-			'K_FPAGO' => 'K Fpago',
-			'Q_NUMCUOTA' => 'Q Numcuota',
-			'K_ID_CREDITO' => 'K Id Credito',
+			'V_PAGO' => 'Valor del pago',
+			'K_CUENTA' => 'Numero de cuenta del banco',
+			'K_FPAGO' => 'Forma de pago',
+			'Q_NUMCUOTA' => 'Numero de cuota',
+			'K_ID_CREDITO' => 'Numero de credito',
 		);
 	}
 

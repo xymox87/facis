@@ -116,4 +116,20 @@ class DESCRIPCIONTIPOCREDITO extends CActiveRecord
                     array('K_ID_DESCRIPCION')),"K_ID_DESCRIPCION", "K_ID_DESCRIPCION"));
         }
         
+        public function obtenerInteresDescripcionActual($tipo_credito){
+            return (double)array_shift(CHtml::listData($this->findAllBySql("SELECT v_tasa_interes FROM descripcion_tipo_credito "
+                    ."WHERE f_establecimiento IN (SELECT max(f_establecimiento) "
+                    ."FROM descripcion_tipo_credito WHERE k_identificador=".(int)$tipo_credito
+                    .") AND k_identificador=".(int)$tipo_credito,
+                    array('V_TASA_INTERES')),"V_TASA_INTERES", "V_TASA_INTERES"));
+        }
+        
+        public function obtenerPlazoMaximoDescripcionActual($tipo_credito){
+            return (int)array_shift(CHtml::listData($this->findAllBySql("SELECT q_plazo_maximo FROM descripcion_tipo_credito "
+                    ."WHERE f_establecimiento IN (SELECT max(f_establecimiento) "
+                    ."FROM descripcion_tipo_credito WHERE k_identificador=".(int)$tipo_credito
+                    .") AND k_identificador=".(int)$tipo_credito,
+                    array('Q_PLAZO_MAXIMO')),"Q_PLAZO_MAXIMO", "Q_PLAZO_MAXIMO"));
+        }
+        
 }

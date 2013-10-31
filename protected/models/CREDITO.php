@@ -37,6 +37,7 @@ class CREDITO extends CActiveRecord
                         //array('K_IDENTIFICACION','ValidacionCreditoTCredito'),
                         array('K_IDENTIFICACION','ValidacionNCreditos'),
                         array('V_CREDITO','ValidacionCapitalDisponible'),
+                        //array('','ValidacionPlazoMaximoCredito'),
 		);
 	}
 
@@ -102,8 +103,9 @@ class CREDITO extends CActiveRecord
 		));
 	}
         
-        public function numeroCreditosSocio($identificacion){
+        public function numeroCreditosVigentesSocio($identificacion){
             $creditos = CHtml::listData($this->findBySql("SELECT count(*) FROM credito "
+                    . "WHERE i_estado LIKE 'vigente'"
                     . "GROUP BY (k_identificacion) HAVING (k_identificacion="
                     . (int)$identificacion.")"
                     , array('K_IDENTIFICACION')), 'K_IDENTIFICACION', 'K_IDENTIFICACION');
