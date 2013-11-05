@@ -108,20 +108,30 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'F_INGRESO'); ?>
-		<?php echo $form->textField($model,'F_INGRESO'); ?><p class="note">Formato DD/MM/AA</p>
-		<?php //echo $this->renderPartial('application.views.partials.fecha', array('model'=>$model,'name'=>'F_INGRESO')); ?>
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                        'model' => $model,
+                        'attribute' => 'F_INGRESO',
+                        'dateFormat'=>'dd-mm-yy',
+                        ));
+                ?>
 		<?php echo $form->error($model,'F_INGRESO'); ?>
 	</div>
         <?php if(!$model->isNewRecord){ ?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'F_RETIRO'); ?>
-		<?php echo $form->textField($model,'F_RETIRO'); ?><p class="note">Formato DD/MM/AA</p>
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                        'model' => $model,
+                        'attribute' => 'F_RETIRO',
+                        'language' => 'es',
+                        'options'=>array('dateFormat'=>'dd/mm/y'),
+                        ));
+                ?>
 		<?php echo $form->error($model,'F_RETIRO'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'O_CAUSAL_RETIRO'); ?>
-		<?php echo $form->textField($model,'O_CAUSAL_RETIRO',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->textArea($model,'O_CAUSAL_RETIRO',array(array('maxlength' => 256, 'rows' => 6, 'cols' => 50))); ?>
 		<?php echo $form->error($model,'O_CAUSAL_RETIRO'); ?>
 	</div>
 

@@ -49,6 +49,9 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Q_CUOTA')); ?>:</b>
 	<?php echo CHtml::encode($data->Q_CUOTA); ?>
 	<br />
+        
+        <b><?php echo CHtml::encode($data->getAttributeLabel('K_ID_DESCRIPCION')); ?>:</b>
+	<?php echo CHtml::encode($data->K_ID_DESCRIPCION,); ?>
 
 	*/ ?>
 

@@ -13,33 +13,44 @@ class Fecha {
     }
     
     public function arrayFecha($fecha){
-        $dia = "";
-        $mes = "";
-        $anio = "";
-        $actual = "";
-        $i=0;
-        for(;$i<count($fecha);$i++){
+        if($fecha != NULL){
+            $dia = "";
+            $mes = "";
+            $anio = "";
+            $actual = "";
+            $i=0;
             $actual = $fecha{$i};
-            if($actual!="/")
-                $dia = $dia + $actual;
-            else
-                break;
-        }
-        for($i++;$i<count($fecha);$i++){
+            while($actual!="/"){
+                $i++;
+                $dia = $dia.$actual;
+                if( $i!=strlen($fecha)){
+                    $actual = $fecha{$i};
+                }else
+                    break;
+            }
+            $i++;
             $actual = $fecha{$i};
-            if($actual!="/")
-                $mes = $mes + $actual;
-            else
-                break;
-        }
-        for($i++;$i<count($fecha);$i++){
+            while($actual!="/"){
+                $i++;
+                $mes = $mes.$actual;
+                if( $i!=strlen($fecha)){
+                    $actual = $fecha{$i};
+                }else
+                    break;
+            }
+            $i++;
             $actual = $fecha{$i};
-            if($actual!="/")
-                $anio = $anio + $actual;
-            else
-                break;
-        }
-        return array('d'=>(int)$dia,'m'=>(int)$mes,'a'=>(int)$anio);
+            while($actual!="/"){
+                $i++;
+                $anio = $anio.$actual;
+                if( $i!=strlen($fecha)){
+                    $actual = $fecha{$i};
+                }else
+                    break;
+            }
+            return array('d'=>(int)$dia,'m'=>(int)$mes,'a'=>(int)$anio);
+        }else
+            return NULL;
     }
     
     function arrayFechaToString($fecha){

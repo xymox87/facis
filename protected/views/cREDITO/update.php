@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List CREDITO', 'url'=>array('index')),
-	array('label'=>'Create CREDITO', 'url'=>array('create')),
-	array('label'=>'View CREDITO', 'url'=>array('view', 'id'=>$model->K_ID_CREDITO)),
-	array('label'=>'Manage CREDITO', 'url'=>array('admin')),
+	array('label'=>'Listar creditos', 'url'=>array('index')),
+	array('label'=>'Crear creditos', 'url'=>array('create')),
+	array('label'=>'Ver creditos', 'url'=>array('view', 'id'=>$model->K_ID_CREDITO)),
+	array('label'=>'Gestionar creditos', 'url'=>array('admin')),
 );
 ?>
 

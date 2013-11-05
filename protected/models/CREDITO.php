@@ -3,6 +3,9 @@
 
 class CREDITO extends CActiveRecord
 {
+    
+        public $K_ID_DESCRIPCION;
+                
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -33,11 +36,11 @@ class CREDITO extends CActiveRecord
 			array('V_CREDITO, V_SALDO, Q_CUOTAS, K_IDENTIFICACION, Q_CUOTA', 'numerical', 'integerOnly'=>true),
 			array('I_ESTADO', 'length', 'max'=>1),
 			array('K_ID_CREDITO, F_APROBACION, F_DESEMBOLSO, F_ULTIMO_PAGO, V_ULTIMO_PAGO, V_CREDITO, V_SALDO, I_ESTADO, Q_CUOTAS, K_IDENTIFICACION, Q_CUOTA', 'safe', 'on'=>'search'),
-                        array('K_IDENTIFICACION','ValidacionAportesAlDia'),
-                        //array('K_IDENTIFICACION','ValidacionCreditoTCredito'),
-                        array('K_IDENTIFICACION','ValidacionNCreditos'),
-                        array('V_CREDITO','ValidacionCapitalDisponible'),
-                        //array('','ValidacionPlazoMaximoCredito'),
+                        array('K_IDENTIFICACION','val.ValidacionAportesAlDia'),
+                        //array('K_IDENTIFICACION','val.ValidacionCreditoTCredito'),
+                        array('K_IDENTIFICACION','val.ValidacionNCreditos'),
+                        array('V_CREDITO','val.ValidacionCapitalDisponible'),
+                        //array('','val.ValidacionPlazoMaximoCredito'),
 		);
 	}
 
@@ -49,6 +52,7 @@ class CREDITO extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                        'kIDDESCRIPCION' => array(self::BELONGS_TO,'DESCRIPCIONTIPOCREDITO','K_ID_DESCRIPCION'),
 			'kIDENTIFICACION' => array(self::BELONGS_TO, 'SOCIO', 'K_IDENTIFICACION'),
 			'dESCRIPCIONs' => array(self::HAS_MANY, 'DESCRIPCION', 'K_ID_CREDITO'),
 			'pLANPAGOSes' => array(self::HAS_MANY, 'PLANPAGOS', 'K_ID_CREDITO'),
@@ -72,6 +76,7 @@ class CREDITO extends CActiveRecord
 			'Q_CUOTAS' => 'Cuotas',
 			'K_IDENTIFICACION' => 'Identificacion del socio',
 			'Q_CUOTA' => 'Cuota actual',
+                        'K_ID_DESCRIPCION' => 'Descripcion actual',
 		);
 	}
 
@@ -97,7 +102,8 @@ class CREDITO extends CActiveRecord
 		$criteria->compare('Q_CUOTAS',$this->Q_CUOTAS);
 		$criteria->compare('K_IDENTIFICACION',$this->K_IDENTIFICACION);
 		$criteria->compare('Q_CUOTA',$this->Q_CUOTA);
-
+                $criteria->compare('K_ID_DESCRIPCION',$this->K_ID_DESCRIPCION);
+                
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -113,7 +119,7 @@ class CREDITO extends CActiveRecord
         }
         
         public function obtenerValorTodosCreditos(){
-            return (double)array_shift(CHtml::listData($this->findBySql(
+            return (double)current(CHtml::listData($this->findBySql(
                     "SELECT SUM(v_credito) AS SUMA FROM credito",array("SUMA"))
                     ,"SUMA","SUMA"));
         }

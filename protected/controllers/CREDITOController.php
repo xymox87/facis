@@ -49,7 +49,7 @@ class CREDITOController extends Controller {
                 'model' => $this->loadModel($id),
             ));
         } catch (Exception $e) {
-            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500, $e->getMessage());
         }
     }
 
@@ -60,7 +60,6 @@ class CREDITOController extends Controller {
     public function actionCreate() {
         try {
             $model = new CREDITO;
-            $model_descripcion = new DESCRIPCION;
             $model_planPagos = new PLANPAGOS;
             // Uncomment the following line if AJAX validation is needed
             // $this->performAjaxValidation($model);
@@ -71,11 +70,8 @@ class CREDITOController extends Controller {
                 $model->F_APROBACION = date("j/n/y");
                 $model->V_SALDO = -$model->V_CREDITO;
                 $model->I_ESTADO = 'vigente';
-                $model_descripcion->K_IDENTIFICADOR = $_POST['TIPO_CREDITO']['K_IDENTIFICADOR'];
-                $model_descripcion->K_ID_CREDITO = $model->K_ID_CREDITO;
-                $model_descripcion->K_ID_DESCRIPCION = (string)DESCRIPCIONTIPOCREDITO::model()->obtenerIdDescripcionActual($_POST['TIPO_CREDITO']['K_IDENTIFICADOR']);
+                $model->K_ID_DESCRIPCION = DESCRIPCIONTIPOCREDITO::model()->obtenerIdDescripcionActual($_POST['TIPO_CREDITO']['K_IDENTIFICADOR']);
                 if ($model->save()){
-                    $model_descripcion->save();
                     $model_planPagos->generar($model->K_ID_CREDITO,
                             $model->Q_CUOTAS, 
                             $model->F_DESEMBOLSO,

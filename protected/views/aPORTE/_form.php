@@ -14,27 +14,37 @@
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
 
 	<?php echo $form->errorSummary($model); ?>
-
+        
 	<div class="row">
 		<?php echo $form->labelEx($model,'K_NUMCONSIGNACION'); ?>
 		<?php echo $form->textField($model,'K_NUMCONSIGNACION'); ?>
 		<?php echo $form->error($model,'K_NUMCONSIGNACION'); ?>
 	</div>
-	<div class="row">
+	
+        <div class="row">
 		<?php echo $form->labelEx($model,'V_APORTE'); ?>
 		<?php echo $form->textField($model,'V_APORTE'); ?>
-		<?php echo $form->error($model,'V_APORTE'); ?>
+		<?php echo $form->error($model,'V_APORTE');?>
 	</div>
         
-        <!--
 	<div class="row">
 		<?php echo $form->labelEx($model,'F_CONSIGNACION'); ?>
-		<?php echo $form->textField($model,'F_CONSIGNACION'); ?>
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                        'model' => $model,
+                        'attribute' => 'F_CONSIGNACION',
+                        'language' => 'es',
+                        'options'=>array('dateFormat'=>'dd/mm/y'),
+                        ));
+                ?>
 		<?php echo $form->error($model,'F_CONSIGNACION'); ?>
 	</div>
-        -->
 	
-
+        <div class="row">
+		<?php echo $form->labelEx($model,'V_MULTA'); ?>
+		<?php echo $form->textField($model,'V_MULTA'); ?>
+		<?php echo $form->error($model,'V_MULTA'); ?>
+	</div>
+        
 	<div class="row">
 		<?php echo $form->labelEx($model,'K_IDENTIFICACION'); ?>
 		<?php echo $form->textField($model,'K_IDENTIFICACION'); ?>

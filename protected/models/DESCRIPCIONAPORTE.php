@@ -102,14 +102,14 @@ class DESCRIPCIONAPORTE extends CActiveRecord
 	}
         
         public function obtenerDiasActual(){
-            return (int)array_shift(CHtml::listData($this->findBySql(
+            return (int)current(CHtml::listData($this->findBySql(
                     "SELECT q_dias FROM descripcionaporte WHERE "
                     . "k_descaporte=".$this->count(),array('Q_DIAS')),
                     "Q_DIAS", "Q_DIAS"));
         }
         
         public function obtenerDiasAporte($id_descaporte){
-            return (int)array_shift(CHtml::listData($this->findBySql(
+            return (int)current(CHtml::listData($this->findBySql(
                     "SELECT q_dias FROM descripcionaporte WHERE "
                     . "k_descaporte=".$id_descaporte,array('Q_DIAS')),
                     "Q_DIAS", "Q_DIAS"));

@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List CREDITO', 'url'=>array('index')),
-	array('label'=>'Create CREDITO', 'url'=>array('create')),
+	array('label'=>'Listar creditos', 'url'=>array('index')),
+	array('label'=>'Crear credito', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -57,9 +57,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'Q_CUOTAS',
 		'K_IDENTIFICACION',
 		'Q_CUOTA',
+                'K_ID_DESCRIPCION',
 		*/
 		array(
 			'class'=>'CButtonColumn',
+                        'template'=>'{view}',
 		),
 	),
 )); ?>

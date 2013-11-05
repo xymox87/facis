@@ -9,13 +9,17 @@
  * @property double $V_TASA_INTERES
  * @property integer $V_APORTE_MINIMO
  * @property integer $Q_PLAZO_MAXIMO
+ * @property integer $K_IDENTIFICADOR
  *
  * The followings are the available model relations:
- * @property DESCRIPCION[] $dESCRIPCIONs
  * @property TIPOCREDITO $kIDDESCRIPCION
+ * @property CREDITO[] $cREDITOs
  */
 class DESCRIPCIONTIPOCREDITO extends CActiveRecord
 {
+    
+        public $K_IDENTIFICADOR;
+        
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -47,7 +51,7 @@ class DESCRIPCIONTIPOCREDITO extends CActiveRecord
 			array('V_TASA_INTERES', 'numerical'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('K_ID_DESCRIPCION, F_ESTABLECIMIENTO, V_TASA_INTERES, V_APORTE_MINIMO, Q_PLAZO_MAXIMO', 'safe', 'on'=>'search'),
+			array('K_ID_DESCRIPCION, F_ESTABLECIMIENTO, V_TASA_INTERES, V_APORTE_MINIMO, Q_PLAZO_MAXIMO, K_IDENTIFICADOR', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,8 +63,8 @@ class DESCRIPCIONTIPOCREDITO extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'dESCRIPCIONs' => array(self::HAS_MANY, 'DESCRIPCION', 'K_ID_DESCRIPCION'),
-			'kIDDESCRIPCION' => array(self::BELONGS_TO, 'TIPOCREDITO', 'K_ID_DESCRIPCION'),
+                        'cREDITOs'  => array(self::HAS_MANY,'CREDITO','K_ID_DESCRIPCION'),
+			'kIDDESCRIPCION' => array(self::BELONGS_TO, 'TIPOCREDITO', 'K_IDENTIFICADOR'),
 		);
 	}
 
@@ -75,6 +79,7 @@ class DESCRIPCIONTIPOCREDITO extends CActiveRecord
 			'V_TASA_INTERES' => 'V Tasa Interes',
 			'V_APORTE_MINIMO' => 'V Aporte Minimo',
 			'Q_PLAZO_MAXIMO' => 'Q Plazo Maximo',
+                        'K_IDENTIFICADOR' => 'Clave del tipo de credito',
 		);
 	}
 
@@ -94,6 +99,7 @@ class DESCRIPCIONTIPOCREDITO extends CActiveRecord
 		$criteria->compare('V_TASA_INTERES',$this->V_TASA_INTERES);
 		$criteria->compare('V_APORTE_MINIMO',$this->V_APORTE_MINIMO);
 		$criteria->compare('Q_PLAZO_MAXIMO',$this->Q_PLAZO_MAXIMO);
+                $criteria->compare('K_IDENTIFICADOR',$this->K_IDENTIFICADOR);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -101,7 +107,7 @@ class DESCRIPCIONTIPOCREDITO extends CActiveRecord
 	}
         
         public function obtenerIdDescripcionActual($tipo_credito){
-            return (int)array_shift(CHtml::listData($this->findAllBySql("SELECT k_id_descripcion FROM descripcion_tipo_credito "
+            return (int)current(CHtml::listData($this->findAllBySql("SELECT k_id_descripcion FROM descripcion_tipo_credito "
                     ."WHERE f_establecimiento IN (SELECT max(f_establecimiento) "
                     ."FROM descripcion_tipo_credito WHERE k_identificador=".(int)$tipo_credito
                     .") AND k_identificador=".(int)$tipo_credito,
@@ -109,7 +115,7 @@ class DESCRIPCIONTIPOCREDITO extends CActiveRecord
         }
 
         public function obtenerValorAportesRequerido($tipo_credito){
-            return (double)array_shift(CHtml::listData($this->findAllBySql("SELECT v_aporte_minimo FROM descripcion_tipo_credito "
+            return (double)current(CHtml::listData($this->findAllBySql("SELECT v_aporte_minimo FROM descripcion_tipo_credito "
                     ."WHERE f_establecimiento IN (SELECT max(f_establecimiento) "
                     ."FROM descripcion_tipo_credito WHERE k_identificador=".(int)$tipo_credito
                     .") AND k_identificador=".(int)$tipo_credito,
@@ -117,7 +123,7 @@ class DESCRIPCIONTIPOCREDITO extends CActiveRecord
         }
         
         public function obtenerInteresDescripcionActual($tipo_credito){
-            return (double)array_shift(CHtml::listData($this->findAllBySql("SELECT v_tasa_interes FROM descripcion_tipo_credito "
+            return (double)current(CHtml::listData($this->findAllBySql("SELECT v_tasa_interes FROM descripcion_tipo_credito "
                     ."WHERE f_establecimiento IN (SELECT max(f_establecimiento) "
                     ."FROM descripcion_tipo_credito WHERE k_identificador=".(int)$tipo_credito
                     .") AND k_identificador=".(int)$tipo_credito,
@@ -125,7 +131,7 @@ class DESCRIPCIONTIPOCREDITO extends CActiveRecord
         }
         
         public function obtenerPlazoMaximoDescripcionActual($tipo_credito){
-            return (int)array_shift(CHtml::listData($this->findAllBySql("SELECT q_plazo_maximo FROM descripcion_tipo_credito "
+            return (int)current(CHtml::listData($this->findAllBySql("SELECT q_plazo_maximo FROM descripcion_tipo_credito "
                     ."WHERE f_establecimiento IN (SELECT max(f_establecimiento) "
                     ."FROM descripcion_tipo_credito WHERE k_identificador=".(int)$tipo_credito
                     .") AND k_identificador=".(int)$tipo_credito,
