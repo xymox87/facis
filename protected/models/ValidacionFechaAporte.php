@@ -8,7 +8,7 @@ class validacionFechaAporte extends CValidator{
         $n_descaporte = (int) $descaporte->count();
         $dia = (int) $this->obtenerDiaAporte($object->$attribute);
         $dia_maximo = (int) $q_dias[(string) $n_descaporte];
-        if ($dia_maximo < $dia && $object->V_MULTA == NULL)
+        if ($dia_maximo < $dia)
             $this->addError($object,$attribute,"Debe ingrsarse un valor para la multa: Dia maximo de pago: $dia_maximo. Dia encontrado: $dia");
     }
     
