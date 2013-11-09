@@ -1253,3 +1253,803 @@ Stack trace:
 REQUEST_URI=/facis/index.php/credito/create
 HTTP_REFERER=http://localhost/facis/index.php/credito/create
 ---
+2013/11/09 07:01:06 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php:152
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): CREDITOController->actionAdmin()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/admin')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/credito/admin
+HTTP_REFERER=http://localhost/facis/index.php
+---
+2013/11/09 07:01:08 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php:164
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionAdmin()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/admin')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/aporte/admin
+HTTP_REFERER=http://localhost/facis/index.php/credito/admin
+---
+2013/11/09 07:01:10 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php:171
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): SOCIOController->actionAdmin()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/admin')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/socio/admin
+HTTP_REFERER=http://localhost/facis/index.php/aporte/admin
+---
+2013/11/09 07:01:19 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php:171
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): SOCIOController->actionAdmin()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/admin')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/socio/admin
+HTTP_REFERER=http://localhost/facis/index.php/site/index
+---
+2013/11/09 07:13:02 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1722 OCIStmtExecute: ORA-01722: invalid number
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte).
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (154)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:13:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 1722 OCIStmtExecute: ORA-01722: invalid number
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte)' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(154): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 07:14:39 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte).
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (154)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:14:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte)' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(154): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 07:16:34 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte).
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (154)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:16:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte)' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(154): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 07:16:37 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte).
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (154)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:16:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte)' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(154): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 07:20:13 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte).
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (152)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:20:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte)' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(152): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 07:20:15 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte).
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (152)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:20:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte)' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(152): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 07:20:15 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte).
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (152)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:20:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte)' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(152): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 07:20:15 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte).
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (152)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:20:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte)' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(152): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 07:20:15 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte).
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (152)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:20:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte)' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(152): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 07:20:15 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte).
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (152)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:20:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte)' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(152): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 07:20:16 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte).
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (152)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:20:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte)' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(152): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 07:20:16 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte).
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (152)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:20:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte)' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(152): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 07:38:24 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte).
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (152)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:38:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte)' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(152): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 07:48:54 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte).
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (152)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:48:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte)' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(152): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 07:48:56 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte).
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (152)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:48:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte)' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(152): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 07:49:29 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte).
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (152)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:49:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte)' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(152): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 07:49:30 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte).
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (152)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:49:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: call PR_VALOR_APORTE(:numeroConsignacion,:valorAporte)' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(152): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 07:55:52 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 6550 OCIStmtExecute: ORA-06550: line 4, column 29:
+PLS-00103: Encountered the symbol "END" when expecting one of the following:
+
+   . ( ) , * @ % & = - + < / > at in is mod remainder not rem =>
+   <an exponent (**)> <> or != or ~= >= <= <> and or like like2
+   like4 likec between || indicator multiset member submultiset
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: 
+                            begin
+                                PR_VALOR_APORTE(:numeroConsignacion,:valorAporte
+                            end;         
+                    .
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (157)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 07:55:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 6550 OCIStmtExecute: ORA-06550: line 4, column 29:
+PLS-00103: Encountered the symbol "END" when expecting one of the following:
+
+   . ( ) , * @ % & = - + < / > at in is mod remainder not rem =>
+   <an exponent (**)> <> or != or ~= >= <= <> and or like like2
+   like4 likec between || indicator multiset member submultiset
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: 
+                            begin
+                                PR_VALOR_APORTE(:numeroConsignacion,:valorAporte
+                            end;         
+                    ' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(157): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 08:38:53 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: 
+                            begin
+                                PR_VALOR_APORTE(:numeroConsignacion,:valorAporte);
+                            end;         
+                    .
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (157)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 08:38:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: 
+                            begin
+                                PR_VALOR_APORTE(:numeroConsignacion,:valorAporte);
+                            end;         
+                    ' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(157): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 08:39:48 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: 
+                            begin
+                                PR_VALOR_APORTE(:numeroConsignacion,:valorAporte);
+                            end;         
+                    .
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (157)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 08:39:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: 
+                            begin
+                                PR_VALOR_APORTE(:numeroConsignacion,:valorAporte);
+                            end;         
+                    ' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(157): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 08:41:27 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: 
+                            begin
+                                PR_VALOR_APORTE('21651',:valorAporte);
+                            end;         
+                    .
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (157)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 08:41:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: 
+                            begin
+                                PR_VALOR_APORTE('21651',:valorAporte);
+                            end;         
+                    ' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(157): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 08:41:39 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: 
+                            begin
+                                PR_VALOR_APORTE('21651',:valorAporte);
+                            end;         
+                    .
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (157)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 08:41:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: 
+                            begin
+                                PR_VALOR_APORTE('21651',:valorAporte);
+                            end;         
+                    ' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(157): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 08:41:58 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: 
+                            begin
+                                PR_VALOR_APORTE(:numeroConsignacion,:valorAporte);
+                            end;         
+                    .
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (157)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 08:41:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: 
+                            begin
+                                PR_VALOR_APORTE(:numeroConsignacion,:valorAporte);
+                            end;         
+                    ' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(157): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 08:58:57 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: 
+                            DECLARE
+                            valor aporte.v_aporte%TYPE;
+                            numero aporte.k_numconsignacion%type := :numeroConsignacion;
+                            begin
+                            PR_VALOR_APORTE(numero,:valorAporte);
+                            end;         
+                    .
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (159)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 08:58:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 3131 OCIStmtExecute: ORA-03131: an invalid buffer was provided for the next piece
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: 
+                            DECLARE
+                            valor aporte.v_aporte%TYPE;
+                            numero aporte.k_numconsignacion%type := :numeroConsignacion;
+                            begin
+                            PR_VALOR_APORTE(numero,:valorAporte);
+                            end;         
+                    ' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(159): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 09:11:44 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 6550 OCIStmtExecute: ORA-06550: line 4, column 29:
+PLS-00201: identifier 'PR_RENDIMIENTOS' must be declared
+ORA-06550: line 4, column 29:
+PL/SQL: Statement ignored
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: 
+                            DECLARE
+                            begin
+                            PR_RENDIMIENTOS(:rendimientoTotal,:numeroSocios);
+                            end;         
+                    .
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (156)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 09:11:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 6550 OCIStmtExecute: ORA-06550: line 4, column 29:
+PLS-00201: identifier 'PR_RENDIMIENTOS' must be declared
+ORA-06550: line 4, column 29:
+PL/SQL: Statement ignored
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: 
+                            DECLARE
+                            begin
+                            PR_RENDIMIENTOS(:rendimientoTotal,:numeroSocios);
+                            end;         
+                    ' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(156): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---
+2013/11/09 10:25:33 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 6502 OCIStmtExecute: ORA-06502: PL/SQL: numeric or value error: character string buffer too small
+ORA-06512: at line 4
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: 
+                            DECLARE
+                            begin
+                            PR_RENDIMIENTOS(:rendimientoTotal,:numeroSocios);
+                            end;         
+                    .
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (156)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/09 10:25:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 6502 OCIStmtExecute: ORA-06502: PL/SQL: numeric or value error: character string buffer too small
+ORA-06512: at line 4
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: 
+                            DECLARE
+                            begin
+                            PR_RENDIMIENTOS(:rendimientoTotal,:numeroSocios);
+                            end;         
+                    ' in C:\xampp\htdocs\FACIS\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php(156): CDbCommand->execute()
+#1 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
+#2 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('procedure')
+#11 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
+#12 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/facis/index.php/aporte/procedure
+---

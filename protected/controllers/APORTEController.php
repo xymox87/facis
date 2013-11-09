@@ -30,7 +30,7 @@ class APORTEController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'admin', 'delete'),
+                'actions' => array('create', 'update', 'admin', 'delete', 'procedure'),
                 'users' => array('@'),
             ),
             array('deny', // deny all users
@@ -72,9 +72,9 @@ class APORTEController extends Controller {
                 $model->F_CONSIGNACION = date("j/n/y");
                 $model->K_DESCAPORTE = (int) $descaporte->count();
                 //$model->K_NUMCONSIGNACION = $_POST['APORTE']['K_NUMCONSIGNACION'];
-                        ; //FALTA LA COLUMNA DE MULTA
+                ; //FALTA LA COLUMNA DE MULTA
                 if ($model->save())
-                    $this->redirect(array('view', 'id' => $model->K_NUMCONSIGNACION));                     
+                    $this->redirect(array('view', 'id' => $model->K_NUMCONSIGNACION));
             }
             $this->render('create', array(
                 'model' => $model,
@@ -141,6 +141,24 @@ class APORTEController extends Controller {
         }
     }
 
+    public function actionProcedure() {
+        $valorRendimientoTotal; //out 
+        $numeroSocios;  //  out
+        $command = Yii::app()->db->createCommand('
+                            DECLARE
+                            begin
+                            PR_RENDIMIENTOS(:rendimientoTotal,:numeroSocios);
+                            end;         
+                    ');
+
+        $command->bindParam(":rendimientoTotal", $valorRendimientoTotal, PDO::PARAM_INT,20);
+        $command->bindParam(":numeroSocios", $numeroSocios, PDO::PARAM_INT,20);
+        $command->execute();
+
+        var_dump($valorRendimientoTotal);
+        var_dump($numeroSocios);
+    }
+
     /**
      * Manages all models.
      */
@@ -191,6 +209,5 @@ class APORTEController extends Controller {
             throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
         }
     }
-
 
 }
