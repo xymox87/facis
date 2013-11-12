@@ -60,23 +60,27 @@ class CREDITOController extends Controller {
     public function actionCreate() {
         try {
             $model = new CREDITO;
-            $model_planPagos = new PLANPAGOS;
+            
             // Uncomment the following line if AJAX validation is needed
             // $this->performAjaxValidation($model);
-
+            
             if (isset($_POST['CREDITO'])) {
                 $model->attributes = $_POST['CREDITO'];
                 date_default_timezone_set("America/Bogota");
                 $model->F_APROBACION = date("j/n/y");
-                $model->V_SALDO = -$model->V_CREDITO;
+                $model->V_SALDO = 0;/*-$model->V_CREDITO*(1+
+                        DESCRIPCIONTIPOCREDITO::model()->obtenerInteresDescripcionActual($_POST['TIPO_CREDITO']['K_IDENTIFICADOR'])*$model->Q_CUOTAS/12);*/
                 $model->I_ESTADO = 'vigente';
                 $model->K_ID_DESCRIPCION = DESCRIPCIONTIPOCREDITO::model()->obtenerIdDescripcionActual($_POST['TIPO_CREDITO']['K_IDENTIFICADOR']);
+                $model->Q_CUOTA = 1;
+                $model->K_ID_CREDITO = SecuenciaOracle::aumentar($model);
                 if ($model->save()){
+                    $model_planPagos = new PLANPAGOS;
                     $model_planPagos->generar($model->K_ID_CREDITO,
-                            $model->Q_CUOTAS, 
-                            $model->F_DESEMBOLSO,
-                            DESCRIPCIONTIPOCREDITO::model()->obtenerInteresDescripcionActual($_POST['TIPO_CREDITO']['K_IDENTIFICADOR']),
-                            $model->V_CREDITO);
+                        $model->Q_CUOTAS, 
+                        $model->F_DESEMBOLSO,
+                        DESCRIPCIONTIPOCREDITO::model()->obtenerInteresDescripcionActual($_POST['TIPO_CREDITO']['K_IDENTIFICADOR']),
+                        $model->V_CREDITO);
                     $this->redirect(array('view', 'id' => $model->K_ID_CREDITO));
                 }
             }

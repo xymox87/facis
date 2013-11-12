@@ -7,7 +7,7 @@ class ValidacionCapitalDisponible extends CValidator{
             PAGO::model()->obtenerValorTodosPagos() -
             CREDITO::model()->obtenerValorTodosCreditos();
         if($capital_disponible < (double)$object->$attribute)
-            $this->addError ($object, $attribute, 'Capital insuficiente');
+            $this->addError ($object, $attribute, 'Capital insuficiente'.$capital_disponible);
     }
 
 }

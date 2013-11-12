@@ -67,6 +67,7 @@ class SOCIOController extends Controller {
                 $model->attributes = $_POST['SOCIO'];
                 $model->K_IDENTIFICACION = $_POST['SOCIO']['K_IDENTIFICACION'];
                 if ($model->save())
+                    $model->asociarRolUsuario();
                     $this->redirect(array('view', 'id' => $model->K_IDENTIFICACION));
 
                 $datos = $_POST['SOCIO'];

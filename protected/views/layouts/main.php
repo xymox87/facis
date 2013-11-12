@@ -31,8 +31,9 @@
 			'items'=>array(
 				array('label'=>'Inicio', 'url'=>array('/site/index')),
 				array('label'=>'Gestion de socios', 'url'=>array('/socio/admin')),
-				array('label'=>'Gestion de Aportes', 'url'=>array('/aporte/admin')),
-				array('label'=>'Gestion de Credito', 'url'=>array('/credito/admin')),
+				array('label'=>'Gestion de aportes', 'url'=>array('/aporte/admin')),
+				array('label'=>'Gestion de credito', 'url'=>array('/credito/admin')),
+                                array('label'=>'Gestion de pago de creditos', 'url'=>array('/pago/admin')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

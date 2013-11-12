@@ -117,33 +117,46 @@ class APORTE extends CActiveRecord
 	}
         
         public function obtenerAportesTotalesSocio($identificacion){
-            return (double)current(CHtml::listData($this->findBySql("SELECT SUM(v_aporte) AS SUMA "
-                    . "FROM aporte WHERE identificacion=".(int)$identificacion,array('SUMA')), "SUMA", "SUMA"));
+            $resultado = Yii::app()->db->createCommand(
+                    "SELECT SUM(v_aporte) AS SUMA "
+                    . "FROM aporte WHERE k_identificacion="
+                    . (int)$identificacion)->queryColumn();
+            if($resultado != NULL){
+                return Conversion::conversionDouble(current($resultado));
+            }else
+                return 0;
         }
         
         public function obtenerAportesTotales(){
-            return (double)current(CHtml::listData($this->findBySql(
-                    "SELECT SUM(v_aporte) AS SUMA FROM aporte",array('SUMA')),
-                    "SUMA", "SUMA"));
+            $resultado = Yii::app()->db->createCommand(
+                    "SELECT SUM(v_aporte) FROM aporte")->queryColumn();
+            if($resultado != NULL){
+                return Conversion::conversionDouble(current($resultado));
+            }else
+                return 0;
         }
         
         public function obtenerFechaUltimoAporte($identificacion){
-            return current(CHtml::listData($this->findBySql(
-                    "SELECT MAX(f_consignacion) AS FECHA FROM aporte "
+            $resultado = Yii::app()->db->createCommand(
+                    "SELECT MAX(f_consignacion) FROM aporte "
                     . "GROUP BY (k_identificacion) HAVING (k_identificacion="
-                    . (int)$identificacion.")",
-                    array('FECHA')),
-                    "FECHA", "FECHA"));
+                    . (int)$identificacion.")")->queryColumn();
+            if($resultado != NULL){
+                return current($resultado);
+            }else
+                return 0;
         }
         
         public function obtenerIdDescApUltimoAporte($identificacion){
-            return (int)current(CHtml::listData($this->findBySql(
+            $resultado = Yii::app()->db->createCommand(
                     "SELECT k_descaporte FROM aporte WHERE f_consignacion IN("
                     . "SELECT MAX(f_consignacion) AS FECHA FROM aporte "
                     . "GROUP BY (k_identificacion) HAVING (k_identificacion="
                     . (int)$identificacion.")) AND k_identificacion="
-                    . (int)$identificacion,
-                    array('K_DESCAPORTE')),
-                    "K_DESCAPORTE", "K_DESCAPORTE"));
+                    . (int)$identificacion)->queryColumn();
+            if($resultado != NULL){
+                return Conversion::conversionInt(current($resultado));
+            }else
+                return 0;
         }
 }

@@ -32,15 +32,18 @@ class CREDITO extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('F_DESEMBOLSO, K_IDENTIFICADOR,F_APROBACION, V_CREDITO, Q_CUOTAS, K_IDENTIFICACION', 'required'),
-			array('V_CREDITO, V_SALDO, Q_CUOTAS, K_IDENTIFICACION, Q_CUOTA', 'numerical', 'integerOnly'=>true),
-			array('I_ESTADO', 'length', 'max'=>1),
+			array('F_DESEMBOLSO,F_APROBACION, V_CREDITO, Q_CUOTAS, K_IDENTIFICACION', 'required'),
+			array('Q_CUOTAS, K_IDENTIFICACION, Q_CUOTA', 'numerical', 'integerOnly'=>true),
+                        array('V_CREDITO, V_SALDO, V_ULTIMO_PAGO','numerical'),
 			array('K_ID_CREDITO, F_APROBACION, F_DESEMBOLSO, F_ULTIMO_PAGO, V_ULTIMO_PAGO, V_CREDITO, V_SALDO, I_ESTADO, Q_CUOTAS, K_IDENTIFICACION, Q_CUOTA', 'safe', 'on'=>'search'),
                         array('K_IDENTIFICACION','val.ValidacionAportesAlDia'),
-                        //array('K_IDENTIFICACION','val.ValidacionCreditoTCredito'),
+                        array('F_DESEMBOLSO','val.ValidacionFechaDesembolso'),
+                        array('K_IDENTIFICACION','val.ValidacionSegunTipoCredito'),
                         array('K_IDENTIFICACION','val.ValidacionNCreditos'),
                         array('V_CREDITO','val.ValidacionCapitalDisponible'),
-                        //array('','val.ValidacionPlazoMaximoCredito'),
+                        array('Q_CUOTAS','val.ValidacionCantidadCuotas'),
+                        array('V_CREDITO','val.ValidacionValorCredito'),
+                        array('Q_CUOTAS','val.ValidacionPlazoMaximoCredito'),
 		);
 	}
 
@@ -54,7 +57,6 @@ class CREDITO extends CActiveRecord
 		return array(
                         'kIDDESCRIPCION' => array(self::BELONGS_TO,'DESCRIPCIONTIPOCREDITO','K_ID_DESCRIPCION'),
 			'kIDENTIFICACION' => array(self::BELONGS_TO, 'SOCIO', 'K_IDENTIFICACION'),
-			'dESCRIPCIONs' => array(self::HAS_MANY, 'DESCRIPCION', 'K_ID_CREDITO'),
 			'pLANPAGOSes' => array(self::HAS_MANY, 'PLANPAGOS', 'K_ID_CREDITO'),
 		);
 	}
@@ -65,7 +67,7 @@ class CREDITO extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'K_ID_CREDITO' => 'Credito',
+			'K_ID_CREDITO' => 'Numero de credito',
 			'F_APROBACION' => 'Aprobacion',
 			'F_DESEMBOLSO' => 'Fecha de desembolso',
 			'F_ULTIMO_PAGO' => 'Fecha del ultimo pago',
@@ -110,17 +112,32 @@ class CREDITO extends CActiveRecord
 	}
         
         public function numeroCreditosVigentesSocio($identificacion){
-            $creditos = CHtml::listData($this->findBySql("SELECT count(*) FROM credito "
+            $resultado = Yii::app()->db->createCommand("SELECT count(*) FROM credito "
                     . "WHERE i_estado LIKE 'vigente'"
                     . "GROUP BY (k_identificacion) HAVING (k_identificacion="
-                    . (int)$identificacion.")"
-                    , array('K_IDENTIFICACION')), 'K_IDENTIFICACION', 'K_IDENTIFICACION');
-            return count($creditos);
+                    . (int)$identificacion.")")->queryColumn();
+            if($resultado != NULL){
+                return Conversion::conversionInt(current($resultado));
+            }else
+                return 0;
         }
         
         public function obtenerValorTodosCreditos(){
-            return (double)current(CHtml::listData($this->findBySql(
-                    "SELECT SUM(v_credito) AS SUMA FROM credito",array("SUMA"))
-                    ,"SUMA","SUMA"));
+            $resultado = Yii::app()->db->createCommand(
+                    "SELECT SUM(v_credito) FROM credito")->queryColumn();
+            if($resultado != NULL){
+                return Conversion::conversionDouble(current($resultado));
+            }else
+                return 0;
+        }
+        
+        public function obtenerFechaDesembolsoCredito($id_credito){
+            $resultado = Yii::app()->db->createCommand(
+                    "SELECT f_desembolso FROM credito WHERE "
+                    ."k_id_credito=$id_credito")->queryColumn();
+            if($resultado != NULL){
+                return current($resultado);
+            }else
+                return 0;
         }
 }

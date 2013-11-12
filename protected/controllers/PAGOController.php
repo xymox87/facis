@@ -58,7 +58,7 @@ class PAGOController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-        try {
+        //try {
             $model = new PAGO;
 
             // Uncomment the following line if AJAX validation is needed
@@ -66,6 +66,7 @@ class PAGOController extends Controller {
 
             if (isset($_POST['PAGO'])) {
                 $model->attributes = $_POST['PAGO'];
+                $model->Q_NUMCUOTA = $model->obtenerUltimoPagoCredito($model->K_ID_CREDITO) + 1;
                 if ($model->save())
                     $this->redirect(array('view', 'id' => $model->K_NUMCONSIGNACION));
             }
@@ -73,9 +74,9 @@ class PAGOController extends Controller {
             $this->render('create', array(
                 'model' => $model,
             ));
-        } catch (Exception $e) {
-            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
-        }
+        //} catch (Exception $e) {
+        //    throw new CHttpException(500, $e->getMessage());
+        //}
     }
 
     /**

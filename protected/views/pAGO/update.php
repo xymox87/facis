@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List PAGO', 'url'=>array('index')),
-	array('label'=>'Create PAGO', 'url'=>array('create')),
-	array('label'=>'View PAGO', 'url'=>array('view', 'id'=>$model->K_NUMCONSIGNACION)),
-	array('label'=>'Manage PAGO', 'url'=>array('admin')),
+	//array('label'=>'List PAGO', 'url'=>array('index')),
+	array('label'=>'Crear pago de creditos', 'url'=>array('create')),
+	array('label'=>'Ver pago de creditos', 'url'=>array('view', 'id'=>$model->K_NUMCONSIGNACION)),
+	array('label'=>'Gestionar pago de creditos', 'url'=>array('admin')),
 );
 ?>
 

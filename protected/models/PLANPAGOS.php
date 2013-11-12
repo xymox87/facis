@@ -9,7 +9,8 @@
  * @property double $V_XCAPITAL
  * @property string $F_ACONSIGNAR
  * @property integer $K_ID_CREDITO
- *
+ * @property double $V_PAGO
+ * 
  * The followings are the available model relations:
  * @property PAGO[] $pAGOs
  * @property PAGO[] $pAGOs1
@@ -22,6 +23,9 @@ class PLANPAGOS extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return PLANPAGOS the static model class
 	 */
+    
+         public $V_PAGO;
+    
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -110,13 +114,28 @@ class PLANPAGOS extends CActiveRecord
             $fecha = $objetoFecha->arrayFecha($fechaDesembolso);
             $fecha['d']=5;
             for($i=1; $i <= (int)$cuotas; $i++){
-                $fecha['m'] = ($fecha['m'] + 1)%12;
-                $fecha['a'] = ($fecha['a'] + 1)%100;
+                if($fecha['m'] + 1 == 13)
+                    $fecha['a'] = ($fecha['a'])%99+1;
+                $fecha['m'] = ($fecha['m'])%12+1;
                 $this->Q_CUOTA=$i;
                 $this->F_ACONSIGNAR = $objetoFecha->arrayFechaToString($fecha);
                 $this->V_XINTERES = $this->V_XINTERES + (double)$capitalInicial*(double)$interes*(double)$cuotas/12;
                 $this->V_XCAPITAL = $this->V_XCAPITAL + (double)$capitalInicial/(double)$cuotas;
-                $this->save();
+                $this->V_PAGO = (double)$capitalInicial*(double)$interes*(double)$cuotas/12 + (double)$capitalInicial/(double)$cuotas;
+                Yii::app()->db->createCommand()->insert($this->tableName(),
+                        array('Q_CUOTA'=> $this->Q_CUOTA,
+                              'V_XINTERES'=> 2000,//$this->V_XINTERES,
+                              'V_XCAPITAL' => 2000,//$this->V_XCAPITAL,
+                              'F_ACONSIGNAR' => $this->F_ACONSIGNAR,
+                              'K_ID_CREDITO' => $this->K_ID_CREDITO,
+                              'V_PAGO' => 10)//$this->V_PAGO)
+                              );
             }
+        }
+        
+        public function obtenerEspecificacionPlanPagos($id_credito,$cuota){
+            return Yii::app()->db->createCommand(
+                    "SELECT * FROM planpagos WHERE k_id_credito="
+                    ."$id_credito AND q_cuota=$cuota")->queryRow();
         }
 }

@@ -102,16 +102,22 @@ class DESCRIPCIONAPORTE extends CActiveRecord
 	}
         
         public function obtenerDiasActual(){
-            return (int)current(CHtml::listData($this->findBySql(
+            $resultado = Yii::app()->db->createCommand(
                     "SELECT q_dias FROM descripcionaporte WHERE "
-                    . "k_descaporte=".$this->count(),array('Q_DIAS')),
-                    "Q_DIAS", "Q_DIAS"));
+                    . "k_descaporte=".$this->count())->queryColumn();
+            if($resultado!=NULL)
+                return (int)current($resultado);
+            else
+                return -1;
         }
         
         public function obtenerDiasAporte($id_descaporte){
-            return (int)current(CHtml::listData($this->findBySql(
+            $resultado = Yii::app()->db->createCommand(
                     "SELECT q_dias FROM descripcionaporte WHERE "
-                    . "k_descaporte=".$id_descaporte,array('Q_DIAS')),
-                    "Q_DIAS", "Q_DIAS"));
+                    . "k_descaporte=".$id_descaporte)->queryColumn();
+            if($resultado != NULL)
+                return (int)current($resultado);
+            else
+                return -1;
         }
 }

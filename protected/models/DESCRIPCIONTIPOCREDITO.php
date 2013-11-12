@@ -12,7 +12,7 @@
  * @property integer $K_IDENTIFICADOR
  *
  * The followings are the available model relations:
- * @property TIPOCREDITO $kIDDESCRIPCION
+ * @property TIPOCREDITO $kIDENTIFICADOR
  * @property CREDITO[] $cREDITOs
  */
 class DESCRIPCIONTIPOCREDITO extends CActiveRecord
@@ -64,7 +64,7 @@ class DESCRIPCIONTIPOCREDITO extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
                         'cREDITOs'  => array(self::HAS_MANY,'CREDITO','K_ID_DESCRIPCION'),
-			'kIDDESCRIPCION' => array(self::BELONGS_TO, 'TIPOCREDITO', 'K_IDENTIFICADOR'),
+			'kIDENTIFICADOR' => array(self::BELONGS_TO, 'TIPOCREDITO', 'K_IDENTIFICADOR'),
 		);
 	}
 
@@ -107,35 +107,51 @@ class DESCRIPCIONTIPOCREDITO extends CActiveRecord
 	}
         
         public function obtenerIdDescripcionActual($tipo_credito){
-            return (int)current(CHtml::listData($this->findAllBySql("SELECT k_id_descripcion FROM descripcion_tipo_credito "
+            $resultado = Yii::app()->db->createCommand(
+                    "SELECT k_id_descripcion FROM descripcion_tipo_credito "
                     ."WHERE f_establecimiento IN (SELECT max(f_establecimiento) "
                     ."FROM descripcion_tipo_credito WHERE k_identificador=".(int)$tipo_credito
-                    .") AND k_identificador=".(int)$tipo_credito,
-                    array('K_ID_DESCRIPCION')),"K_ID_DESCRIPCION", "K_ID_DESCRIPCION"));
+                    .") AND k_identificador=".(int)$tipo_credito)->queryColumn();
+            if($resultado != NULL)
+                return Conversion::conversionInt(current($resultado));
+            else
+                return -1;
         }
 
         public function obtenerValorAportesRequerido($tipo_credito){
-            return (double)current(CHtml::listData($this->findAllBySql("SELECT v_aporte_minimo FROM descripcion_tipo_credito "
+            $resultado = Yii::app()->db->createCommand(
+                    "SELECT v_aporte_minimo FROM descripcion_tipo_credito "
                     ."WHERE f_establecimiento IN (SELECT max(f_establecimiento) "
                     ."FROM descripcion_tipo_credito WHERE k_identificador=".(int)$tipo_credito
-                    .") AND k_identificador=".(int)$tipo_credito,
-                    array('K_ID_DESCRIPCION')),"K_ID_DESCRIPCION", "K_ID_DESCRIPCION"));
+                    .") AND k_identificador=".(int)$tipo_credito)->queryColumn();
+            if($resultado != NULL)
+                return Conversion::conversionDouble(current($resultado));
+            else
+                return -1;
         }
         
         public function obtenerInteresDescripcionActual($tipo_credito){
-            return (double)current(CHtml::listData($this->findAllBySql("SELECT v_tasa_interes FROM descripcion_tipo_credito "
+            $resultado = Yii::app()->db->createCommand(
+                    "SELECT v_tasa_interes FROM descripcion_tipo_credito "
                     ."WHERE f_establecimiento IN (SELECT max(f_establecimiento) "
                     ."FROM descripcion_tipo_credito WHERE k_identificador=".(int)$tipo_credito
-                    .") AND k_identificador=".(int)$tipo_credito,
-                    array('V_TASA_INTERES')),"V_TASA_INTERES", "V_TASA_INTERES"));
+                    .") AND k_identificador=".(int)$tipo_credito)->queryColumn();
+            if($resultado != NULL)
+        return Conversion::conversionDouble(current($resultado));
+            else
+                return -1;
         }
         
         public function obtenerPlazoMaximoDescripcionActual($tipo_credito){
-            return (int)current(CHtml::listData($this->findAllBySql("SELECT q_plazo_maximo FROM descripcion_tipo_credito "
+            $resultado = Yii::app()->db->createCommand(
+                    "SELECT q_plazo_maximo FROM descripcion_tipo_credito "
                     ."WHERE f_establecimiento IN (SELECT max(f_establecimiento) "
                     ."FROM descripcion_tipo_credito WHERE k_identificador=".(int)$tipo_credito
-                    .") AND k_identificador=".(int)$tipo_credito,
-                    array('Q_PLAZO_MAXIMO')),"Q_PLAZO_MAXIMO", "Q_PLAZO_MAXIMO"));
+                    .") AND k_identificador=".(int)$tipo_credito)->queryColumn();
+            if($resultado != NULL)
+                return Conversion::conversionInt(current($resultado));
+            else
+                return -1;
         }
         
 }

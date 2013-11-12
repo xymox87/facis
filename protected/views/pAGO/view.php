@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List PAGO', 'url'=>array('index')),
-	array('label'=>'Create PAGO', 'url'=>array('create')),
-	array('label'=>'Update PAGO', 'url'=>array('update', 'id'=>$model->K_NUMCONSIGNACION)),
-	array('label'=>'Delete PAGO', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->K_NUMCONSIGNACION),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage PAGO', 'url'=>array('admin')),
+	//array('label'=>'List PAGO', 'url'=>array('index')),
+	array('label'=>'Crear pagos de credito', 'url'=>array('create')),
+	//array('label'=>'Update PAGO', 'url'=>array('update', 'id'=>$model->K_NUMCONSIGNACION)),
+	//array('label'=>'Delete PAGO', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->K_NUMCONSIGNACION),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Gestionar pagos de credito', 'url'=>array('admin')),
 );
 ?>
 

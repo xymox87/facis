@@ -11,7 +11,7 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son requeridos.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -27,11 +27,16 @@
 		<?php echo $form->error($model,'K_NUMCONSIGNACION'); ?>
 	</div>
         
-	<!--<div class="row">
-		<?php //echo $form->labelEx($model,'F_PAGO'); ?>
-		<?php //echo $form->textField($model,'F_PAGO'); ?>
-		<?php //echo $form->error($model,'F_PAGO'); ?>
-	</div>-->
+	<div class="row">
+		<?php echo $form->labelEx($model,'F_PAGO'); ?>
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                        'model' => $model,
+                        'attribute' => 'F_PAGO',
+                        'language' => 'es',
+                        'options'=>array('dateFormat'=>'dd/mm/y'),
+                        )); ?>
+		<?php echo $form->error($model,'F_PAGO'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'V_PAGO'); ?>

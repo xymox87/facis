@@ -49,10 +49,10 @@ class PAGO extends CActiveRecord
 			array('K_NUMCONSIGNACION, V_PAGO, K_CUENTA, K_FPAGO, K_ID_CREDITO', 'required'),
 			array('K_CUENTA, K_FPAGO, Q_NUMCUOTA, K_ID_CREDITO', 'numerical', 'integerOnly'=>true),
 			array('V_PAGO', 'numerical'),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
 			array('F_PAGO, K_NUMCONSIGNACION, V_PAGO, K_CUENTA, K_FPAGO, Q_NUMCUOTA, K_ID_CREDITO', 'safe', 'on'=>'search'),
-		);
+                        array('V_PAGO','val.ValidacionPagoContraPlanPagos'),
+                        array('F_PAGO','val.ValidacionFechaPago'),
+                );
 	}
 
 	/**
@@ -111,8 +111,22 @@ class PAGO extends CActiveRecord
 	}
         
         public function obtenerValorTodosPagos(){
-            return (double)current(CHtml::listData($this->findBySql(
-                    "SELECT SUM(v_pago) AS SUMA FROM pago",array('SUMA')),
-                    "SUMA", "SUMA"));
+            $resultado = Yii::app()->db->createCommand(
+                    "SELECT SUM(v_pago) AS SUMA FROM pago")->queryColumn();
+            if($resultado != NULL)
+                return Conversion::conversionDouble(current($resultado));
+            else
+                return 0;
+        }
+        
+        public function obtenerUltimoPagoCredito($id_credito){
+            $resultado = Yii::app()->db->createCommand(
+                    "SELECT max(q_numcuota) FROM pago "
+                    ."GROUP BY k_id_credito HAVING "
+                    ."(k_id_credito=$id_credito)")->queryColumn();
+            if($resultado != NULL)
+                return Conversion::conversionInt(current($resultado));
+            else
+                return 0;
         }
 }
