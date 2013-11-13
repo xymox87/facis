@@ -59,7 +59,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'K_FPAGO'); ?>
-		<?php echo CHtml::dropDownList("APORTE[K_FPAGO]",$model->K_FPAGO,CHtml::listData(FORMAPAGO::model()->findAll(),'K_FPAGO',"N_FPAGO")); ?>
+		<?php echo CHtml::dropDownList('APORTE[K_FPAGO]',$model->K_FPAGO,CHtml::listData(FORMAPAGO::model()->findAll(),'K_FPAGO',"N_FPAGO")); ?>
 		<?php echo $form->error($model,'K_FPAGO'); ?>
 	</div>
 
