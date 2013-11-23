@@ -2129,3 +2129,768 @@ Stack trace:
 REQUEST_URI=/facis/index.php/socio/admin
 HTTP_REFERER=http://localhost/facis/index.php
 ---
+2013/11/23 00:12:04 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:152
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/
+---
+2013/11/23 00:12:08 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:152
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:12:34 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:152
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:13:33 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:152
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:13:39 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:152
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/credito/admin
+---
+2013/11/23 00:13:44 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:152
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/socio/admin
+---
+2013/11/23 00:17:14 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:152
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:18:35 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:18:43 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:18:44 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:18:47 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:19:07 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:19:08 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:19:08 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:19:08 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:19:08 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:19:09 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:19:09 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:19:09 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:20:02 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:20:23 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:21:37 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:154
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:21:38 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:154
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:21:39 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:154
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:21:39 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:154
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:21:39 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:154
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:22:02 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:152
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:24:20 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:24:43 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:154
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/pago/admin
+---
+2013/11/23 00:26:18 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/credito/admin
+---
+2013/11/23 00:26:58 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/credito/admin
+---
+2013/11/23 00:27:17 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta hijueputa accion.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/credito/admin
+---
+2013/11/23 00:28:00 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'Propiedad "PAGO"."Q_NUMCUOTA" no se encuentra definida.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:154
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/credito/admin
+---
+2013/11/23 00:28:02 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'Propiedad "PAGO"."Q_NUMCUOTA" no se encuentra definida.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:154
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
+#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/credito/admin
+---
+2013/11/23 00:32:36 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\facis\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#9 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/
+---
+2013/11/23 00:33:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\facis\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#9 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/
+---
+2013/11/23 00:33:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\facis\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#9 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/
+---
+2013/11/23 00:33:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\facis\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#9 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/
+---
+2013/11/23 00:33:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\facis\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#9 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/
+---
+2013/11/23 00:33:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\facis\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#9 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/
+---
+2013/11/23 00:33:23 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\facis\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('pago/admin')
+#9 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/facis/index.php/pago/admin
+HTTP_REFERER=http://localhost/facis/index.php/
+---

@@ -25,12 +25,8 @@
 	<?php echo CHtml::encode($data->K_FPAGO); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Q_NUMCUOTA')); ?>:</b>
-	<?php echo CHtml::encode($data->Q_NUMCUOTA); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('K_ID_CREDITO')); ?>:</b>
-	<?php echo CHtml::encode($data->K_ID_CREDITO); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('K_ID_PLAN')); ?>:</b>
+	<?php echo CHtml::encode($data->K_ID_PLAN); ?>
 	<br />
 
 
