@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List CREDITO', 'url'=>array('index')),
-	array('label'=>'Manage CREDITO', 'url'=>array('admin')),
+	array('label'=>'Listar Creditos', 'url'=>array('index')),
+	array('label'=>'Gestionar Creditos', 'url'=>array('admin')),
 );
 ?>
 
