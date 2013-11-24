@@ -22,12 +22,6 @@
 	</div>-->
         
         <div class="row">
-		<?php echo $form->labelEx($model,'K_IDENTIFICACION'); ?>
-		<?php echo $form->textField($model,'K_IDENTIFICACION'); ?>
-		<?php echo $form->error($model,'K_IDENTIFICACION'); ?>
-	</div>
-        
-        <div class="row">
                 <?php echo $form->labelEx($model,'K_IDENTIFICACION'); ?>
 		<?php echo CHtml::dropDownList("TIPO_CREDITO[K_IDENTIFICADOR]",  TIPOCREDITO::model()->K_IDENTIFICADOR ,CHtml::listData(TIPOCREDITO::model()->findAll(), "K_IDENTIFICADOR", "I_TIPO")); ?>
 		<?php echo $form->error($model,'K_IDENTIFICACION'); ?>
@@ -93,11 +87,17 @@
 		<?php echo $form->error($model,'Q_CUOTAS'); ?>
 	</div>
 
-	<!--<div class="row">
-		<?php //echo $form->labelEx($model,'Q_CUOTA'); ?>
-		<?php //echo $form->textField($model,'Q_CUOTA'); ?>
-		<?php //echo $form->error($model,'Q_CUOTA'); ?>
-	</div>-->
+	<div class="row">
+		<?php echo $form->labelEx($model,'Q_CUOTA'); ?>
+		<?php echo $form->textField($model,'Q_CUOTA'); ?>
+		<?php echo $form->error($model,'Q_CUOTA'); ?>
+	</div>
+        
+        <div class="row">
+		<?php echo $form->labelEx($model,'K_ID_DESCRIPCION'); ?>
+		<?php echo $form->textField($model,'K_ID_DESCRIPCION'); ?>
+		<?php echo $form->error($model,'K_ID_DESCRIPCION'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
