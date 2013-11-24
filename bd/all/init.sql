@@ -75,7 +75,7 @@ CREATE TABLE Socio
 CREATE TABLE Rendimiento
 (
 	v_rendimiento        NUMBER(30,2) NOT NULL,
-	o_rendimiento  DATE NOT NULL,
+	f_rendimiento  DATE NOT NULL,
 	k_id_rendimiento  NUMERIC NOT NULL
 )
 ;
