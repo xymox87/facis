@@ -17,9 +17,22 @@ CREATE OR REPLACE PACKAGE pk_rendimientos_hed AS
         pm_error        Mensaje de error
 --------------------------------------------------------------------------*/
 
-PROCEDURE pr_calcular_rendimientos_socios(
-    pc_error OUT NUMBER, pm_error OUT VARCHAR
-);
+PROCEDURE pr_calcular_rendimientos_socios(pc_error OUT NUMBER,
+                                             pm_error OUT VARCHAR
+                                          );
+
+/*-------------------------------------------------------------------------
+    
+    Calcula los rendimientos del fondo a la fecha
+
+    Parámetros de salida: 
+        pc_error        Código de error
+        pm_error        Mensaje de error
+--------------------------------------------------------------------------*/
+
+PROCEDURE pr_calcular_rendimientos_fondo(pc_error OUT NUMBER,
+                                             pm_error OUT VARCHAR
+                                          );
 
 END pk_rendimientos_hed;
 /

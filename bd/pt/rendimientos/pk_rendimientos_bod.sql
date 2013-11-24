@@ -44,5 +44,32 @@ EXCEPTION
 
 END pr_calcular_rendimientos_socios;
 
+/*-------------------------------------------------------------------------
+    
+    Calcula los rendimientos del fondo en el ultimo periodo de tiempo
+
+    Parámetros de salida: 
+        pc_error        Código de error
+        pm_error        Mensaje de error
+--------------------------------------------------------------------------*/
+
+PROCEDURE pr_calcular_rendimientos_fondo(pc_error OUT NUMBER,
+                                             pm_error OUT VARCHAR
+                                          ) IS
+
+CURSOR c_rendimientos_fondo IS
+    SELECT v_capital_disponible
+    FROM rendimiento
+    WHERE f_rendimiento = TO_DATE(TO_CHAR(sysdate,'yyyy'),'yyyy');
+
+BEGIN
+
+EXCEPTION
+    WHEN OTHERS THEN
+        pc_error := sqlcode;
+        pm_error := sqlerrm;
+
+END pr_calcular_rendimientos_fondo;
+
 END pk_rendimientos_hed;
 /
