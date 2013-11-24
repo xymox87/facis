@@ -4921,4 +4921,542 @@ Stack trace:
 #14 {main}
 REQUEST_URI=/facis/index.php/aporte/procedure
 ---
+<<<<<<< HEAD
 >>>>>>> bc36ed79e46d6527d0ff723af116a8bc8f84d2bf
+=======
+2013/11/22 20:04:40 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php:171
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): SOCIOController->actionAdmin()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/admin')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/socio/admin
+HTTP_REFERER=http://localhost/facis/index.php
+---
+2013/11/22 20:20:48 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php:171
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): SOCIOController->actionAdmin()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/admin')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/socio/admin
+HTTP_REFERER=http://localhost/facis/index.php
+---
+2013/11/22 20:21:45 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php:172
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): SOCIOController->actionAdmin()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/admin')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/socio/admin
+HTTP_REFERER=http://localhost/facis/index.php
+---
+2013/11/22 20:21:45 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\SOCIOController.php:172
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): SOCIOController->actionAdmin()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('admin')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('socio/admin')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/socio/admin
+HTTP_REFERER=http://localhost/facis/index.php
+---
+2013/11/22 15:55:15 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1438 OCIStmtExecute: ORA-01438: value larger than specified precision allowed for this column
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "APORTE" ("K_NUMCONSIGNACION", "V_APORTE", "K_IDENTIFICACION", "K_CUENTA", "K_FPAGO", "F_CONSIGNACION", "K_DESCAPORTE") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6) RETURNING "K_NUMCONSIGNACION" INTO :RETURN_ID.
+in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php (76)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 15:55:15 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 1438 OCIStmtExecute: ORA-01438: value larger than specified precision allowed for this column
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "APORTE" ("K_NUMCONSIGNACION", "V_APORTE", "K_IDENTIFICACION", "K_CUENTA", "K_FPAGO", "F_CONSIGNACION", "K_DESCAPORTE") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6) RETURNING "K_NUMCONSIGNACION" INTO :RETURN_ID' in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php:83
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionCreate()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/create')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/aporte/create
+HTTP_REFERER=http://localhost/facis/index.php/aporte/create
+---
+2013/11/22 21:57:34 [warning] [application] Error al definir unsafe el atributo "F_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 21:57:34 [warning] [application] Error al definir unsafe el atributo "V_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 21:57:34 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."CREDITO"."K_ID_CREDITO")
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "CREDITO" ("F_APROBACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "K_IDENTIFICACION", "Q_CUOTA") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (69)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 21:57:34 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php:77
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): CREDITOController->actionCreate()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/credito/create
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/22 21:59:07 [warning] [application] Error al definir unsafe el atributo "F_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 21:59:07 [warning] [application] Error al definir unsafe el atributo "V_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 21:59:07 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."CREDITO"."K_ID_CREDITO")
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "CREDITO" ("F_APROBACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "K_IDENTIFICACION", "Q_CUOTA") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (69)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 21:59:07 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php:78
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): CREDITOController->actionCreate()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/credito/create
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/22 22:02:10 [warning] [application] Error al definir unsafe el atributo "F_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:02:10 [warning] [application] Error al definir unsafe el atributo "V_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:02:10 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1847 OCIStmtExecute: ORA-01847: day of month must be between 1 and last day of month
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "CREDITO" ("F_APROBACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "K_IDENTIFICACION", "Q_CUOTA", "K_ID_CREDITO") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (70)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:02:10 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php:79
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): CREDITOController->actionCreate()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/credito/create
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/22 22:04:31 [warning] [application] Error al definir unsafe el atributo "F_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:04:31 [warning] [application] Error al definir unsafe el atributo "V_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:04:31 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."CREDITO"."F_ULTIMO_PAGO")
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "CREDITO" ("F_APROBACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "K_IDENTIFICACION", "Q_CUOTA", "K_ID_CREDITO") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (70)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:04:31 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php:79
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): CREDITOController->actionCreate()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/credito/create
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/22 22:06:14 [warning] [application] Error al definir unsafe el atributo "F_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:06:14 [warning] [application] Error al definir unsafe el atributo "V_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:06:14 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."CREDITO"."F_ULTIMO_PAGO")
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "CREDITO" ("F_APROBACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "K_IDENTIFICACION", "Q_CUOTA", "K_ID_CREDITO") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (70)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:06:14 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php:79
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): CREDITOController->actionCreate()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/credito/create
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/22 22:07:38 [warning] [application] Error al definir unsafe el atributo "F_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:07:38 [warning] [application] Error al definir unsafe el atributo "V_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:07:38 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1847 OCIStmtExecute: ORA-01847: day of month must be between 1 and last day of month
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "CREDITO" ("F_APROBACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "K_IDENTIFICACION", "Q_CUOTA", "K_ID_CREDITO") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (70)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:07:38 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php:79
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): CREDITOController->actionCreate()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/credito/create
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/22 22:10:27 [warning] [application] Error al definir unsafe el atributo "F_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:10:27 [warning] [application] Error al definir unsafe el atributo "V_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:10:27 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1847 OCIStmtExecute: ORA-01847: day of month must be between 1 and last day of month
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "CREDITO" ("F_APROBACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "K_IDENTIFICACION", "Q_CUOTA", "K_ID_CREDITO") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (70)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:10:27 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php:79
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): CREDITOController->actionCreate()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/credito/create
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/22 22:14:21 [warning] [application] Error al definir unsafe el atributo "F_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:14:21 [warning] [application] Error al definir unsafe el atributo "V_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:14:21 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1847 OCIStmtExecute: ORA-01847: day of month must be between 1 and last day of month
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "CREDITO" ("F_APROBACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "K_IDENTIFICACION", "Q_CUOTA", "K_ID_CREDITO") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (70)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:14:21 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php:79
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): CREDITOController->actionCreate()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/credito/create
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/22 22:14:35 [warning] [application] Error al definir unsafe el atributo "F_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:14:35 [warning] [application] Error al definir unsafe el atributo "V_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:14:35 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1847 OCIStmtExecute: ORA-01847: day of month must be between 1 and last day of month
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "CREDITO" ("F_APROBACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "K_IDENTIFICACION", "Q_CUOTA", "K_ID_CREDITO") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (70)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:14:35 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php:79
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): CREDITOController->actionCreate()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/credito/create
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/22 22:15:00 [warning] [application] Error al definir unsafe el atributo "F_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:15:00 [warning] [application] Error al definir unsafe el atributo "V_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:15:00 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1847 OCIStmtExecute: ORA-01847: day of month must be between 1 and last day of month
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "CREDITO" ("F_APROBACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "K_IDENTIFICACION", "Q_CUOTA", "K_ID_CREDITO") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (70)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:15:00 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php:79
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): CREDITOController->actionCreate()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/credito/create
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/22 22:15:15 [warning] [application] Error al definir unsafe el atributo "F_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:15:15 [warning] [application] Error al definir unsafe el atributo "V_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:15:15 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1847 OCIStmtExecute: ORA-01847: day of month must be between 1 and last day of month
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "CREDITO" ("F_APROBACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "K_IDENTIFICACION", "Q_CUOTA", "K_ID_CREDITO") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (70)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:15:15 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php:79
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): CREDITOController->actionCreate()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/credito/create
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/22 22:16:56 [warning] [application] Error al definir unsafe el atributo "F_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:16:56 [warning] [application] Error al definir unsafe el atributo "V_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:16:56 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1847 OCIStmtExecute: ORA-01847: day of month must be between 1 and last day of month
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "CREDITO" ("F_APROBACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "K_IDENTIFICACION", "Q_CUOTA", "K_ID_CREDITO") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (70)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:16:56 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php:79
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): CREDITOController->actionCreate()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/credito/create
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/22 22:21:38 [warning] [application] Error al definir unsafe el atributo "F_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:21:38 [warning] [application] Error al definir unsafe el atributo "V_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:21:38 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1847 OCIStmtExecute: ORA-01847: day of month must be between 1 and last day of month
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "CREDITO" ("F_APROBACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "K_IDENTIFICACION", "Q_CUOTA", "K_ID_CREDITO") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (70)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:21:38 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php:79
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): CREDITOController->actionCreate()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/credito/create
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/22 22:22:20 [warning] [application] Error al definir unsafe el atributo "F_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:22:20 [warning] [application] Error al definir unsafe el atributo "V_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:22:20 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."CREDITO"."K_ID_DESCRIPCION")
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "CREDITO" ("F_APROBACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "K_IDENTIFICACION", "Q_CUOTA", "K_ID_CREDITO") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (70)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:22:20 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php:79
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): CREDITOController->actionCreate()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/credito/create
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/22 22:28:28 [warning] [application] Error al definir unsafe el atributo "F_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:28:28 [warning] [application] Error al definir unsafe el atributo "V_ULTIMO_PAGO" de "CREDITO".
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (68)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:28:28 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1400 OCIStmtExecute: ORA-01400: cannot insert NULL into ("FACIS"."CREDITO"."K_ID_DESCRIPCION")
+ (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "CREDITO" ("F_APROBACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "K_IDENTIFICACION", "Q_CUOTA", "K_ID_CREDITO") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
+in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php (70)
+in C:\xampp\htdocs\FACIS\index.php (13)
+2013/11/22 22:28:28 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\FACIS\protected\controllers\CREDITOController.php:79
+Stack trace:
+#0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): CREDITOController->actionCreate()
+#1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FACIS\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\FACIS\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\FACIS\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\FACIS\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\FACIS\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\FACIS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
+#11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/facis/index.php/credito/create
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+>>>>>>> origin/master
