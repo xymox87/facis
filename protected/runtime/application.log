@@ -1147,7 +1147,7 @@ REQUEST_URI=/facis/index.php/aporte/create
 in C:\xampp\htdocs\Facis\protected\models\ValidacionValorAporte.php (10)
 in C:\xampp\htdocs\Facis\protected\controllers\APORTEController.php (76)
 in C:\xampp\htdocs\Facis\index.php (13)
-2013/10/31 14:21:26 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'Propiedad "APORTE"."V_MULTA" no se encuentra definida.' in C:\xampp\htdocs\FACIS\protected\controllers\APORTEController.php:83
+2013/11/22 23:33:20 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\APORTEController.php:158
 Stack trace:
 #0 C:\xampp\htdocs\FACIS\framework\web\actions\CInlineAction.php(49): APORTEController->actionCreate()
 #1 C:\xampp\htdocs\FACIS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
@@ -1162,6 +1162,7 @@ Stack trace:
 #10 C:\xampp\htdocs\FACIS\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/create')
 #11 C:\xampp\htdocs\FACIS\framework\base\CApplication.php(169): CWebApplication->processRequest()
 #12 C:\xampp\htdocs\FACIS\index.php(13): CApplication->run()
+#13 {main}
 #13 {main}
 REQUEST_URI=/facis/index.php/aporte/create
 HTTP_REFERER=http://localhost/facis/index.php/aporte/create

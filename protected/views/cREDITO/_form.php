@@ -79,6 +79,11 @@
 		<?php echo $form->textField($model,'Q_CUOTA'); ?>
 		<?php echo $form->error($model,'Q_CUOTA'); ?>
 	</div>
+        <div class="row">
+		<?php echo $form->labelEx($model,'K_ID_DESCRIPCION'); ?>
+		<?php echo $form->textField($model,'K_ID_DESCRIPCION'); ?>
+		<?php echo $form->error($model,'K_ID_DESCRIPCION'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
