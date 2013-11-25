@@ -6,7 +6,7 @@
     Fecha: 2013/11/24
 --------------------------------------------------------------------------*/
 
-CREATE OR REPLACE PACKAGE pk_socios_hed AS
+CREATE OR REPLACE PACKAGE pk_socios AS
 
-END pk_socios_hed;
+END pk_socios;
 /

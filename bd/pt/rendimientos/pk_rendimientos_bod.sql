@@ -9,30 +9,39 @@
 CREATE OR REPLACE PACKAGE BODY pk_rendimientos_bod AS
 
 /*-------------------------------------------------------------------------
-    Calcula y distribuye los rendimientos del fondo a los socios
+    Distribuye los rendimientos del fondo a los socios. La dis-
+    tribución de los rendimientos se hará con la siguiente dinámica:
+    Los intereses por concepto de crédito serán divididos en partes iguales
+    para los socios que estén al día con el pago de sus aportes.
+    
 
     Parámetros de salida: 
         pc_error        Código de error
         pm_error        Mensaje de error
 --------------------------------------------------------------------------*/
 
-PROCEDURE pr_calcular_rendimientos_socios(pc_error OUT NUMBER, 
+PROCEDURE pr_dividir_rendimientos_socios(pc_error OUT NUMBER, 
                                             pm_error OUT VARCHAR) IS
 
 CURSOR c_socios IS
     SELECT k_identificacion
     FROM socios;
 
-CURSOR c_rendimientos_anuales IS
-    SELECT 
+CURSOR c_rendimiento_anual IS
+    SELECT v_rendimiento
+    FROM rendimiento
+    WHERE f_rendimiento = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy');
 
 BEGIN
     
     FOR r_c_socios IN c_socios LOOP
-        IF pk_aportes.fu_socio_al_dia(
+        IF (pk_aportes.fu_socio_al_dia(
             r_c_socios.k_identificacion,
             pc_error,
-            pm_error) AND pc_error IS NULL AND pm_erro IS NULL THEN
+            pm_error) AND pc_error IS NULL AND pm_error IS NULL) 
+            AND (pk_creditos.fu_socio_al_dia(r_c_socios.k_identificacion,
+            pc_error,
+            pm_error) AND pc_error IS NULL AND pm_error IS NULL) THEN
             
         END IF;
     END LOOP;
@@ -42,34 +51,55 @@ EXCEPTION
         pc_error := sqlcode;
         pm_error := sqlerrm;
 
-END pr_calcular_rendimientos_socios;
+END pr_dividir_rendimientos_socios;
 
 /*-------------------------------------------------------------------------
     
-    Calcula los rendimientos del fondo en el ultimo periodo de tiempo
+    Calcula el capital disponible del fondo
 
     Parámetros de salida: 
         pc_error        Código de error
         pm_error        Mensaje de error
 --------------------------------------------------------------------------*/
 
-PROCEDURE pr_calcular_rendimientos_fondo(pc_error OUT NUMBER,
+PROCEDURE pr_calcular_capital_disponible(pc_error OUT NUMBER,
                                              pm_error OUT VARCHAR
                                           ) IS
 
-CURSOR c_rendimientos_fondo IS
-    SELECT v_capital_disponible
-    FROM rendimiento
-    WHERE f_rendimiento = TO_DATE(TO_CHAR(sysdate,'yyyy'),'yyyy');
+
 
 BEGIN
-
+    FOR r_c_rendimientos_fondo IN c_rendimientos_fondo LOOP
+        
+    END LOOP;
 EXCEPTION
     WHEN OTHERS THEN
         pc_error := sqlcode;
         pm_error := sqlerrm;
 
-END pr_calcular_rendimientos_fondo;
+END pr_calcular_capital_disponible;
+
+/*-------------------------------------------------------------------------
+    
+    Calcula el capital total del fondo
+
+    Parámetros de salida: 
+        pc_error        Código de error
+        pm_error        Mensaje de error
+--------------------------------------------------------------------------*/
+
+PROCEDURE pr_calcular_capital_total(pc_error OUT NUMBER,
+                                             pm_error OUT VARCHAR
+                                          ) IS
+
+BEGIN
+    
+EXCEPTION
+    WHEN OTHERS THEN
+        pc_error := sqlcode;
+        pm_error := sqlerrm;
+
+END pr_calcular_capital_total;
 
 END pk_rendimientos_hed;
 /

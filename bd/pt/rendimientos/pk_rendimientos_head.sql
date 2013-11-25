@@ -10,27 +10,40 @@ CREATE OR REPLACE PACKAGE pk_rendimientos_hed AS
 
 /*-------------------------------------------------------------------------
     
-    Calcula y distribuye los rendimientos del fondo a los socios
+    Distribuye los rendimientos del fondo a los socios
 
     Parámetros de salida: 
         pc_error        Código de error
         pm_error        Mensaje de error
 --------------------------------------------------------------------------*/
 
-PROCEDURE pr_calcular_rendimientos_socios(pc_error OUT NUMBER,
+PROCEDURE pr_dividir_rendimientos_socios(pc_error OUT NUMBER,
                                              pm_error OUT VARCHAR
                                           );
 
 /*-------------------------------------------------------------------------
     
-    Calcula los rendimientos del fondo a la fecha
+    Calcula el capital disponible del fondo
 
     Parámetros de salida: 
         pc_error        Código de error
         pm_error        Mensaje de error
 --------------------------------------------------------------------------*/
 
-PROCEDURE pr_calcular_rendimientos_fondo(pc_error OUT NUMBER,
+PROCEDURE pr_calcular_capital_disponible(pc_error OUT NUMBER,
+                                             pm_error OUT VARCHAR
+                                          );
+
+/*-------------------------------------------------------------------------
+    
+    Calcula el capital total del fondo
+
+    Parámetros de salida: 
+        pc_error        Código de error
+        pm_error        Mensaje de error
+--------------------------------------------------------------------------*/
+
+PROCEDURE pr_calcular_capital_total(pc_error OUT NUMBER,
                                              pm_error OUT VARCHAR
                                           );
 

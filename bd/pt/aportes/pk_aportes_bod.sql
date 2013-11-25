@@ -32,26 +32,26 @@ CURSOR c_ultimo_aporte_socio IS
     GROUP BY (k_identificacion)
     HAVING (k_identificacion = pk_identificacion);
 
-l_b_al_dia BOOLEAN DEFAULT FALSE;
-l_f_dia_inicial DATE DEFAULT TO_DATE(TO_CHAR(sysdate,'dd-mm-yyyy'),'dd-mm-yyyy')
+b_al_dia BOOLEAN DEFAULT FALSE;
+f_dia_inicial DATE DEFAULT TO_DATE(TO_CHAR(sysdate,'dd-mm-yyyy'),'dd-mm-yyyy')
      - TO_DATE(TO_CHAR(sysdate,'dd'),'dd') + TO_DATE('01','dd');
-l_f_dia_final DATE DEFAULT TO_DATE(TO_CHAR(sysdate,'dd-mm-yyyy'),'dd-mm-yyyy')
+f_dia_final DATE DEFAULT TO_DATE(TO_CHAR(sysdate,'dd-mm-yyyy'),'dd-mm-yyyy')
      - TO_DATE(TO_CHAR(sysdate,'dd'),'dd') + TO_DATE('06','dd');
 
 BEGIN
 
     FOR r_c_ultimo_aporte_socio IN c_ultimo_aporte_socio LOOP
-        l_b_al_dia := TO_DATE(TO_CHAR(r_c_ultimo_aporte_socio.f_consignacion,'dd-mm-yyyy'),
-            'dd-mm-yyyy') BETWEEN l_f_dia_inicial AND l_f_dia_final;
+        b_al_dia := TO_DATE(TO_CHAR(r_c_ultimo_aporte_socio.f_consignacion,'dd-mm-yyyy'),
+            'dd-mm-yyyy') BETWEEN f_dia_inicial AND f_dia_final;
     END LOOP;
     
-    RETURN l_b_al_dia;
+    RETURN b_al_dia;
 
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
         pc_error := -20000;
         pm_error := 'No existe socio con esa identificación';
-        RETURN l_b_al_dia;
+        RETURN b_al_dia;
     WHEN OTHERS THEN
         pc_error := sqlcode;
         pm_error := sqlerrm;
