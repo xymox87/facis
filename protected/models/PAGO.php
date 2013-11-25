@@ -9,14 +9,12 @@
  * @property double $V_PAGO
  * @property integer $K_CUENTA
  * @property integer $K_FPAGO
- * @property integer $Q_NUMCUOTA
- * @property integer $K_ID_CREDITO
+ * @property integer $K_ID_PLAN
  *
  * The followings are the available model relations:
  * @property CUENTA $kCUENTA
  * @property FORMAPAGO $kFPAGO
- * @property PLANPAGOS $qNUMCUOTA
- * @property PLANPAGOS $kIDCREDITO
+ * @property PLANPAGOS $kIDPLAN
  */
 class PAGO extends CActiveRecord
 {
@@ -46,12 +44,12 @@ class PAGO extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('F_PAGO, V_PAGO, K_CUENTA, K_FPAGO, Q_NUMCUOTA, K_ID_CREDITO', 'required'),
-			array('K_CUENTA, K_FPAGO, Q_NUMCUOTA, K_ID_CREDITO', 'numerical', 'integerOnly'=>true),
+			array('F_PAGO, V_PAGO, K_CUENTA, K_FPAGO, K_ID_PLAN', 'required'),
+			array('K_CUENTA, K_FPAGO, K_ID_PLAN', 'numerical', 'integerOnly'=>true),
 			array('V_PAGO', 'numerical'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('F_PAGO, K_NUMCONSIGNACION, V_PAGO, K_CUENTA, K_FPAGO, Q_NUMCUOTA, K_ID_CREDITO', 'safe', 'on'=>'search'),
+			array('F_PAGO, K_NUMCONSIGNACION, V_PAGO, K_CUENTA, K_FPAGO, K_ID_PLAN', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,8 +63,7 @@ class PAGO extends CActiveRecord
 		return array(
 			'kCUENTA' => array(self::BELONGS_TO, 'CUENTA', 'K_CUENTA'),
 			'kFPAGO' => array(self::BELONGS_TO, 'FORMAPAGO', 'K_FPAGO'),
-			'qNUMCUOTA' => array(self::BELONGS_TO, 'PLANPAGOS', 'Q_NUMCUOTA'),
-			'kIDCREDITO' => array(self::BELONGS_TO, 'PLANPAGOS', 'K_ID_CREDITO'),
+			'kIDPLAN' => array(self::BELONGS_TO, 'PLANPAGOS', 'K_ID_PLAN'),
 		);
 	}
 
@@ -76,13 +73,12 @@ class PAGO extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'F_PAGO' => 'Fecha de pago',
-			'K_NUMCONSIGNACION' => 'Numero de consignacion',
-			'V_PAGO' => 'Valor de pago',
-			'K_CUENTA' => 'Numero de pago',
-			'K_FPAGO' => 'K Fpago',
-			'Q_NUMCUOTA' => 'Q Numcuota',
-			'K_ID_CREDITO' => 'K Id Credito',
+			'F_PAGO' => 'Fecha de Pago',
+			'K_NUMCONSIGNACION' => 'No de recibo de Pago',
+			'V_PAGO' => 'Valor a Pagar',
+			'K_CUENTA' => 'No Cuenta a Acreditar',
+			'K_FPAGO' => 'Forma de Pago',
+			'K_ID_PLAN' => 'Id de Plan de Pago',
 		);
 	}
 
@@ -102,8 +98,7 @@ class PAGO extends CActiveRecord
 		$criteria->compare('V_PAGO',$this->V_PAGO);
 		$criteria->compare('K_CUENTA',$this->K_CUENTA);
 		$criteria->compare('K_FPAGO',$this->K_FPAGO);
-		$criteria->compare('Q_NUMCUOTA',$this->Q_NUMCUOTA);
-		$criteria->compare('K_ID_CREDITO',$this->K_ID_CREDITO);
+		$criteria->compare('K_ID_PLAN',$this->K_ID_PLAN);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

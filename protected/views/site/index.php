@@ -4,9 +4,15 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<h1>Bien venido <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+<h1>Bienvenido al <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
-<p>Felcitaciones.</p>
+<p>El Fondo de Ahorro y Crédito de Profesionales de Ingeniería de Sistemas– FACIS - es una 
+
+entidad sin ánimo de lucro que tiene como finalidad promover el ahorro entre sus socios 
+
+con el fin de facilitarles créditos a baja tasa de interés para estudio, capital de trabajo o libre 
+
+inversión.</p>
 
 
 
