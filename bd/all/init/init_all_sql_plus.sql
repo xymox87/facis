@@ -1,3 +1,5 @@
+set serveroutput on
+
 connect system/123456
 --start C:\xampp\htdocs\facis\bd\all\init\init_facis_user.sql
 connect facis/facis
@@ -16,7 +18,7 @@ start C:\xampp\htdocs\facis\bd\pt\rendimientos\pk_rendimientos_head.sql
 --INICIALIZANDO OBJETOS APORTES
 
 start C:\xampp\htdocs\facis\bd\pt\aportes\pk_aportes_bod.sql
-start C:\xampp\htdocs\facis\bd\pt\aportes\tr_sumar_aportes.sql
+start C:\xampp\htdocs\facis\bd\pt\aportes\tr_sumar_rendimiento_aporte.sql
 
 --INICIALIZANDO OBJETOS CREDITOS
 

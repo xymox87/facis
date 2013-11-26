@@ -25,15 +25,6 @@ INSERT INTO descripcionaporte VALUES
 INSERT INTO descripcionaporte VALUES 
 (sysdate,3,20000000,50000,0.30,seq_descripcion_aporte.nextval);
 
---INSERTANDO EN APORTE
-
-INSERT INTO aporte VALUES
-(50000,sysdate,1,2,1018453546,89456723,2,NULL);
-INSERT INTO aporte VALUES
-(50000,sysdate,2,2,1019499187,89456723,2,50000*0.30);
-INSERT INTO aporte VALUES
-(50000,sysdate,3,2,1019499187,89456723,2,50000*0.30);
-
 --INSERTANDO EN LA TABLA CUENTA
 
 INSERT INTO cuenta VALUES 
@@ -47,15 +38,6 @@ INSERT INTO formapago VALUES
 (seq_formapago.nextval,'Cheque');
 INSERT INTO formapago VALUES
 (seq_formapago.nextval,'Efectivo');
-
---INSERTANDO EN LA TABLA CREDITO
-
-INSERT INTO CREDITO VALUES
-(seq_credito.nextval,sysdate,sysdate,NULL,NULL,2000,-2000,'vigente',2,1018453546,1,1);
-INSERT INTO CREDITO VALUES
-(seq_credito.nextval,sysdate,sysdate,NULL,NULL,2000,-2000,'vigente',1,1019499187,1,1);
-INSERT INTO CREDITO VALUES
-(seq_credito.nextval,sysdate,sysdate,NULL,NULL,2000,-2000,'vigente',1,1019499187,1,1);
 
 --INSERTANDO EN LA TABLA TIPO_CREDITO
 
@@ -74,6 +56,24 @@ INSERT INTO descripcion_tipo_credito VALUES
 (seq_descripcion_tipo_credito.nextval,sysdate,0.3,1000000,20,2);
 INSERT INTO descripcion_tipo_credito VALUES
 (seq_descripcion_tipo_credito.nextval,sysdate,0.15,1000000,20,3);
+
+--INSERTANDO EN APORTE
+
+INSERT INTO aporte VALUES
+(50000,sysdate,1,2,1018453546,89456723,2,NULL);
+INSERT INTO aporte VALUES
+(50000,sysdate,2,2,1019499187,89456723,2,50000*0.30);
+INSERT INTO aporte VALUES
+(50000,sysdate,3,2,1019499187,89456723,2,50000*0.30);
+
+--INSERTANDO EN LA TABLA CREDITO
+
+INSERT INTO CREDITO VALUES
+(seq_credito.nextval,sysdate,sysdate,NULL,NULL,2000,-2000,'vigente',2,1018453546,1,1);
+INSERT INTO CREDITO VALUES
+(seq_credito.nextval,sysdate,sysdate,NULL,NULL,2000,-2000,'vigente',1,1019499187,1,1);
+INSERT INTO CREDITO VALUES
+(seq_credito.nextval,sysdate,sysdate,NULL,NULL,2000,-2000,'vigente',1,1019499187,1,1);
 
 --INSERTANDO EN LA TABLA RENDIMIENTO
 

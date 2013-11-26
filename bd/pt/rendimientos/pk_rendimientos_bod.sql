@@ -135,8 +135,8 @@ BEGIN
 
 EXCEPTION
     WHEN OTHERS THEN
-        pc_error := 1;
-        pm_error := 'Error al crear nuevo rendimiento';
+        pc_error := sqlcode;
+        pm_error := sqlerrm;
 
 END pr_crear_nuevo_rendimiento;
 

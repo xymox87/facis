@@ -98,10 +98,13 @@ v_creditos_anuales rendimiento.v_creditos%TYPE;
 
 BEGIN
 
+    pc_error := 0;
+    pm_error := '';
+
     SELECT v_rendimientos_financieros, v_creditos
     INTO v_rendimiento_anual, v_creditos_anuales
     FROM rendimiento
-    WHERE f_rendimiento = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy');
+    WHERE f_rendimiento = TO_DATE(TO_CHAR(sysdate,'yyyy'),'yyyy');
 
     SELECT v_xcapital, v_xinteres
     INTO v_xcapital_pago, v_xinteres_pago
@@ -112,20 +115,17 @@ BEGIN
                             + v_xinteres_pago,
                            v_creditos = 
                             v_creditos_anuales - v_xcapital_pago
-    WHERE f_rendimiento = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy'); 
+    WHERE f_rendimiento = TO_DATE(TO_CHAR(sysdate,'yyyy'),'yyyy'); 
 
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
         pk_rendimientos.pr_crear_nuevo_rendimiento(pc_error, pm_error);
-        IF pc_error IS NULL AND pm_error IS NULL THEN
-            pr_act_rendimiento_pago(pc_error, pm_error);
-            IF pc_error IS NOT NULL AND pm_error IS NOT NULL THEN
-                pc_error := 1;
-                pm_error := 'No se pudo actualizar el rendimiento';
-            END IF;
+        IF pc_error IS NOT NULL AND pm_error IS NOT NULL THEN
+            pc_error := 1;
+            pm_error := 'No se pudo insertar el rendimiento';
         ELSE
             pc_error := 2;
-            pm_error := 'No se pudo crear una nueva entrada de rendimiento';
+            pm_error := 'No se actualiza rendimiento. Creado nuevo rendimiento';
         END IF;
         
     WHEN OTHERS THEN
@@ -153,29 +153,34 @@ PROCEDURE pr_act_rendimiento_credito(pv_credito credito.v_credito%TYPE,
     v_credito_anual rendimiento.v_creditos%TYPE;
 
 BEGIN
+
+    pc_error := 0;
+    pm_error := '';
+
     SELECT v_creditos
     INTO v_credito_anual
     FROM rendimiento
-    WHERE f_rendimiento = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy');
+    WHERE f_rendimiento = TO_DATE(TO_CHAR(sysdate,'yyyy'),'yyyy');
 
-    UPDATE rendimiento SET v_creditos = v_credito_anual + pv_credito;
+    UPDATE rendimiento SET v_creditos = v_credito_anual + pv_credito
+    WHERE f_rendimiento = TO_DATE(TO_CHAR(sysdate,'yyyy'),'yyyy');
 
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
         pk_rendimientos.pr_crear_nuevo_rendimiento(pc_error, pm_error);
-        IF pc_error IS NULL AND pm_error IS NULL THEN
-            pr_act_rendimiento_credito(pv_credito, pc_error, pm_error);
-            IF pc_error IS NOT NULL AND pm_error IS NOT NULL THEN
-                pc_error := 1;
-                pm_error := 'No se pudo actualizar el rendimiento';
-            END IF;
+        dbms_output.put_line(pm_error);
+        IF pc_error IS NOT NULL AND pm_error IS NOT NULL THEN
+            pc_error := 1;
+            pm_error := 'No se pudo insertar el rendimiento';
         ELSE
             pc_error := 2;
-            pm_error := 'No se pudo crear una nueva entrada de rendimiento';
+            pm_error := 'No se actualiza rendimiento. Creado nuevo rendimiento';
         END IF;
+        dbms_output.put_line(pm_error);
     WHEN OTHERS THEN
         pc_error := sqlcode;
         pm_error := sqlerrm;
+        dbms_output.put_line(pm_error);
 
 END pr_act_rendimiento_credito;
 

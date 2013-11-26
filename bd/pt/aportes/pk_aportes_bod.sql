@@ -85,10 +85,13 @@ PROCEDURE pr_act_rendimiento_aporte(pv_aporte aporte.v_aporte%TYPE,
 
 BEGIN
 
+    pc_error := 0;
+    pm_error := '';
+
     SELECT v_rendimientos_financieros, v_aportes
     INTO v_rendimiento_anual, v_aportes_anuales
     FROM rendimiento
-    WHERE f_rendimiento = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy');
+    WHERE f_rendimiento = TO_DATE(TO_CHAR(sysdate,'yyyy'),'yyyy');
     
     IF pv_multa IS NULL THEN
         v_multa_nueva := 0;
@@ -99,20 +102,17 @@ BEGIN
     UPDATE rendimiento SET v_rendimientos_financieros = v_rendimiento_anual + 
                             v_multa_nueva, 
                            v_aportes = v_aportes_anuales + pv_aporte
-    WHERE f_rendimiento = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy');
+    WHERE f_rendimiento = TO_DATE(TO_CHAR(sysdate,'yyyy'),'yyyy');
 
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
         pk_rendimientos.pr_crear_nuevo_rendimiento(pc_error, pm_error);
-        IF pc_error IS NULL AND pm_error IS NULL THEN
-            pr_act_rendimiento_aporte(pv_aporte, pv_multa, pc_error, pm_error);
-            IF pc_error IS NOT NULL AND pm_error IS NOT NULL THEN
-                pc_error := 1;
-                pm_error := 'No se pudo actualizar el rendimiento';
-            END IF;
+        IF pc_error IS NOT NULL AND pm_error IS NOT NULL THEN
+            pc_error := 1;
+            pm_error := 'No se pudo insertar el rendimiento';
         ELSE
             pc_error := 2;
-            pm_error := 'No se pudo crear una nueva entrada de rendimiento';
+            pm_error := 'No se actualiza rendimiento. Creado nuevo rendimiento';
         END IF;
     WHEN OTHERS THEN
         pc_error := sqlcode;
