@@ -47,5 +47,18 @@ PROCEDURE pr_calcular_capital_total(pc_error OUT NUMBER,
                                              pm_error OUT VARCHAR
                                           );
 
+/*-------------------------------------------------------------------------
+    
+    Crea registro en la base de datos de un nuevo rendimiento anual
+
+    Parámetros de salida: 
+        pc_error        Código de error
+        pm_error        Mensaje de error
+--------------------------------------------------------------------------*/
+
+PROCEDURE pr_crear_nuevo_rendimiento(pc_error OUT NUMBER,
+                                             pm_error OUT VARCHAR
+                                          );
+
 END pk_rendimientos;
 /

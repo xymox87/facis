@@ -4,20 +4,17 @@ FOR EACH ROW
 
 DECLARE
 
-    v_rendimiento_anual rendimiento.v_rendimientos_financieros%TYPE;
-    v_aportes_anuales rendimiento.v_aportes%TYPE;
+    lc_error NUMBER;
+    lm_error VARCHAR(300);
+    excepcion EXCEPTION;
 
 BEGIN
 
-    SELECT v_rendimientos_financieros, v_aportes
-    INTO v_rendimiento_anual, v_aportes_anuales
-    FROM rendimiento
-    WHERE f_rendimiento = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy');
-    
-    UPDATE rendimiento SET v_rendimientos_financieros = v_rendimiento_anual + 
-                            :new.v_multa, 
-                           v_aportes = v_aportes_anuales + :new.v_aporte
-    WHERE f_rendimiento = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy');
+    pk_aportes.pr_act_rendimiento_aporte(:new.v_aporte, :new.v_multa,
+                                            lc_error, lm_error);
+    IF lc_error IS NOT NULL AND lm_error IS NOT NULL THEN
+        RAISE excepcion;
+    END IF;
 
 EXCEPTION
     WHEN OTHERS THEN

@@ -79,6 +79,106 @@ EXCEPTION
 
 END fu_socio_al_dia;
 
+/*--------------------------------------------------------------------------
+    Procedimiento que hace un update a los rendimientos cuando se adiciona
+    un nuevo pago a cualquier crédito
+       
+    Parámetros de salida:
+        pc_error            Variable que tendrá el código de error
+        pm_error            Variable que tendrá el mensaje de error
+--------------------------------------------------------------------------*/
+
+PROCEDURE pr_act_rendimiento_pago(pc_error OUT NUMBER,
+                                    pm_error OUT VARCHAR) IS
+
+v_xinteres_pago planpagos.v_xinteres%TYPE;
+v_xcapital_pago planpagos.v_xcapital%TYPE;
+v_rendimiento_anual rendimiento.v_rendimientos_financieros%TYPE;
+v_creditos_anuales rendimiento.v_creditos%TYPE;
+
+BEGIN
+
+    SELECT v_rendimientos_financieros, v_creditos
+    INTO v_rendimiento_anual, v_creditos_anuales
+    FROM rendimiento
+    WHERE f_rendimiento = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy');
+
+    SELECT v_xcapital, v_xinteres
+    INTO v_xcapital_pago, v_xinteres_pago
+    FROM planpagos pp,credito c
+    WHERE pp.k_id_credito = c.k_id_credito AND c.q_cuota = pp.q_cuota;
+
+    UPDATE rendimiento SET v_rendimientos_financieros = v_rendimiento_anual 
+                            + v_xinteres_pago,
+                           v_creditos = 
+                            v_creditos_anuales - v_xcapital_pago
+    WHERE f_rendimiento = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy'); 
+
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        pk_rendimientos.pr_crear_nuevo_rendimiento(pc_error, pm_error);
+        IF pc_error IS NULL AND pm_error IS NULL THEN
+            pr_act_rendimiento_pago(pc_error, pm_error);
+            IF pc_error IS NOT NULL AND pm_error IS NOT NULL THEN
+                pc_error := 1;
+                pm_error := 'No se pudo actualizar el rendimiento';
+            END IF;
+        ELSE
+            pc_error := 2;
+            pm_error := 'No se pudo crear una nueva entrada de rendimiento';
+        END IF;
+        
+    WHEN OTHERS THEN
+        pc_error := sqlcode;
+        pm_error := sqlerrm;
+
+END pr_act_rendimiento_pago;
+
+/*--------------------------------------------------------------------------
+    Procedimiento que hace un update a los rendimientos cuando se adiciona
+    un nuevo crédito
+       
+    Parámetros de entrada:
+        pv_credito          Valor por el cual se está registrando el crédito
+
+    Parámetros de salida:
+        pc_error            Variable que tendrá el código de error
+        pm_error            Variable que tendrá el mensaje de error
+--------------------------------------------------------------------------*/
+
+PROCEDURE pr_act_rendimiento_credito(pv_credito credito.v_credito%TYPE,
+                                    pc_error OUT NUMBER,
+                                    pm_error OUT VARCHAR) IS
+
+    v_credito_anual rendimiento.v_creditos%TYPE;
+
+BEGIN
+    SELECT v_creditos
+    INTO v_credito_anual
+    FROM rendimiento
+    WHERE f_rendimiento = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy');
+
+    UPDATE rendimiento SET v_creditos = v_credito_anual + pv_credito;
+
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        pk_rendimientos.pr_crear_nuevo_rendimiento(pc_error, pm_error);
+        IF pc_error IS NULL AND pm_error IS NULL THEN
+            pr_act_rendimiento_credito(pv_credito, pc_error, pm_error);
+            IF pc_error IS NOT NULL AND pm_error IS NOT NULL THEN
+                pc_error := 1;
+                pm_error := 'No se pudo actualizar el rendimiento';
+            END IF;
+        ELSE
+            pc_error := 2;
+            pm_error := 'No se pudo crear una nueva entrada de rendimiento';
+        END IF;
+    WHEN OTHERS THEN
+        pc_error := sqlcode;
+        pm_error := sqlerrm;
+
+END pr_act_rendimiento_credito;
+
 END pk_creditos;
 /
 

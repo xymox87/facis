@@ -33,3 +33,5 @@ BEGIN
     END LOOP;
   CLOSE c_pago;  
 END PR_BAL_CREDITO;
+
+/

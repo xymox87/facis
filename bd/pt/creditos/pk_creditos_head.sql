@@ -27,6 +27,34 @@ FUNCTION fu_socio_al_dia(pk_identificacion socio.k_identificacion%TYPE,
                           pc_error OUT NUMBER,
                           pm_error OUT VARCHAR) RETURN BOOLEAN;
 
+/*--------------------------------------------------------------------------
+    Procedimiento que hace un update a los rendimientos cuando se adiciona
+    un nuevo pago a cualquier crédito
+       
+    Parámetros de salida:
+        pc_error            Variable que tendrá el código de error
+        pm_error            Variable que tendrá el mensaje de error
+--------------------------------------------------------------------------*/
+
+PROCEDURE pr_act_rendimiento_pago(pc_error OUT NUMBER,
+                                    pm_error OUT VARCHAR);
+
+/*--------------------------------------------------------------------------
+    Procedimiento que hace un update a los rendimientos cuando se adiciona
+    un nuevo crédito
+       
+    Parámetros de entrada:
+        pv_credito          Valor por el cuál se está registrando el crédito
+
+    Parámetros de salida:
+        pc_error            Variable que tendrá el código de error
+        pm_error            Variable que tendrá el mensaje de error
+--------------------------------------------------------------------------*/
+
+PROCEDURE pr_act_rendimiento_credito(pv_credito credito.v_credito%TYPE,
+                                    pc_error OUT NUMBER,
+                                    pm_error OUT VARCHAR);
+
 END pk_creditos;
 /
 

@@ -58,6 +58,68 @@ EXCEPTION
 
 END fu_socio_al_dia;
 
+/*--------------------------------------------------------------------------
+    Procedimiento que actualiza los rendimientos cuando un nuevo aporte es
+    registrado
+    
+    Parámetros de entrada:
+        pv_aporte           Valor por el cual se está registrando el aporte
+        pv_multa            Valor por el cual se está registrando la multa
+        
+    Parámetros de salida:
+        pc_error            Variable que tendrá el código de error
+        pm_error            Variable que tendrá el mensaje de error
+
+    Retorno: BOOLEAN que indica si el socio está o no al día con sus 
+            aportes
+--------------------------------------------------------------------------*/
+
+PROCEDURE pr_act_rendimiento_aporte(pv_aporte aporte.v_aporte%TYPE,
+                                    pv_multa aporte.v_multa%TYPE,
+                                    pc_error OUT NUMBER,
+                                    pm_error OUT VARCHAR) IS
+
+    v_rendimiento_anual rendimiento.v_rendimientos_financieros%TYPE;
+    v_aportes_anuales rendimiento.v_aportes%TYPE;
+    v_multa_nueva aporte.v_multa%TYPE;
+
+BEGIN
+
+    SELECT v_rendimientos_financieros, v_aportes
+    INTO v_rendimiento_anual, v_aportes_anuales
+    FROM rendimiento
+    WHERE f_rendimiento = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy');
+    
+    IF pv_multa IS NULL THEN
+        v_multa_nueva := 0;
+    ELSE
+        v_multa_nueva := pv_multa;
+    END IF; 
+
+    UPDATE rendimiento SET v_rendimientos_financieros = v_rendimiento_anual + 
+                            v_multa_nueva, 
+                           v_aportes = v_aportes_anuales + pv_aporte
+    WHERE f_rendimiento = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy');
+
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        pk_rendimientos.pr_crear_nuevo_rendimiento(pc_error, pm_error);
+        IF pc_error IS NULL AND pm_error IS NULL THEN
+            pr_act_rendimiento_aporte(pv_aporte, pv_multa, pc_error, pm_error);
+            IF pc_error IS NOT NULL AND pm_error IS NOT NULL THEN
+                pc_error := 1;
+                pm_error := 'No se pudo actualizar el rendimiento';
+            END IF;
+        ELSE
+            pc_error := 2;
+            pm_error := 'No se pudo crear una nueva entrada de rendimiento';
+        END IF;
+    WHEN OTHERS THEN
+        pc_error := sqlcode;
+        pm_error := sqlerrm;
+
+END pr_act_rendimiento_aporte;
+
 END pk_aportes;
 /
 

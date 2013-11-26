@@ -4,3 +4,4 @@ BEFORE INSERT ON PAGO FOR EACH ROW
 BEGIN
   pr_update_saldo_credito(:NEW.K_NUMCONSIGNACION);
 END;
+/

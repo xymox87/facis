@@ -43,19 +43,6 @@ CURSOR c_socios IS
     SELECT k_identificacion
     FROM socio;
 
-PROCEDURE pr_guardar_socio_lista(pk_identificacion socio.k_identificacion%TYPE,
-                                p_r_cabeza_lista r_lista_socios_al_dia) IS
-
-BEGIN
-
-    IF r_lista_socios_al_dia.r_socio_actual.k_identificacion IS NULL THEN
-        r_lista_socios_al_dia.r_socio_actual.k_identificacion := 
-            pk_identificacion;
-    ELSIF 
-    END IF;
-
-END pr_guardar_socio_lista;
-
 BEGIN
     
     SELECT v_rendimientos_financieros 
@@ -71,9 +58,7 @@ BEGIN
             AND (pk_creditos.fu_socio_al_dia(r_c_socios.k_identificacion,
             pc_error,
             pm_error) AND pc_error IS NULL AND pm_error IS NULL) THEN
-                IF r_socios_rendimientos IS NULL THEN
-                    
-                END IF;
+                NULL;
         END IF;
     END LOOP;
 
@@ -129,6 +114,31 @@ EXCEPTION
         pm_error := sqlerrm;
 
 END pr_calcular_capital_total;
+
+/*-------------------------------------------------------------------------
+    
+    Crea registro en la base de datos de un nuevo rendimiento anual
+
+    Parámetros de salida: 
+        pc_error        Código de error
+        pm_error        Mensaje de error
+--------------------------------------------------------------------------*/
+
+PROCEDURE pr_crear_nuevo_rendimiento(pc_error OUT NUMBER,
+                                             pm_error OUT VARCHAR
+                                          ) IS
+
+BEGIN
+
+    INSERT INTO rendimiento VALUES
+        (0,0,0,0,TO_DATE(TO_CHAR(sysdate,'yyyy'),'yyyy'),seq_rendimiento.nextval);
+
+EXCEPTION
+    WHEN OTHERS THEN
+        pc_error := 1;
+        pm_error := 'Error al crear nuevo rendimiento';
+
+END pr_crear_nuevo_rendimiento;
 
 END pk_rendimientos;
 /

@@ -57,7 +57,7 @@ WHERE K_ID_DESCRIPCION = L_K_ID_DESCRIPCION;
     )
     VALUES
     (
-      sequence_planpagos.nextval,
+      seq_planpagos.nextval,
       l_numcuota,
       L_V_XINTERES,
       L_V_XCAPITAL,

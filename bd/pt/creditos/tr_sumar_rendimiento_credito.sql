@@ -4,16 +4,16 @@ FOR EACH ROW
 
 DECLARE
 
-    v_credito_anual rendimiento.v_creditos%TYPE;
-
+    lc_error NUMBER;
+    lm_error VARCHAR(300);
+    excepcion EXCEPTION;
+    
 BEGIN
 
-    SELECT v_creditos
-    INTO v_credito_anual
-    FROM rendimiento
-    WHERE f_rendimiento = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy');
-
-    UPDATE rendimiento SET v_creditos = v_credito_anual + :new.v_credito;
+    pk_creditos.pr_act_rendimiento_credito(:new.v_credito, lc_error, lm_error);
+    IF lc_error IS NOT NULL AND lm_error IS NOT NULL THEN
+        RAISE excepcion;
+    END IF;
 
 EXCEPTION
     WHEN OTHERS THEN

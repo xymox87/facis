@@ -26,6 +26,27 @@ FUNCTION fu_socio_al_dia(pk_identificacion socio.k_identificacion%TYPE,
                             pc_error OUT NUMBER,
                             pm_error OUT VARCHAR) RETURN BOOLEAN;
 
+/*--------------------------------------------------------------------------
+    Procedimiento que actualiza los rendimientos cuando un nuevo aporte es
+    registrado
+    
+    Parámetros de entrada:
+        pv_aporte           Valor por el cual se está registrando el aporte
+        pv_multa            Valor por el cual se está registrando la multa
+        
+    Parámetros de salida:
+        pc_error            Variable que tendrá el código de error
+        pm_error            Variable que tendrá el mensaje de error
+
+    Retorno: BOOLEAN que indica si el socio está o no al día con sus 
+            aportes
+--------------------------------------------------------------------------*/
+
+PROCEDURE pr_act_rendimiento_aporte(pv_aporte aporte.v_aporte%TYPE,
+                                    pv_multa aporte.v_multa%TYPE,
+                                    pc_error OUT NUMBER,
+                                    pm_error OUT VARCHAR);
+
 END pk_aportes;
 /
 
