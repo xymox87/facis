@@ -18,7 +18,7 @@ BEGIN
         IF lc_error IS NOT NULL AND lc_error = 1 THEN
             RAISE excepcion;
         END IF;
-    ELSE
+    ELSIF lc_error != 0 THEN
         RAISE excepcion;
     END IF;
 

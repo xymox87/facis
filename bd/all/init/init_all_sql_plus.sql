@@ -42,4 +42,4 @@ start C:\xampp\htdocs\facis\bd\pt\rendimientos\pk_rendimientos_bod.sql
 
 --HACIENDO INSERTS
 
---start C:\xampp\htdocs\facis\bd\all\init\init_insert_on_tables.sql
+start C:\xampp\htdocs\facis\bd\all\init\init_insert_on_tables.sql

@@ -84,4 +84,4 @@ INSERT INTO rendimiento VALUES
 
 --HACIENDO COMMIT
 
-commit;
+COMMIT;
