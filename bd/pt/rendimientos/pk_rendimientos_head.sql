@@ -6,7 +6,7 @@
     Fecha: 2013/11/24
 --------------------------------------------------------------------------*/
 
-CREATE OR REPLACE PACKAGE pk_rendimientos_hed AS
+CREATE OR REPLACE PACKAGE pk_rendimientos AS
 
 /*-------------------------------------------------------------------------
     
@@ -47,5 +47,5 @@ PROCEDURE pr_calcular_capital_total(pc_error OUT NUMBER,
                                              pm_error OUT VARCHAR
                                           );
 
-END pk_rendimientos_hed;
+END pk_rendimientos;
 /

@@ -6,7 +6,7 @@
     Fecha: 2013/11/24
 --------------------------------------------------------------------------*/
 
-CREATE OR REPLACE PACKAGE BODY pk_rendimientos_bod AS
+CREATE OR REPLACE PACKAGE BODY pk_rendimientos AS
 
 /*-------------------------------------------------------------------------
     Distribuye los rendimientos del fondo a los socios. La dis-
@@ -23,16 +23,45 @@ CREATE OR REPLACE PACKAGE BODY pk_rendimientos_bod AS
 PROCEDURE pr_dividir_rendimientos_socios(pc_error OUT NUMBER, 
                                             pm_error OUT VARCHAR) IS
 
+/*--------------------------------------------------------------------------
+    Creando lista dinamica para guardar los socios entre los que ser va a
+    repartir el rendimiento del año anterior
+--------------------------------------------------------------------------*/
+
+TYPE r_socio_al_dia IS RECORD(k_identificacion socio.k_identificacion%TYPE);
+TYPE r_lista_socios_al_dia IS RECORD(r_socio_actual r_socio_al_dia,
+                                     r_socio_siguiente r_socio_al_dia);
+
+r_socios_rendimientos r_lista_socios_al_dia;
+r_socio_actual r_lista_socios_al_dia;
+
+----------------------------------------------------------------------------
+
+v_rendimiento_anual rendimiento.v_rendimientos_financieros%TYPE;
+
 CURSOR c_socios IS
     SELECT k_identificacion
-    FROM socios;
+    FROM socio;
 
-CURSOR c_rendimiento_anual IS
-    SELECT v_rendimiento
-    FROM rendimiento
-    WHERE f_rendimiento = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy');
+PROCEDURE pr_guardar_socio_lista(pk_identificacion socio.k_identificacion%TYPE,
+                                p_r_cabeza_lista r_lista_socios_al_dia) IS
 
 BEGIN
+
+    IF r_lista_socios_al_dia.r_socio_actual.k_identificacion IS NULL THEN
+        r_lista_socios_al_dia.r_socio_actual.k_identificacion := 
+            pk_identificacion;
+    ELSIF 
+    END IF;
+
+END pr_guardar_socio_lista;
+
+BEGIN
+    
+    SELECT v_rendimientos_financieros 
+    INTO v_rendimiento_anual
+    FROM rendimiento
+    WHERE f_rendimiento = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy');
     
     FOR r_c_socios IN c_socios LOOP
         IF (pk_aportes.fu_socio_al_dia(
@@ -42,7 +71,9 @@ BEGIN
             AND (pk_creditos.fu_socio_al_dia(r_c_socios.k_identificacion,
             pc_error,
             pm_error) AND pc_error IS NULL AND pm_error IS NULL) THEN
-            
+                IF r_socios_rendimientos IS NULL THEN
+                    
+                END IF;
         END IF;
     END LOOP;
 
@@ -69,9 +100,7 @@ PROCEDURE pr_calcular_capital_disponible(pc_error OUT NUMBER,
 
 
 BEGIN
-    FOR r_c_rendimientos_fondo IN c_rendimientos_fondo LOOP
-        
-    END LOOP;
+    NULL;
 EXCEPTION
     WHEN OTHERS THEN
         pc_error := sqlcode;
@@ -93,7 +122,7 @@ PROCEDURE pr_calcular_capital_total(pc_error OUT NUMBER,
                                           ) IS
 
 BEGIN
-    
+    NULL;
 EXCEPTION
     WHEN OTHERS THEN
         pc_error := sqlcode;
@@ -101,5 +130,5 @@ EXCEPTION
 
 END pr_calcular_capital_total;
 
-END pk_rendimientos_hed;
+END pk_rendimientos;
 /
