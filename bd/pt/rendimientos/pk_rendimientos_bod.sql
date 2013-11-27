@@ -257,19 +257,4 @@ EXCEPTION
 END pr_generar_estados_cuenta;
 
 END pk_rendimientos;
-/*
-
-declare
-
-l_cuenta number;
-lm_error VARCHAR2(300);
-lc_error NUMBER;
-
-begin
-
-    l_cuenta := pk_rendimientos.fu_calcular_capital_disponible(to_date('01-11-2013'),to_date('01-11-2013'),lc_error,lm_error);
-    dbms_output.put_line(lc_error||' '||lm_error||' '||l_cuenta);
-
-end;
-
-*/
+/
