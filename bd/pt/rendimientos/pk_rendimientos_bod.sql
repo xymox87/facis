@@ -85,47 +85,121 @@ END pr_dividir_rendimientos_socios;
 
 /*-------------------------------------------------------------------------
     
-    Calcula el capital disponible del fondo
+    Calcula el capital disponible del fondo en un periodo de tiempo
+    
+    Parámetros de entrada:
+        pf_inicial      Fecha inicial
+        pf_final        Fecha final
 
     Parámetros de salida: 
         pc_error        Código de error
         pm_error        Mensaje de error
+
+    Retorno:
+        Retorna un NUMBER con el capital disponible del fondo en el periodo de
+        tiempo dado
 --------------------------------------------------------------------------*/
 
-PROCEDURE pr_calcular_capital_disponible(pc_error OUT NUMBER,
-                                             pm_error OUT VARCHAR
-                                          ) IS
+FUNCTION fu_calcular_capital_disponible(pf_inicial DATE,
+                                         pf_final DATE, 
+                                         pc_error OUT NUMBER,
+                                         pm_error OUT VARCHAR
+                                         ) RETURN NUMBER IS
+
+v_aportes_periodo rendimiento.v_aportes%TYPE;
+v_creditos_periodo rendimiento.v_creditos%TYPE;
 
 BEGIN
-    NULL;
+
+    SELECT SUM(v_aportes), SUM(v_creditos)
+    INTO v_aportes_periodo, v_creditos_periodo
+    FROM rendimiento
+    WHERE f_rendimiento BETWEEN pf_inicial AND pf_final
+    GROUP BY (v_aportes, v_creditos);
+    
+    IF v_aportes_periodo IS NULL THEN
+        v_aportes_periodo := 0;
+    END IF;
+    
+    IF v_creditos_periodo IS NULL THEN
+        v_creditos_periodo := 0;
+    END IF;
+
+    RETURN v_aportes_periodo - v_creditos_periodo;
+
 EXCEPTION
     WHEN OTHERS THEN
+        RETURN NULL;
         pc_error := sqlcode;
         pm_error := sqlerrm;
 
-END pr_calcular_capital_disponible;
+END fu_calcular_capital_disponible;
 
 /*-------------------------------------------------------------------------
     
-    Calcula el capital total del fondo
+    Calcula el capital total del fondo  en un periodo de tiempo
+    
+    Parámetros de entrada:
+        pf_inicial      Fecha inicial
+        pf_final        Fecha final
 
     Parámetros de salida: 
         pc_error        Código de error
         pm_error        Mensaje de error
+
+    Retorno:
+        Retorna un NUMBER con el capital total del fondo en el periodo de
+        tiempo dado
 --------------------------------------------------------------------------*/
 
-PROCEDURE pr_calcular_capital_total(pc_error OUT NUMBER,
-                                             pm_error OUT VARCHAR
-                                          ) IS
+FUNCTION fu_calcular_capital_total(pf_inicial DATE,
+                                   pf_final DATE, 
+                                   pc_error OUT NUMBER,
+                                   pm_error OUT VARCHAR
+                                   ) RETURN NUMBER IS
+
+v_aportes_periodo rendimiento.v_aportes%TYPE;
+v_creditos_periodo rendimiento.v_creditos%TYPE;
+v_rendimientos_finan_periodo rendimiento.v_rendimientos_financieros%TYPE;
+v_gastos_finan_periodo rendimiento.v_gastos_financieros%TYPE;
 
 BEGIN
-    NULL;
+
+    SELECT SUM(v_aportes), SUM(v_creditos), 
+           SUM(v_gastos_financieros), SUM(v_rendimientos_financieros)
+    INTO v_aportes_periodo, v_creditos_periodo, 
+         v_gastos_finan_periodo, v_rendimientos_finan_periodo
+    FROM rendimiento
+    WHERE f_rendimiento BETWEEN pf_inicial AND pf_final
+    GROUP BY (v_aportes, v_creditos, 
+              v_gastos_financieros, v_rendimientos_financieros);
+    
+    IF v_aportes_periodo IS NULL THEN
+        v_aportes_periodo := 0;
+    END IF;
+    
+    IF v_creditos_periodo IS NULL THEN
+        v_creditos_periodo := 0;
+    END IF;
+
+    IF v_rendimientos_finan_periodo IS NULL THEN
+        v_rendimientos_finan_periodo := 0;
+    END IF;
+
+    IF v_gastos_finan_periodo IS NULL THEN
+        v_gastos_finan_periodo := 0;
+    END IF;
+
+    RETURN v_aportes_periodo + v_rendimientos_finan_periodo
+             - (v_creditos_periodo + v_gastos_finan_periodo);
+
 EXCEPTION
     WHEN OTHERS THEN
+        RETURN NULL;
         pc_error := sqlcode;
         pm_error := sqlerrm;
 
-END pr_calcular_capital_total;
+END fu_calcular_capital_total;
 
 /*-------------------------------------------------------------------------
     
@@ -153,8 +227,8 @@ EXCEPTION
 END pr_crear_nuevo_rendimiento;
 
 END pk_rendimientos;
-/
 /*
+
 declare
 
 l_cuenta number;
@@ -163,8 +237,8 @@ lc_error NUMBER;
 
 begin
 
-    pk_rendimientos.pr_dividir_rendimientos_socios(lc_error,lm_error);
-    dbms_output.put_line(lc_error||' '||lm_error);
+    l_cuenta := pk_rendimientos.fu_calcular_capital_disponible(to_date('01-11-2013'),to_date('01-11-2013'),lc_error,lm_error);
+    dbms_output.put_line(lc_error||' '||lm_error||' '||l_cuenta);
 
 end;
 

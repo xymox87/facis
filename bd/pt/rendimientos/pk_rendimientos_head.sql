@@ -23,29 +23,49 @@ PROCEDURE pr_dividir_rendimientos_socios(pc_error OUT NUMBER,
 
 /*-------------------------------------------------------------------------
     
-    Calcula el capital disponible del fondo
+    Calcula el capital disponible del fondo en un periodo de tiempo
+    
+    Parámetros de entrada:
+        pf_inicial      Fecha inicial
+        pf_final        Fecha final
 
     Parámetros de salida: 
         pc_error        Código de error
         pm_error        Mensaje de error
+
+    Retorno:
+        Retorna un NUMBER con el capital disponible del fondo en el periodo de
+        tiempo dado
 --------------------------------------------------------------------------*/
 
-PROCEDURE pr_calcular_capital_disponible(pc_error OUT NUMBER,
-                                             pm_error OUT VARCHAR
-                                          );
+FUNCTION fu_calcular_capital_disponible(pf_inicial DATE,
+                                         pf_final DATE, 
+                                         pc_error OUT NUMBER,
+                                         pm_error OUT VARCHAR
+                                         ) RETURN NUMBER;
 
 /*-------------------------------------------------------------------------
     
-    Calcula el capital total del fondo
+    Calcula el capital total del fondo  en un periodo de tiempo
+    
+    Parámetros de entrada:
+        pf_inicial      Fecha inicial
+        pf_final        Fecha final
 
     Parámetros de salida: 
         pc_error        Código de error
         pm_error        Mensaje de error
+
+    Retorno:
+        Retorna un NUMBER con el capital total del fondo en el periodo de
+        tiempo dado
 --------------------------------------------------------------------------*/
 
-PROCEDURE pr_calcular_capital_total(pc_error OUT NUMBER,
-                                             pm_error OUT VARCHAR
-                                          );
+FUNCTION fu_calcular_capital_total(pf_inicial DATE,
+                                   pf_final DATE, 
+                                   pc_error OUT NUMBER,
+                                   pm_error OUT VARCHAR
+                                   ) RETURN NUMBER;
 
 /*-------------------------------------------------------------------------
     
