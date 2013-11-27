@@ -2489,3 +2489,25 @@ Stack trace:
 REQUEST_URI=/facis/index.php/credito/facis.sequence_credito.nextval
 HTTP_REFERER=http://localhost/facis/index.php/credito/create
 ---
+2013/11/28 00:40:26 [error] [php] unserialize() [<a href='function.unserialize'>function.unserialize</a>]: Error at offset 0 of 226 bytes (C:\xampp\htdocs\facis\framework\base\CStatePersister.php:94)
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\base\CApplication.php(599): CWebApplication->loadGlobalState()
+#1 C:\xampp\htdocs\facis\framework\base\CSecurityManager.php(100): CWebApplication->getGlobalState()
+#2 C:\xampp\htdocs\facis\framework\base\CSecurityManager.php(282): CSecurityManager->getValidationKey()
+#3 C:\xampp\htdocs\facis\framework\base\CSecurityManager.php(249): CSecurityManager->computeHMAC()
+#4 C:\xampp\htdocs\facis\framework\web\auth\CWebUser.php(512): CSecurityManager->hashData()
+#5 C:\xampp\htdocs\facis\framework\web\auth\CWebUser.php(232): CWebUser->saveToCookie()
+#6 C:\xampp\htdocs\facis\protected\models\LoginForm.php(71): CWebUser->login()
+#7 C:\xampp\htdocs\facis\protected\controllers\SiteController.php(91): LoginForm->login()
+#8 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#9 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\xampp\htdocs\facis\framework\web\CController.php(286): SiteController->runAction()
+#11 C:\xampp\htdocs\facis\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#12 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): SiteController->run()
+#13 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\facis\index.php(13): CWebApplication->run()
+REQUEST_URI=/facis/index.php/site/login
+in C:\xampp\htdocs\facis\protected\models\LoginForm.php (71)
+in C:\xampp\htdocs\facis\protected\controllers\SiteController.php (91)
+in C:\xampp\htdocs\facis\index.php (13)
