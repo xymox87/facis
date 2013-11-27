@@ -77,8 +77,28 @@ FUNCTION fu_calcular_capital_total(pf_inicial DATE,
 --------------------------------------------------------------------------*/
 
 PROCEDURE pr_crear_nuevo_rendimiento(pc_error OUT NUMBER,
-                                             pm_error OUT VARCHAR
-                                          );
+                                     pm_error OUT VARCHAR
+                                     );
+
+/*-------------------------------------------------------------------------
+    
+    Genera los estados de cuenta de cada socio para un periodo de tiempo
+
+     Parámetros de entrada:
+        pf_inicial      Fecha inicial
+        pf_final        Fecha final
+
+    Parámetros de salida: 
+        pc_error        Código de error
+        pm_error        Mensaje de error
+--------------------------------------------------------------------------*/
+
+PROCEDURE pr_generar_estados_cuenta(pf_inicial DATE,
+                                    pf_final DATE, 
+                                    pc_error OUT NUMBER,
+                                    pm_error OUT VARCHAR
+                                    );
+
 
 END pk_rendimientos;
 /
