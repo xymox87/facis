@@ -2401,3 +2401,91 @@ Stack trace:
 REQUEST_URI=/facis/index.php/credito/facis.sequence_credito.nextval
 HTTP_REFERER=http://localhost/facis/index.php/credito/create
 ---
+2013/11/23 03:04:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "facis.sequence_credito.nextval" solicitada.' in C:\xampp\htdocs\facis\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\CController.php(270): CController->missingAction('facis.sequence_...')
+#1 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('facis.sequence_...')
+#2 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/facis.s...')
+#3 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/facis/index.php/credito/facis.sequence_credito.nextval
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/23 03:04:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "facis.sequence_credito.nextval" solicitada.' in C:\xampp\htdocs\facis\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\CController.php(270): CController->missingAction('facis.sequence_...')
+#1 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('facis.sequence_...')
+#2 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/facis.s...')
+#3 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/facis/index.php/credito/facis.sequence_credito.nextval
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/23 03:04:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "facis.sequence_credito.nextval" solicitada.' in C:\xampp\htdocs\facis\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\CController.php(270): CController->missingAction('facis.sequence_...')
+#1 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('facis.sequence_...')
+#2 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/facis.s...')
+#3 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/facis/index.php/credito/facis.sequence_credito.nextval
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/23 03:05:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "facis.sequence_credito.nextval" solicitada.' in C:\xampp\htdocs\facis\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\CController.php(270): CController->missingAction('facis.sequence_...')
+#1 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('facis.sequence_...')
+#2 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/facis.s...')
+#3 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/facis/index.php/credito/facis.sequence_credito.nextval
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/23 03:13:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "facis.sequence_credito.nextval" solicitada.' in C:\xampp\htdocs\facis\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\CController.php(270): CController->missingAction('facis.sequence_...')
+#1 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('facis.sequence_...')
+#2 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/facis.s...')
+#3 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/facis/index.php/credito/facis.sequence_credito.nextval
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/23 03:13:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "facis.sequence_credito.nextval" solicitada.' in C:\xampp\htdocs\facis\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\CController.php(270): CController->missingAction('facis.sequence_...')
+#1 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('facis.sequence_...')
+#2 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/facis.s...')
+#3 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/facis/index.php/credito/facis.sequence_credito.nextval
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/23 03:13:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "facis.sequence_credito.nextval" solicitada.' in C:\xampp\htdocs\facis\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\CController.php(270): CController->missingAction('facis.sequence_...')
+#1 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('facis.sequence_...')
+#2 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/facis.s...')
+#3 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/facis/index.php/credito/facis.sequence_credito.nextval
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
+2013/11/23 03:14:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "facis.sequence_credito.nextval" solicitada.' in C:\xampp\htdocs\facis\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\facis\framework\web\CController.php(270): CController->missingAction('facis.sequence_...')
+#1 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('facis.sequence_...')
+#2 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/facis.s...')
+#3 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/facis/index.php/credito/facis.sequence_credito.nextval
+HTTP_REFERER=http://localhost/facis/index.php/credito/create
+---
