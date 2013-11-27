@@ -63,8 +63,6 @@ INSERT INTO aporte VALUES
 (50000,sysdate,1,2,1018453546,89456723,2,NULL);
 INSERT INTO aporte VALUES
 (50000,sysdate,2,2,1019499187,89456723,2,50000*0.30);
-INSERT INTO aporte VALUES
-(50000,sysdate,3,2,1019499187,89456723,2,50000*0.30);
 
 --INSERTANDO EN LA TABLA CREDITO
 
@@ -74,13 +72,6 @@ INSERT INTO CREDITO VALUES
 (seq_credito.nextval,sysdate,sysdate,NULL,NULL,2000,-2000,'vigente',1,1019499187,1,1);
 INSERT INTO CREDITO VALUES
 (seq_credito.nextval,sysdate,sysdate,NULL,NULL,2000,-2000,'vigente',1,1019499187,1,1);
-
---INSERTANDO EN LA TABLA RENDIMIENTO
-
-/*INSERT INTO rendimiento VALUES
-(10000,0,10,1000,TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy'),seq_rendimiento.nextval);
-INSERT INTO rendimiento VALUES
-(10000,0,10,1000,TO_DATE(TO_CHAR(sysdate,'yyyy'),'yyyy'),seq_rendimiento.nextval);*/
 
 --HACIENDO COMMIT
 

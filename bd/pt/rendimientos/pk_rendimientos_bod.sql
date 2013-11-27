@@ -23,25 +23,20 @@ CREATE OR REPLACE PACKAGE BODY pk_rendimientos AS
 PROCEDURE pr_dividir_rendimientos_socios(pc_error OUT NUMBER, 
                                             pm_error OUT VARCHAR) IS
 
-/*--------------------------------------------------------------------------
-    Creando lista dinamica para guardar los socios entre los que ser va a
-    repartir el rendimiento del año anterior
---------------------------------------------------------------------------*/
-
-TYPE r_socio_al_dia IS RECORD(k_identificacion socio.k_identificacion%TYPE);
-TYPE r_lista_socios_al_dia IS RECORD(r_socio_actual r_socio_al_dia,
-                                     r_socio_siguiente r_socio_al_dia);
-
-r_socios_rendimientos r_lista_socios_al_dia;
-r_socio_actual r_lista_socios_al_dia;
-
-----------------------------------------------------------------------------
-
 v_rendimiento_anual rendimiento.v_rendimientos_financieros%TYPE;
+c_n_socios_al_dia NUMBER DEFAULT 0;
 
 CURSOR c_socios IS
     SELECT k_identificacion
-    FROM socio;
+    FROM socio 
+    WHERE pk_creditos.fu_socio_al_dia(k_identificacion) IN ('T','N') 
+    AND pk_aportes.fu_socio_al_dia(k_identificacion) IN ('T','N');
+
+CURSOR c_cuenta_socios IS
+    SELECT COUNT(*) AS cuenta
+    FROM socio 
+    WHERE pk_creditos.fu_socio_al_dia(k_identificacion) IN ('T','N') 
+    AND pk_aportes.fu_socio_al_dia(k_identificacion) IN ('T','N');
 
 BEGIN
     
@@ -50,16 +45,12 @@ BEGIN
     FROM rendimiento
     WHERE f_rendimiento = TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-12),'yyyy'),'yyyy');
     
+    FOR r_c_cuenta_socios IN c_cuenta_socios LOOP
+        c_n_socios_al_dia := r_c_cuenta_socios.cuenta;
+    END LOOP;
+
     FOR r_c_socios IN c_socios LOOP
-        IF (pk_aportes.fu_socio_al_dia(
-            r_c_socios.k_identificacion,
-            pc_error,
-            pm_error) AND pc_error IS NULL AND pm_error IS NULL) 
-            AND (pk_creditos.fu_socio_al_dia(r_c_socios.k_identificacion,
-            pc_error,
-            pm_error) AND pc_error IS NULL AND pm_error IS NULL) THEN
-                NULL;
-        END IF;
+        NULL;
     END LOOP;
 
 EXCEPTION
@@ -81,8 +72,6 @@ END pr_dividir_rendimientos_socios;
 PROCEDURE pr_calcular_capital_disponible(pc_error OUT NUMBER,
                                              pm_error OUT VARCHAR
                                           ) IS
-
-
 
 BEGIN
     NULL;
@@ -142,3 +131,19 @@ END pr_crear_nuevo_rendimiento;
 
 END pk_rendimientos;
 /
+/*
+declare
+
+l_cuenta number;
+
+begin
+
+SELECT COUNT(*) AS cuenta into l_cuenta
+    FROM socio 
+    WHERE --pk_creditos.fu_socio_al_dia(k_identificacion) IN ('T','N');
+ pk_aportes.fu_socio_al_dia(k_identificacion) IN ('T','N');
+--AND
+dbms_output.put_line(l_cuenta);
+
+end;
+*/

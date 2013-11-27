@@ -14,18 +14,14 @@ CREATE OR REPLACE PACKAGE pk_creditos AS
     
     Parámetros de entrada:
         pk_identificacion   Identificación del socio
-        
-    Parámetros de salida:
-        pc_error            Variable que tendrá el código de error
-        pm_error            Variable que tendrá el mensaje de error
 
-    Retorno: BOOLEAN que indica si el socio está o no al día con sus 
-            aportes
+    Retorno: VARCHAR que indica si el socio está o no al día con el pago de
+             sus créditos así: F - No está al día ; T - Está al día;
+                               N - No aplica
 --------------------------------------------------------------------------*/
 
-FUNCTION fu_socio_al_dia(pk_identificacion socio.k_identificacion%TYPE,
-                          pc_error OUT NUMBER,
-                          pm_error OUT VARCHAR) RETURN BOOLEAN;
+FUNCTION fu_socio_al_dia(pk_identificacion socio.k_identificacion%TYPE)
+                         RETURN VARCHAR;
 
 /*--------------------------------------------------------------------------
     Procedimiento que hace un update a los rendimientos cuando se adiciona
@@ -57,4 +53,29 @@ PROCEDURE pr_act_rendimiento_credito(pv_credito credito.v_credito%TYPE,
 
 END pk_creditos;
 /
+/*
+declare
+
+retorno number := 0;
+
+begin
+
+select 1 into retorno from dual where pk_creditos.fu_socio_al_dia(1018453546) in ('T','N');
+
+dbms_output.put_line(retorno);
+
+exception
+
+when others then
+    NULL;
+
+end; 
+
+SELECT f_aconsignar, f_ultimo_pago
+    FROM credito c,planpagos pp
+    WHERE k_identificacion = 1018453546
+    AND c.k_id_credito = pp.k_id_credito
+    AND c.q_cuota = pp.q_cuota
+    AND c.i_estado = 'vigente';
+*/
 

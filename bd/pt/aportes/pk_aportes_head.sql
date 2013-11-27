@@ -18,13 +18,12 @@ CREATE OR REPLACE PACKAGE pk_aportes AS
         pc_error            Variable que tendrá el código de error
         pm_error            Variable que tendrá el mensaje de error
 
-    Retorno: BOOLEAN que indica si el socio está o no al día con sus 
-            aportes
+    Retorno: VARCHAR que indica si el socio está o no al día con sus 
+            aportes así: F - No está al día ; T - Está al día; N - No aplica
 --------------------------------------------------------------------------*/
 
-FUNCTION fu_socio_al_dia(pk_identificacion socio.k_identificacion%TYPE,
-                            pc_error OUT NUMBER,
-                            pm_error OUT VARCHAR) RETURN BOOLEAN;
+FUNCTION fu_socio_al_dia(pk_identificacion socio.k_identificacion%TYPE)
+                         RETURN VARCHAR;
 
 /*--------------------------------------------------------------------------
     Procedimiento que actualiza los rendimientos cuando un nuevo aporte es
