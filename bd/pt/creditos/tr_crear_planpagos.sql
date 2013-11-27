@@ -5,3 +5,4 @@ BEGIN
     pr_crear_planpagos(:NEW.k_id_credito);
   END IF;
 END;
+/

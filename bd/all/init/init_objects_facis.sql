@@ -107,7 +107,7 @@ CREATE TABLE Ganancia
 	k_id_ganancia     NUMBER(11) NOT NULL,
 	v_ganancia        NUMBER(15,2) NOT NULL,
 	f_corte           DATE NOT NULL,
-	o_proceso         VARCHAR(50) NOT NULL,
+	o_proceso         VARCHAR(100) NOT NULL,
 	k_identificacion  NUMBER(11) NOT NULL
 )
 ;

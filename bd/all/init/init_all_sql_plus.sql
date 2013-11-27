@@ -35,6 +35,7 @@ start C:\xampp\htdocs\facis\bd\pt\creditos\pk_creditos_bod.sql
 start C:\xampp\htdocs\facis\bd\pt\creditos\tr_sumar_rendimiento_credito.sql
 start C:\xampp\htdocs\facis\bd\pt\creditos\tr_sumar_rendimiento_pago.sql
 start C:\xampp\htdocs\facis\bd\pt\creditos\tr_update_saldo_credito.sql
+--start C:\xampp\htdocs\facis\bd\pt\creditos\tr_crear_planpagos.sql
 
 --INICIALIZANDO OBJETOS RENDIMIENTOS
 

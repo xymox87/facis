@@ -57,7 +57,6 @@ BEGIN
 EXCEPTION
 
     WHEN NO_DATA_FOUND THEN
-        dbms_output.put_line(SQLCODE||' '||SQLERRM);
         RETURN 'N';
     WHEN OTHERS THEN
         RAISE_APPLICATION_ERROR(sqlcode,sqlerrm);
