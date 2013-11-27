@@ -29,14 +29,15 @@ CURSOR c_creditos_socio(pc_identificacion socio.k_identificacion%TYPE) IS
     WHERE k_identificacion = pc_identificacion
     AND c.k_id_credito = pp.k_id_credito
     AND c.q_cuota = pp.q_cuota
-    AND c.i_estado = 'vigente';
+    AND c.i_estado = 'V';
 
 b_retorno VARCHAR(1) DEFAULT 'F';
+b_entra_loop BOOLEAN DEFAULT FALSE;
 
 BEGIN
 
     FOR r_c_creditos_socio IN c_creditos_socio(pk_identificacion) LOOP
-            dbms_output.put_line('1****');
+        b_entra_loop := TRUE;
         IF r_c_creditos_socio.f_ultimo_pago IS NOT NULL THEN
             IF sysdate BETWEEN r_c_creditos_socio.f_ultimo_pago AND 
                 r_c_creditos_socio.f_aconsignar THEN
@@ -47,7 +48,9 @@ BEGIN
         END IF;
     END LOOP;
 
-DBMS_OUTPUT.PUT_LINE(b_retorno);
+    IF NOT b_entra_loop THEN
+        b_retorno := 'N';
+    END IF;
 
     RETURN b_retorno;
 

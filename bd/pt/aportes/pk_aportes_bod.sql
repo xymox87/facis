@@ -29,7 +29,7 @@ CURSOR c_ultimo_aporte_socio(pc_identificacion socio.k_identificacion%TYPE) IS
 
 b_al_dia VARCHAR(1) DEFAULT 'F';
 f_dia_inicial DATE;
-f_dia_final DATE;
+f_dia_final DATE DEFAULT TO_DATE(TO_CHAR(sysdate,'dd-mm-yyyy'),'dd-mm-yyyy');
 
 BEGIN
 
@@ -43,17 +43,17 @@ BEGIN
             f_dia_inicial := TO_DATE(TO_CHAR(ADD_MONTHS(sysdate,-1),'dd-mm-yyyy'),'dd-mm-yyyy')
                 - TO_DATE(TO_CHAR(sysdate,'dd'),'dd') + TO_DATE('01','dd'); 
         END IF;
-        f_dia_final := TO_DATE(TO_CHAR(sysdate,'dd-mm-yyyy'),'dd-mm-yyyy');
         IF TO_DATE(TO_CHAR(r_c_ultimo_aporte_socio.f_consignacion,'dd-mm-yyyy'),
             'dd-mm-yyyy') BETWEEN f_dia_inicial AND f_dia_final THEN
             b_al_dia := 'T';
         END IF;
     END LOOP;
+
     RETURN b_al_dia;
 
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        RETURN 'N';
+        RETURN b_al_dia;
     WHEN OTHERS THEN
         RAISE_APPLICATION_ERROR(sqlcode,sqlerrm);
 

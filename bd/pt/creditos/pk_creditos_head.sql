@@ -76,6 +76,6 @@ SELECT f_aconsignar, f_ultimo_pago
     WHERE k_identificacion = 1018453546
     AND c.k_id_credito = pp.k_id_credito
     AND c.q_cuota = pp.q_cuota
-    AND c.i_estado = 'vigente';
+    AND c.i_estado = 'V';
 */
 

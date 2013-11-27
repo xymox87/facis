@@ -67,11 +67,11 @@ INSERT INTO aporte VALUES
 --INSERTANDO EN LA TABLA CREDITO
 
 INSERT INTO CREDITO VALUES
-(seq_credito.nextval,sysdate,sysdate,NULL,NULL,2000,-2000,'vigente',2,1018453546,1,1);
+(seq_credito.nextval,sysdate,sysdate,NULL,NULL,2000,-2000,'A',2,1018453546,1,1);
 INSERT INTO CREDITO VALUES
-(seq_credito.nextval,sysdate,sysdate,NULL,NULL,2000,-2000,'vigente',1,1019499187,1,1);
+(seq_credito.nextval,sysdate,sysdate,NULL,NULL,2000,-2000,'A',1,1019499187,1,1);
 INSERT INTO CREDITO VALUES
-(seq_credito.nextval,sysdate,sysdate,NULL,NULL,2000,-2000,'vigente',1,1019499187,1,1);
+(seq_credito.nextval,sysdate,sysdate,NULL,NULL,2000,-2000,'A',1,1019499187,1,1);
 
 --HACIENDO COMMIT
 

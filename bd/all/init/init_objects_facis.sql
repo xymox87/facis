@@ -163,7 +163,7 @@ CREATE TABLE Credito
 	v_ultimo_pago     NUMBER(12,2) NULL,
 	v_credito         NUMBER(12) NOT NULL,
 	v_saldo           NUMBER(12) NOT NULL,
-	i_estado          VARCHAR(9) NOT NULL,
+	i_estado          VARCHAR(1) NOT NULL,
 	q_cuotas          NUMBER(3) NOT NULL,
 	k_identificacion  NUMBER(11) NOT NULL,
 	q_cuota           NUMBER(3) NULL,
