@@ -26,7 +26,6 @@ $this->menu=array(
 		'V_PAGO',
 		'K_CUENTA',
 		'K_FPAGO',
-		'Q_NUMCUOTA',
-		'K_ID_CREDITO',
+		'K_ID_PLAN',
 	),
 )); ?>

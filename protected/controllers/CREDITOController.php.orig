@@ -1,6 +1,6 @@
 <?php
 
-class APORTEController extends Controller {
+class CREDITOController extends Controller {
 
     /**
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -30,7 +30,7 @@ class APORTEController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'admin', 'delete', 'procedure'),
+                'actions' => array('create', 'update', 'admin', 'delete'),
                 'users' => array('@'),
             ),
             array('deny', // deny all users
@@ -50,6 +50,7 @@ class APORTEController extends Controller {
             ));
         } catch (Exception $e) {
             throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500,$e->getMessage());
         }
     }
 
@@ -59,28 +60,28 @@ class APORTEController extends Controller {
      */
     public function actionCreate() {
         try {
-            $model = new APORTE;
+            $model = new CREDITO;
 
             // Uncomment the following line if AJAX validation is needed
             // $this->performAjaxValidation($model);
 
-            if (isset($_POST['APORTE'])) {
-                $model->attributes = $_POST['APORTE'];
-                $descaporte = new DESCRIPCIONAPORTE;
-                $model->attributes = $_POST['APORTE'];
-                date_default_timezone_set("America/Bogota");
-                $model->F_CONSIGNACION = date("j/n/y");
-                $model->K_DESCAPORTE = (int) $descaporte->count();
-                //$model->K_NUMCONSIGNACION = $_POST['APORTE']['K_NUMCONSIGNACION'];
-                ; //FALTA LA COLUMNA DE MULTA
+            if (isset($_POST['CREDITO'])) {
+                $model->attributes = $_POST['CREDITO'];
+                $model->K_ID_CREDITO = new CDbExpression('facis.sequence_credito.nextval');
                 if ($model->save())
-                    $this->redirect(array('view', 'id' => $model->K_NUMCONSIGNACION));
+                    $this->redirect(array('view', 'id' => $model->K_ID_CREDITO));
             }
+
             $this->render('create', array(
                 'model' => $model,
             ));
         } catch (Exception $e) {
-            throw new CHttpException(500, $e->getMessage());
+<<<<<<< HEAD
+             
+            //throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+=======
+>>>>>>> Diego/master
+            throw new CHttpException(500,$e->getMessage());
         }
     }
 
@@ -96,17 +97,18 @@ class APORTEController extends Controller {
             // Uncomment the following line if AJAX validation is needed
             // $this->performAjaxValidation($model);
 
-            if (isset($_POST['APORTE'])) {
-                $model->attributes = $_POST['APORTE'];
+            if (isset($_POST['CREDITO'])) {
+                $model->attributes = $_POST['CREDITO'];
                 if ($model->save())
-                    $this->redirect(array('view', 'id' => $model->K_NUMCONSIGNACION));
+                    $this->redirect(array('view', 'id' => $model->K_ID_CREDITO));
             }
 
             $this->render('update', array(
                 'model' => $model,
             ));
         } catch (Exception $e) {
-            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');    
+            throw new CHttpException(500,$e->getMessage());
         }
     }
 
@@ -124,6 +126,7 @@ class APORTEController extends Controller {
                 $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
         } catch (Exception $e) {
             throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500,$e->getMessage());
         }
     }
 
@@ -132,31 +135,14 @@ class APORTEController extends Controller {
      */
     public function actionIndex() {
         try {
-            $dataProvider = new CActiveDataProvider('APORTE');
+            $dataProvider = new CActiveDataProvider('CREDITO');
             $this->render('index', array(
                 'dataProvider' => $dataProvider,
             ));
         } catch (Exception $e) {
-            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            //throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500, $e->getMessage());
         }
-    }
-
-    public function actionProcedure() {
-        $valorRendimientoTotal; //out 
-        $numeroSocios;  //  out
-        $command = Yii::app()->db->createCommand('
-                            DECLARE
-                            begin
-                            PR_RENDIMIENTOS(:rendimientoTotal,:numeroSocios);
-                            end;         
-                    ');
-
-        $command->bindParam(":rendimientoTotal", $valorRendimientoTotal, PDO::PARAM_INT,20);
-        $command->bindParam(":numeroSocios", $numeroSocios, PDO::PARAM_INT,20);
-        $command->execute();
-
-        var_dump($valorRendimientoTotal);
-        var_dump($numeroSocios);
     }
 
     /**
@@ -164,16 +150,16 @@ class APORTEController extends Controller {
      */
     public function actionAdmin() {
         try {
-            $model = new APORTE('search');
+            $model = new CREDITO('search');
             $model->unsetAttributes();  // clear any default values
-            if (isset($_GET['APORTE']))
-                $model->attributes = $_GET['APORTE'];
+            if (isset($_GET['CREDITO']))
+                $model->attributes = $_GET['CREDITO'];
 
             $this->render('admin', array(
                 'model' => $model,
             ));
         } catch (Exception $e) {
-            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500,$e->getMessage());
         }
     }
 
@@ -181,32 +167,34 @@ class APORTEController extends Controller {
      * Returns the data model based on the primary key given in the GET variable.
      * If the data model is not found, an HTTP exception will be raised.
      * @param integer $id the ID of the model to be loaded
-     * @return APORTE the loaded model
+     * @return CREDITO the loaded model
      * @throws CHttpException
      */
     public function loadModel($id) {
         try {
-            $model = APORTE::model()->findByPk($id);
+            $model = CREDITO::model()->findByPk($id);
             if ($model === null)
                 throw new CHttpException(404, 'The requested page does not exist.');
             return $model;
         } catch (Exception $e) {
             throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500,$e->getMessage());
         }
     }
 
     /**
      * Performs the AJAX validation.
-     * @param APORTE $model the model to be validated
+     * @param CREDITO $model the model to be validated
      */
     protected function performAjaxValidation($model) {
         try {
-            if (isset($_POST['ajax']) && $_POST['ajax'] === 'aporte-form') {
+            if (isset($_POST['ajax']) && $_POST['ajax'] === 'credito-form') {
                 echo CActiveForm::validate($model);
                 Yii::app()->end();
             }
         } catch (Exception $e) {
             throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500,$e->getMessage());
         }
     }
 

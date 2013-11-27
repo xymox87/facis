@@ -14,6 +14,12 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'K_NUMCONSIGNACION'); ?>
+		<?php echo $form->textField($model,'K_NUMCONSIGNACION'); ?>
+		<?php echo $form->error($model,'K_NUMCONSIGNACION'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'F_PAGO'); ?>
@@ -40,15 +46,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Q_NUMCUOTA'); ?>
-		<?php echo $form->textField($model,'Q_NUMCUOTA'); ?>
-		<?php echo $form->error($model,'Q_NUMCUOTA'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'K_ID_CREDITO'); ?>
-		<?php echo $form->textField($model,'K_ID_CREDITO'); ?>
-		<?php echo $form->error($model,'K_ID_CREDITO'); ?>
+		<?php echo $form->labelEx($model,'K_ID_PLAN'); ?>
+		<?php echo $form->textField($model,'K_ID_PLAN'); ?>
+		<?php echo $form->error($model,'K_ID_PLAN'); ?>
 	</div>
 
 	<div class="row buttons">
