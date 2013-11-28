@@ -32,6 +32,10 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('K_FPAGO')); ?>:</b>
 	<?php echo CHtml::encode($data->K_FPAGO); ?>
 	<br />
+        
+        <b><?php echo CHtml::encode($data->getAttributeLabel('V_MULTA')); ?>:</b>
+	<?php echo CHtml::encode($data->V_MULTA); ?>
+	<br />
 
 
 </div>

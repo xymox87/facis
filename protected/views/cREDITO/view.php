@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List CREDITO', 'url'=>array('index')),
-	array('label'=>'Create CREDITO', 'url'=>array('create')),
-	array('label'=>'Update CREDITO', 'url'=>array('update', 'id'=>$model->K_ID_CREDITO)),
-	array('label'=>'Delete CREDITO', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->K_ID_CREDITO),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage CREDITO', 'url'=>array('admin')),
+	array('label'=>'Listar creditos', 'url'=>array('index')),
+	array('label'=>'Crear credito', 'url'=>array('create')),
+	array('label'=>'Modificar credito', 'url'=>array('update', 'id'=>$model->K_ID_CREDITO)),
+	array('label'=>'Borrar credito', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->K_ID_CREDITO),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Gestionar creditos', 'url'=>array('admin')),
 );
 ?>
 
@@ -32,5 +32,6 @@ $this->menu=array(
 		'Q_CUOTAS',
 		'K_IDENTIFICACION',
 		'Q_CUOTA',
+                'K_ID_DESCRIPCION',
 	),
 )); ?>

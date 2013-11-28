@@ -141,9 +141,17 @@ class SOCIO extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
         public function fechas($F_INGRESO,$F_RETIRO) {
             if($F_INGRESO<$F_RETIRO)
                 $this->addError('F_RETIRO','Debe ser posterior a la fecha de ingreso.');
-            
+        }
+        
+        public function asociarRolUsuario(){
+            Yii::app()->db->createCommand("CREATE USER socio"
+                    .$this->K_IDENTIFICACION." IDENTIFIED BY "
+                    .$this->K_IDENTIFICACION);
+            Yii::app()->db->createCommand("GRANT socio TO socio"
+                    .$this->K_IDENTIFICACION);
         }
 }

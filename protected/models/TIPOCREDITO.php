@@ -9,7 +9,7 @@
  * @property string $N_DESCRIPCION
  *
  * The followings are the available model relations:
- * @property DESCRIPCIONTIPOCREDITO $dESCRIPCIONTIPOCREDITO
+ * @property DESCRIPCIONTIPOCREDITO[] $dESCRIPCIONTIPOCREDITOs
  */
 class TIPOCREDITO extends CActiveRecord
 {
@@ -56,7 +56,7 @@ class TIPOCREDITO extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'dESCRIPCIONTIPOCREDITO' => array(self::HAS_ONE, 'DESCRIPCIONTIPOCREDITO', 'K_ID_DESCRIPCION'),
+			'dESCRIPCIONTIPOCREDITOs' => array(self::HAS_MANY, 'DESCRIPCIONTIPOCREDITO', 'K_ID_DESCRIPCION'),
 		);
 	}
 

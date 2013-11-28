@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Creditos', 'url'=>array('index')),
-	array('label'=>'Gestionar Creditos', 'url'=>array('admin')),
+	array('label'=>'Listar creditos', 'url'=>array('index')),
+	array('label'=>'Gestionar creditos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create CREDITO</h1>
+<h1>Crear credito</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

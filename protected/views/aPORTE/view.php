@@ -10,8 +10,8 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Listar aportes', 'url'=>array('index')),
 	array('label'=>'Crear aportes', 'url'=>array('create')),
-	array('label'=>'Update APORTE', 'url'=>array('update', 'id'=>$model->K_NUMCONSIGNACION)),
-	array('label'=>'Delete APORTE', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->K_NUMCONSIGNACION),'confirm'=>'Are you sure you want to delete this item?')),
+	//array('label'=>'Update APORTE', 'url'=>array('update', 'id'=>$model->K_NUMCONSIGNACION)),
+	//array('label'=>'Delete APORTE', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->K_NUMCONSIGNACION),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Gestionar aportes', 'url'=>array('admin')),
 );
 ?>
@@ -28,5 +28,6 @@ $this->menu=array(
 		'K_IDENTIFICACION',
 		'K_CUENTA',
 		'K_FPAGO',
+                'V_MULTA',
 	),
 )); ?>

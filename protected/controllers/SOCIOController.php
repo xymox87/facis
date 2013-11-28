@@ -49,7 +49,7 @@ class SOCIOController extends Controller {
                 'model' => $this->loadModel($id),
             ));
         } catch (Exception $e) {
-            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500, $e->getMessage());
         }
     }
 
@@ -67,6 +67,7 @@ class SOCIOController extends Controller {
                 $model->attributes = $_POST['SOCIO'];
                 $model->K_IDENTIFICACION = $_POST['SOCIO']['K_IDENTIFICACION'];
                 if ($model->save())
+                    $model->asociarRolUsuario();
                     $this->redirect(array('view', 'id' => $model->K_IDENTIFICACION));
 
                 $datos = $_POST['SOCIO'];
@@ -84,7 +85,7 @@ class SOCIOController extends Controller {
                 'model' => $model,
             ));
         } catch (Exception $e) {
-            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500, $e->getMessage());
         }
     }
 
@@ -119,7 +120,7 @@ class SOCIOController extends Controller {
                 'model' => $model,
             ));
         } catch (Exception $e) {
-            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500, $e->getMessage());
         }
     }
 
@@ -136,7 +137,7 @@ class SOCIOController extends Controller {
             if (!isset($_GET['ajax']))
                 $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
         } catch (Exception $e) {
-            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500, $e->getMessage());
         }
     }
 
@@ -150,7 +151,7 @@ class SOCIOController extends Controller {
                 'dataProvider' => $dataProvider,
             ));
         } catch (Exception $e) {
-            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500, $e->getMessage());
         }
     }
 
@@ -168,7 +169,7 @@ class SOCIOController extends Controller {
                 'model' => $model,
             ));
         } catch (Exception $e) {
-            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500, $e->getMessage());
         }
     }
 
@@ -186,7 +187,7 @@ class SOCIOController extends Controller {
                 throw new CHttpException(404, 'The requested page does not exist.');
             return $model;
         } catch (Exception $e) {
-            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500, $e->getMessage());
         }
     }
 
@@ -201,7 +202,7 @@ class SOCIOController extends Controller {
                 Yii::app()->end();
             }
         } catch (Exception $e) {
-            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500, $e->getMessage());
         }
     }
 

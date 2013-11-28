@@ -37,8 +37,13 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'K_ID_PLAN'); ?>
-		<?php echo $form->textField($model,'K_ID_PLAN'); ?>
+		<?php echo $form->label($model,'Q_NUMCUOTA'); ?>
+		<?php echo $form->textField($model,'Q_NUMCUOTA'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'K_ID_CREDITO'); ?>
+		<?php echo $form->textField($model,'K_ID_CREDITO'); ?>
 	</div>
 
 	<div class="row buttons">

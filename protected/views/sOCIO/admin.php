@@ -29,7 +29,7 @@ $('.search-form form').submit(function(){
 <h1>Gestion de socios</h1>
 
 <p>
-  Opciones de ordenamiento (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>)
+    Opciones de ordenamiento (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>)
 </p>
 
 <?php echo CHtml::link('Advanced Search', '#', array('class' => 'search-button')); ?>

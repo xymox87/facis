@@ -1,0 +1,30 @@
+--------------------------------------------------------
+-- Archivo creado  - lunes-noviembre-11-2013   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for View VW_BALANCE_CREDITOS
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "FACIS"."VW_BALANCE_CREDITOS" ("K_IDENTIFICACION", "N_NOMBRE", "N_APELLIDO", "K_ID_CREDITO", "V_CREDITO", "F_PAGO", "V_PAGO", "V_XINTERES", "V_XCAPITAL", "V_SALDO") AS 
+  SELECT
+  SOCIO.K_IDENTIFICACION,
+  SOCIO.N_NOMBRE,
+  SOCIO.N_APELLIDO,
+  CREDITO.K_ID_CREDITO,
+  CREDITO.V_CREDITO,
+  PAGO.F_PAGO,
+  PAGO.V_PAGO,
+  PLANPAGOS.V_XINTERES,
+  PLANPAGOS.V_XCAPITAL,
+  CREDITO.V_SALDO
+FROM
+  CREDITO
+INNER JOIN SOCIO
+ON
+  SOCIO.K_IDENTIFICACION = CREDITO.K_IDENTIFICACION
+INNER JOIN PLANPAGOS
+ON
+  CREDITO.K_ID_CREDITO = PLANPAGOS.K_ID_CREDITO
+INNER JOIN PAGO
+ON
+  PLANPAGOS.K_ID_PLAN = PAGO.K_ID_PLAN;

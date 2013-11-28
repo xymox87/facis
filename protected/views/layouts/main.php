@@ -30,11 +30,10 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Inicio', 'url'=>array('/site/index')),
-				array('label'=>'Socios', 'url'=>array('/socio/admin')),
-				array('label'=>'Aportes', 'url'=>array('/aporte/admin')),
-				array('label'=>'Tipos de Credito', 'url'=>array('/descripciontipocredito/admin')),
-				array('label'=>'Credito', 'url'=>array('/credito/admin')),
-				array('label'=>'Tesoreria', 'url'=>array('/pago/admin')),
+				array('label'=>'Gestion de socios', 'url'=>array('/socio/admin')),
+				array('label'=>'Gestion de aportes', 'url'=>array('/aporte/admin')),
+				array('label'=>'Gestion de credito', 'url'=>array('/credito/admin')),
+                                array('label'=>'Gestion de pago de creditos', 'url'=>array('/pago/admin')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
@@ -52,9 +51,7 @@
 
 	<div id="footer">
 		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		Diego Mauricio Ortiz, John David Carvajal, Rafael Malagón, Nicolas Garcia<br/>
 		All Rights Reserved.<br/>
-		Universidad Distrital Francisco Jose de Caldas
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
 
