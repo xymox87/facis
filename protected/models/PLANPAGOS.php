@@ -133,9 +133,8 @@ class PLANPAGOS extends CActiveRecord
             }
         }
         
-        public function obtenerEspecificacionPlanPagos($id_credito,$cuota){
+        public function obtenerEspecificacionPlanPagos($id_plan){
             return Yii::app()->db->createCommand(
-                    "SELECT * FROM planpagos WHERE k_id_credito="
-                    ."$id_credito AND q_cuota=$cuota")->queryRow();
+                    "SELECT * FROM planpagos WHERE k_id_plan=".$id_plan)->queryRow();
         }
 }
