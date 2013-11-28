@@ -39,3 +39,9 @@ CREATE PUBLIC SYNONYM pk_rendimientos FOR facis.pk_rendimientos;
 CREATE PUBLIC SYNONYM pk_aportes FOR facis.pk_aportes;
 CREATE PUBLIC SYNONYM pk_creditos FOR facis.pk_creditos;
 CREATE PUBLIC SYNONYM pk_socios FOR facis.pk_socios;
+
+--CREANDO DIRECTORIO DE ESTADOS DE CUENTA
+
+DROP DIRECTORY dir_estados_cuenta;
+
+CREATE OR REPLACE DIRECTORY dir_estados_cuenta AS 'C:\TEMP\estados-cuenta';
