@@ -20,6 +20,11 @@ body
 	margin: 0;
 	padding: 0;
 	border-top: 3px solid #C9E0ED;
+	font-size: 16px;
+	font-family: times;
+	font-style: "background-color:red;";
+	color: blue;
+	text-align: center;
 }
 
 #content

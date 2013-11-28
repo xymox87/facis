@@ -34,7 +34,7 @@
 				array('label'=>'Aportes', 'url'=>array('/aporte/admin')),
 				array('label'=>'Credito', 'url'=>array('/credito/admin')),
                 array('label'=>'Tesoreria', 'url'=>array('/pago/admin')),
-                array('label'=>'Informes', 'url'=>array('/aporte/procedure')),
+                array('label'=>'Informes', 'url'=>array('/informes/admin')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
@@ -51,8 +51,11 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> Universidad Distital Francisco Jose de Caldas.<br/>
+		John David Carvajal Rivera.<br/>
+		Diego Mauricio Ortiz.<br/>
+		Nicolas MAuricio Garcia.<br/>
+		Rafael Malagón.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
 
