@@ -78,6 +78,13 @@ GRANT SELECT ON seq_tipo_credito TO cajero;
 GRANT SELECT ON seq_descripcion_tipo_credito TO cajero;
 GRANT SELECT ON seq_descripcion_aporte TO cajero;
 GRANT SELECT ON seq_rendimiento TO cajero;
+GRANT execute ON pk_creditos TO cajero;
+GRANT execute ON pk_creditos TO administrador;
+
+--PAQUETE DE RENDIMIENTOS
+
+GRANT execute ON pk_rendimientos TO administrador;
+
 GRANT SELECT ON seq_planpagos TO cajero;
 --CREANDO USUARIOS
 
