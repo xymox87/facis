@@ -15,7 +15,7 @@ BEGIN
     WHERE f_modificacion IN (SELECT MAX(f_modificacion) 
                              FROM descripcionaporte);
 
-    IF :new.v_aporte NOT BETWEEN v_min AND v_max THEN
+    IF NOT :new.v_aporte BETWEEN v_min AND v_max THEN
         RAISE excepcion;
     END IF;
 
