@@ -50,8 +50,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'V_PAGO',
 		'K_CUENTA',
 		'K_FPAGO',
-		'Q_NUMCUOTA',
-		'K_ID_CREDITO',
 		array(
 			'class'=>'CButtonColumn',
                         'template'=>'{view}',

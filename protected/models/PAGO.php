@@ -10,7 +10,6 @@
  * @property integer $K_CUENTA
  * @property integer $K_FPAGO
  * @property integer $Q_NUMCUOTA
- * @property integer $K_ID_CREDITO
  *
  * The followings are the available model relations:
  * @property CUENTA $kCUENTA
@@ -46,12 +45,12 @@ class PAGO extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('K_NUMCONSIGNACION, V_PAGO, K_CUENTA, K_FPAGO, K_ID_CREDITO', 'required'),
-			array('K_CUENTA, K_FPAGO, Q_NUMCUOTA, K_ID_CREDITO', 'numerical', 'integerOnly'=>true),
+			array('K_NUMCONSIGNACION, V_PAGO, K_CUENTA, K_FPAGO,K_ID_PLAN', 'required'),
+			array('K_CUENTA, K_FPAGO, K_ID_PLAN', 'numerical', 'integerOnly'=>true),
 			array('V_PAGO', 'numerical'),
-			array('F_PAGO, K_NUMCONSIGNACION, V_PAGO, K_CUENTA, K_FPAGO, Q_NUMCUOTA, K_ID_CREDITO', 'safe', 'on'=>'search'),
+			array('F_PAGO, K_NUMCONSIGNACION, V_PAGO, K_CUENTA, K_FPAGO, Q_NUMCUOTA', 'safe', 'on'=>'search'),
                         array('V_PAGO','val.ValidacionPagoContraPlanPagos'),
-                        array('F_PAGO','val.ValidacionFechaPago'),
+                        //array('F_PAGO','val.ValidacionFechaPago'),
                 );
 	}
 
@@ -65,8 +64,7 @@ class PAGO extends CActiveRecord
 		return array(
 			'kCUENTA' => array(self::BELONGS_TO, 'CUENTA', 'K_CUENTA'),
 			'kFPAGO' => array(self::BELONGS_TO, 'FORMAPAGO', 'K_FPAGO'),
-			'qNUMCUOTA' => array(self::BELONGS_TO, 'PLANPAGOS', 'Q_NUMCUOTA'),
-			'kIDCREDITO' => array(self::BELONGS_TO, 'PLANPAGOS', 'K_ID_CREDITO'),
+			'kIdPlan' => array(self::BELONGS_TO, 'PLANPAGOS', 'K_ID_PLAN'),
 		);
 	}
 
@@ -76,13 +74,12 @@ class PAGO extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'K_ID_PLAN' => 'Pago a Realizar',
 			'F_PAGO' => 'Fecha de pago',
 			'K_NUMCONSIGNACION' => 'Numero de consignacion',
 			'V_PAGO' => 'Valor del pago',
 			'K_CUENTA' => 'Numero de cuenta del banco',
 			'K_FPAGO' => 'Forma de pago',
-			'Q_NUMCUOTA' => 'Numero de cuota',
-			'K_ID_CREDITO' => 'Numero de credito',
 		);
 	}
 
@@ -102,8 +99,8 @@ class PAGO extends CActiveRecord
 		$criteria->compare('V_PAGO',$this->V_PAGO);
 		$criteria->compare('K_CUENTA',$this->K_CUENTA);
 		$criteria->compare('K_FPAGO',$this->K_FPAGO);
-		$criteria->compare('Q_NUMCUOTA',$this->Q_NUMCUOTA);
-		$criteria->compare('K_ID_CREDITO',$this->K_ID_CREDITO);
+		$criteria->compare('K_ID_PLAN',$this->K_ID_PLAN);
+
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -119,7 +116,7 @@ class PAGO extends CActiveRecord
                 return 0;
         }
         
-        public function obtenerUltimoPagoCredito($id_credito){
+        /*public function obtenerUltimoPagoCredito($id_credito){
             $resultado = Yii::app()->db->createCommand(
                     "SELECT max(q_numcuota) FROM pago "
                     ."GROUP BY k_id_credito HAVING "
@@ -128,5 +125,5 @@ class PAGO extends CActiveRecord
                 return Conversion::conversionInt(current($resultado));
             else
                 return 0;
-        }
+        }*/
 }
