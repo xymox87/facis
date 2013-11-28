@@ -139,6 +139,17 @@ class APORTEController extends Controller {
     }
 
     public function actionProcedure() {
+        try {
+            $dataProvider = new CActiveDataProvider('APORTE');
+            $valorRendimientoTotal = 232; //out 
+            $numeroSocios;  //  out
+            $this->render('procedure', array(
+                'dataProvider' => $dataProvider,
+            ));
+        } catch (Exception $e) {
+            throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+        }
+        /*
         $valorRendimientoTotal; //out 
         $numeroSocios;  //  out
         $command = Yii::app()->db->createCommand('
@@ -154,6 +165,8 @@ class APORTEController extends Controller {
 
         var_dump($valorRendimientoTotal);
         var_dump($numeroSocios);
+         * 
+         */
     }
 
     /**

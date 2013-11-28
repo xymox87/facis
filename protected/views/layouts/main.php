@@ -34,6 +34,7 @@
 				array('label'=>'Gestion de aportes', 'url'=>array('/aporte/admin')),
 				array('label'=>'Gestion de credito', 'url'=>array('/credito/admin')),
                                 array('label'=>'Gestion de pago de creditos', 'url'=>array('/pago/admin')),
+                                array('label'=>'Informe de creditos', 'url'=>array('/aporte/procedure')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
