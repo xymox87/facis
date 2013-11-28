@@ -1,10 +1,10 @@
 set serveroutput on
 
-connect system/123456
+connect system/oracle2013
 --start C:\xampp\htdocs\facis\bd\all\init\init_facis_user.sql
 connect facis/facis
 start C:\xampp\htdocs\facis\bd\all\init\init_objects_facis.sql
-connect system/123456
+connect system/oracle2013
 start C:\xampp\htdocs\facis\bd\all\init\init_objects_dba_system.sql
 --start C:\xampp\htdocs\facis\bd\all\init\init_security.sql
 connect facis/facis
