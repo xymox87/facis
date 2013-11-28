@@ -45,6 +45,9 @@ CREATE PUBLIC SYNONYM pk_socios FOR facis.pk_socios;
 DROP PUBLIC SYNONYM seq_credito;
 DROP PUBLIC SYNONYM seq_ganancia;
 DROP PUBLIC SYNONYM seq_formapago;
+DROP DIRECTORY dir_estados_cuenta;
+
+CREATE OR REPLACE DIRECTORY dir_estados_cuenta AS 'C:\TEMP\estados-cuenta';
 DROP PUBLIC SYNONYM seq_tipo_credito;
 DROP PUBLIC SYNONYM seq_descripcion_tipo_credito;
 DROP PUBLIC SYNONYM seq_descripcion_aporte;

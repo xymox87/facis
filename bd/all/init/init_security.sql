@@ -8,7 +8,7 @@ CREATE ROLE administrador;
 CREATE ROLE socio;
 CREATE ROLE cajero;
 
---ANIADIENDO PRIVILEGIOS A LOS ROLES
+--ANIADIENDO PRIVILEGIOS A LOS ROLES SOBRE TABLAS
 
 GRANT CONNECT TO administrador;
 GRANT SELECT ON TIPO_CREDITO TO administrador;
@@ -64,6 +64,13 @@ GRANT SELECT ON seq_descripcion_aporte TO administrador;
 GRANT SELECT ON seq_rendimiento TO administrador;
 GRANT SELECT ON seq_planpagos TO administrador;
 
+GRANT execute ON pk_creditos TO cajero;
+GRANT execute ON pk_creditos TO administrador;
+
+--PAQUETE DE RENDIMIENTOS
+
+GRANT execute ON pk_rendimientos TO administrador;
+
 GRANT SELECT ON seq_credito TO cajero;
 GRANT SELECT ON seq_ganancia TO cajero;
 GRANT SELECT ON seq_formapago TO cajero;
@@ -97,4 +104,11 @@ QUOTA UNLIMITED ON facis;
 
 GRANT administrador to admin1;
 GRANT administrador to admin2;
-GRANT cajero to caj1; 
+GRANT cajero to caj1;
+
+--CONCEDIENTO PERMISOS A admin1, admin2 Y facis SOBRE EL DIRECTORIO
+--DE ESTADOS DE CUENTA
+
+GRANT read, write ON DIRECTORY dir_estados_cuenta TO admin1;
+GRANT read, write ON DIRECTORY dir_estados_cuenta TO admin2;
+GRANT read, write ON DIRECTORY dir_estados_cuenta TO facis;

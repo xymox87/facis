@@ -2,7 +2,7 @@
     Proyecto: Fondo de ahorros y creditos para ingenieros de sistemas FACIS
     Descripción: Este paquete lista las funciones y los procedimientos
                  correspondientes al manejo de creditos.
-    Autor: Nicolás Mauricio García Garzón
+    Autor: Nicolás Mauricio García Garzón, John David Cravajal
     Fecha: 2013/11/24
 --------------------------------------------------------------------------*/
 
@@ -61,7 +61,37 @@ PROCEDURE pr_act_rendimiento_credito(pv_credito credito.v_credito%TYPE,
         
  ------------------------------------------------------------------*/
  PROCEDURE PR_CREAR_PLANPAGOS(P_K_ID_CREDITO IN CREDITO.K_ID_CREDITO%TYPE);
+
+/*--------------------------------------------------------------------------
+    Función que valida que el valor del pago ingresado
+  coincida con el valor del plan de pagos. 
+  si es correcto devuelve verdadero caso contrario devuelve falso.
+
+  Se ejecuta al realizar el pago.
+    Parámetros de entrada:
+        v_pago    Valor total del Pago
+        k_id_plan  Pan de pagos al que pertenece el PAgo
+    Retorno: BOOLEAN que indica si el pago cubre el valor del plan pago o no
+             
+--------------------------------------------------------------------------*/
+FUNCTION   FU_VALIDAR_VALOR_PAGO(  P_V_PAGO IN PAGO.V_PAGO%TYPE
+                                , P_K_ID_PLAN IN PLANPAGOS.K_ID_PLAN%TYPE
+                                ) RETURN BOOLEAN;
+/*--------------------------------------------------------------------------
+    Procedimiento que actualiza el sado de un credito 
+    Este procedimiento  se llama cada vez que se realiza el pago a un credito
+       
+    Parámetros de entrada:
+        pk_numconsignación         Identificador del recibo de pago o numero de consignacion
+
+    Parámetros de salida:
+        
+ ------------------------------------------------------------------*/
+ PROCEDURE   PR_UPDATE_SALDO_CREDITO ( P_K_NUMCONSIGNACION IN PAGO.K_NUMCONSIGNACION%TYPE);
+
+
 END pk_creditos;
+
 /
 /*
 declare

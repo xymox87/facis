@@ -216,15 +216,11 @@ ADD CONSTRAINT CHK_k_identificacion CHECK (k_identificacion > 0)
 ;
 
 ALTER TABLE Socio
-ADD CONSTRAINT CHK_i_estado_civil CHECK (i_estado_civil IN ('S','C'))
+ADD CONSTRAINT CHK_i_estado_civil CHECK (i_estado_civil IN ('S','C','V','D'))
 ;
 
 ALTER TABLE Socio
 ADD CONSTRAINT CHK_i_genero CHECK (i_genero IN ('F','M'))
-;
-
-ALTER TABLE Socio
-ADD CONSTRAINT CHK_correo_electronico CHECK (REG_EXP(o_correo_electronico,'+@+.+'))
 ;
 
 ALTER TABLE Rendimiento
@@ -312,6 +308,11 @@ ADD CONSTRAINT CHK_q_plazo_maximo CHECK (q_plazo_maximo > 0)
 
 ALTER TABLE Descripcion_Tipo_Credito
 ADD CONSTRAINT CHK_k_id_descripcion CHECK (k_id_descripcion > 0)
+;
+
+ALTER TABLE descripcionaporte
+	ADD CONSTRAINT UQ_descaporte_fecha_mod UNIQUE (f_modificacion)
+ USING INDEX 
 ;
 
 ALTER TABLE DescripcionAporte
