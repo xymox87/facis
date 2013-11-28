@@ -25,6 +25,8 @@ GRANT SELECT,INSERT ON DESCRIPCION_TIPO_CREDITO TO administrador;
 GRANT SELECT,INSERT,UPDATE ON CUENTA TO administrador;
 GRANT SELECT,INSERT ON APORTE TO administrador;
 GRANT EXECUTE ON pk_creditos TO administrador;
+GRANT EXECUTE ON pk_aportes TO administrador;
+GRANT EXECUTE ON pk_rendimientos TO administrador;
 
 GRANT CONNECT TO socio;
 GRANT SELECT ON TIPO_CREDITO TO socio;
