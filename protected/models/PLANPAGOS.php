@@ -75,11 +75,11 @@ class PLANPAGOS extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'Q_CUOTA' => 'Q Cuota',
-			'V_XINTERES' => 'V Xinteres',
-			'V_XCAPITAL' => 'V Xcapital',
-			'F_ACONSIGNAR' => 'F Aconsignar',
-			'K_ID_CREDITO' => 'K Id Credito',
+			'Q_CUOTA' => 'Numero cuota',
+			'V_XINTERES' => 'Valor de interes',
+			'V_XCAPITAL' => 'Valor de Capital',
+			'F_ACONSIGNAR' => 'Fecha',
+			'K_ID_CREDITO' => 'Num credito',
 		);
 	}
 
