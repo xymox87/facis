@@ -1,8 +1,0 @@
-CREATE OR REPLACE TRIGGER TR_CREAR_PLANPAGOS 
-AFTER INSERT OR UPDATE ON CREDITO FOR EACH ROW
-BEGIN
-  IF(UPPER(:new.i_estado) = 'A') THEN
-    pr_crear_planpagos(:NEW.k_id_credito);
-  END IF;
-END;
-/
