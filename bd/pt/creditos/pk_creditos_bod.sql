@@ -2,7 +2,7 @@
     Proyecto: Fondo de ahorros y creditos para ingenieros de sistemas FACIS
     Descripción: Este paquete lista las funciones y los procedimientos
                  correspondientes al manejo de creditos.
-    Autor: Nicolás Mauricio García Garzón
+    Autor: Nicolás Mauricio García Garzón, JOhn David Carvajal
     Fecha: 2013/11/24
 --------------------------------------------------------------------------*/
 
