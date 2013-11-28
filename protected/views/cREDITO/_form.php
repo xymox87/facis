@@ -32,11 +32,17 @@
 		<?php echo $form->error($model,'K_IDENTIFICADOR'); ?>
         </div>
         
-	<!--<div class="row">
-		<?php //echo $form->labelEx($model,'F_APROBACION'); ?>
-		<?php //echo $form->textField($model,'F_APROBACION'); ?>
-		<?php //echo $form->error($model,'F_APROBACION'); ?>
-	</div>-->
+	<div class="row">
+		<?php echo $form->labelEx($model,'F_APROBACION'); ?>
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                        'model' => $model,
+                        'attribute' => 'F_APROBACION',
+                        'language' => 'es',
+                        'options'=>array('dateFormat'=>'dd/mm/y'),
+                        ));
+                ?>
+		<?php echo $form->error($model,'F_APROBACION'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'F_DESEMBOLSO'); ?>
