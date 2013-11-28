@@ -24,6 +24,9 @@ GRANT SELECT,INSERT ON DESCRIPCIONAPORTE TO administrador;
 GRANT SELECT,INSERT ON DESCRIPCION_TIPO_CREDITO TO administrador;
 GRANT SELECT,INSERT,UPDATE ON CUENTA TO administrador;
 GRANT SELECT,INSERT ON APORTE TO administrador;
+GRANT EXECUTE ON pk_creditos TO administrador;
+GRANT EXECUTE ON pk_aportes TO administrador;
+GRANT EXECUTE ON pk_rendimientos TO administrador;
 
 GRANT CONNECT TO socio;
 GRANT SELECT ON TIPO_CREDITO TO socio;
@@ -60,6 +63,14 @@ GRANT execute ON pk_aportes TO cajero;
 GRANT execute ON pk_aportes TO administrador;
 
 --PAQUETE DE CREDITOS
+GRANT SELECT ON seq_credito TO administrador;
+GRANT SELECT ON seq_ganancia TO administrador;
+GRANT SELECT ON seq_formapago TO administrador;
+GRANT SELECT ON seq_tipo_credito TO administrador;
+GRANT SELECT ON seq_descripcion_tipo_credito TO administrador;
+GRANT SELECT ON seq_descripcion_aporte TO administrador;
+GRANT SELECT ON seq_rendimiento TO administrador;
+GRANT SELECT ON seq_planpagos TO administrador;
 
 GRANT execute ON pk_creditos TO cajero;
 GRANT execute ON pk_creditos TO administrador;
@@ -68,6 +79,14 @@ GRANT execute ON pk_creditos TO administrador;
 
 GRANT execute ON pk_rendimientos TO administrador;
 
+GRANT SELECT ON seq_credito TO cajero;
+GRANT SELECT ON seq_ganancia TO cajero;
+GRANT SELECT ON seq_formapago TO cajero;
+GRANT SELECT ON seq_tipo_credito TO cajero;
+GRANT SELECT ON seq_descripcion_tipo_credito TO cajero;
+GRANT SELECT ON seq_descripcion_aporte TO cajero;
+GRANT SELECT ON seq_rendimiento TO cajero;
+GRANT SELECT ON seq_planpagos TO cajero;
 --CREANDO USUARIOS
 
 DROP USER admin1;

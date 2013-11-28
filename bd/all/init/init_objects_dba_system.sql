@@ -40,8 +40,26 @@ CREATE PUBLIC SYNONYM pk_aportes FOR facis.pk_aportes;
 CREATE PUBLIC SYNONYM pk_creditos FOR facis.pk_creditos;
 CREATE PUBLIC SYNONYM pk_socios FOR facis.pk_socios;
 
+--CREANDO SINONIMOS DE SEQUENCIAS
 --CREANDO DIRECTORIO DE ESTADOS DE CUENTA
 
 DROP DIRECTORY dir_estados_cuenta;
 
 CREATE OR REPLACE DIRECTORY dir_estados_cuenta AS 'C:\TEMP\estados-cuenta';
+DROP PUBLIC SYNONYM seq_credito;
+DROP PUBLIC SYNONYM seq_ganancia;
+DROP PUBLIC SYNONYM seq_formapago;
+DROP PUBLIC SYNONYM seq_tipo_credito;
+DROP PUBLIC SYNONYM seq_descripcion_tipo_credito;
+DROP PUBLIC SYNONYM seq_descripcion_aporte;
+DROP PUBLIC SYNONYM seq_rendimiento;
+DROP PUBLIC SYNONYM seq_planpagos;
+
+CREATE PUBLIC SYNONYM seq_credito FOR FACIS.seq_credito;
+CREATE PUBLIC SYNONYM seq_ganancia FOR FACIS.seq_ganancia;
+CREATE PUBLIC SYNONYM seq_formapago FOR FACIS.seq_formapago;
+CREATE PUBLIC SYNONYM seq_tipo_credito FOR FACIS.seq_tipo_credito;
+CREATE PUBLIC SYNONYM seq_descripcion_tipo_credito FOR FACIS.seq_descripcion_tipo_credito;
+CREATE PUBLIC SYNONYM seq_descripcion_aporte FOR FACIS.seq_descripcion_aporte;
+CREATE PUBLIC SYNONYM seq_rendimiento FOR FACIS.seq_rendimiento;
+CREATE PUBLIC SYNONYM seq_planpagos FOR FACIS.seq_planpagos;
