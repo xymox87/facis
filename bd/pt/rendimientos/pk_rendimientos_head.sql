@@ -82,23 +82,47 @@ PROCEDURE pr_crear_nuevo_rendimiento(pc_error OUT NUMBER,
 
 /*-------------------------------------------------------------------------
     
-    Genera los estados de cuenta de cada socio para un periodo de tiempo
-
-     Parámetros de entrada:
-        pf_inicial      Fecha inicial
-        pf_final        Fecha final
+    Genera los estados de cuenta de cada socio
 
     Parámetros de salida: 
         pc_error        Código de error
         pm_error        Mensaje de error
 --------------------------------------------------------------------------*/
 
-PROCEDURE pr_generar_estados_cuenta(pf_inicial DATE,
-                                    pf_final DATE, 
-                                    pc_error OUT NUMBER,
+PROCEDURE pr_generar_estados_cuenta(pc_error OUT NUMBER,
                                     pm_error OUT VARCHAR
                                     );
 
 
 END pk_rendimientos;
 /
+
+/*
+SELECT c.k_id_credito AS k_id_credito,
+           c.v_saldo AS v_saldo,
+           pp.f_aconsignar AS f_siguiente_pago,
+           (pp.v_xinteres + pp.v_xcapital - (SELECT SUM(v_pago)
+                                            FROM pago p
+                                            WHERE (pp.k_id_plan - 1 = p.k_id_plan OR 
+                                            (pp.k_id_plan = p.k_id_plan AND pp.q_cuota = 1))
+                                            AND  p.f_pago < pp.f_aconsignar))
+           AS v_siguiente_pago,
+           c.f_ultimo_pago AS f_ultimo_pago,
+           c.v_ultimo_pago AS v_ultimo_pago
+    FROM credito c, planpagos pp
+    WHERE c.k_identificacion = 1018453546
+    AND c.k_id_credito = pp.k_id_credito
+    AND c.q_cuota = pp.q_cuota;
+
+declare
+
+c number;
+m varchar(300);
+
+begin
+    pk_rendimientos.pr_generar_estados_cuenta(c,m);
+exception
+when others then
+    dbms_output.put_line(c||' '||m);
+end;
+*/

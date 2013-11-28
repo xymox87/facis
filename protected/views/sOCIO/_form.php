@@ -36,7 +36,6 @@
                     $listE["C"]="Casado";
                     $listE["D"]="Divorciado";                   
                     $listE["V"]="Viudo";                   
-                    $listE["P"]="Separado";                   
                 ?>
 
 	<div class="row">

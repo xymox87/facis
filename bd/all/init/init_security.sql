@@ -54,7 +54,7 @@ GRANT SELECT,INSERT ON APORTE TO cajero;
 
 --CREANDO USUARIOS
 
-DROP USER admin1;
+/*DROP USER admin1;
 DROP USER admin2;
 DROP USER caj1;
 
@@ -77,4 +77,11 @@ QUOTA UNLIMITED ON facis;
 
 GRANT administrador to admin1;
 GRANT administrador to admin2;
-GRANT cajero to caj1; 
+GRANT cajero to caj1;*/
+
+--CONCEDIENTO PERMISOS A admin1, admin2 y facis sobre el directorio
+--de estados de cuenta
+
+GRANT read, write ON DIRECTORY dir_estados_cuenta TO admin1;
+GRANT read, write ON DIRECTORY dir_estados_cuenta TO admin2;
+GRANT read, write ON DIRECTORY dir_estados_cuenta TO facis;

@@ -216,7 +216,7 @@ ADD CONSTRAINT CHK_k_identificacion CHECK (k_identificacion > 0)
 ;
 
 ALTER TABLE Socio
-ADD CONSTRAINT CHK_i_estado_civil CHECK (i_estado_civil IN ('S','C'))
+ADD CONSTRAINT CHK_i_estado_civil CHECK (i_estado_civil IN ('S','C','V','D'))
 ;
 
 ALTER TABLE Socio

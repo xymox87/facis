@@ -6,7 +6,7 @@ connect facis/facis
 start C:\xampp\htdocs\facis\bd\all\init\init_objects_facis.sql
 connect system/123456
 start C:\xampp\htdocs\facis\bd\all\init\init_objects_dba_system.sql
---start C:\xampp\htdocs\facis\bd\all\init\init_security.sql
+start C:\xampp\htdocs\facis\bd\all\init\init_security.sql
 connect facis/facis
 
 --INICIALIZANDO HEADERS PAQUETES

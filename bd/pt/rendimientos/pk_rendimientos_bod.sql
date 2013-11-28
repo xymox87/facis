@@ -228,27 +228,169 @@ END pr_crear_nuevo_rendimiento;
 
 /*-------------------------------------------------------------------------
     
-    Genera los estados de cuenta de cada socio para un periodo de tiempo
-
-     Parámetros de entrada:
-        pf_inicial      Fecha inicial
-        pf_final        Fecha final
+    Genera los estados de cuenta de cada socio
 
     Parámetros de salida: 
         pc_error        Código de error
         pm_error        Mensaje de error
 --------------------------------------------------------------------------*/
 
-PROCEDURE pr_generar_estados_cuenta(pf_inicial DATE,
-                                    pf_final DATE, 
-                                    pc_error OUT NUMBER,
+PROCEDURE pr_generar_estados_cuenta(pc_error OUT NUMBER,
                                     pm_error OUT VARCHAR
                                     ) IS
 
+n_cadena_a_grabar VARCHAR(32000);
+
+CURSOR c_estado_cuenta_socio IS
+    SELECT k_identificacion, n_nombre, n_apellido, i_estado_civil, n_ocupacion,
+           o_tarjeta_profesional, i_genero, o_direccion_domicilio,
+           o_direccion_trabajo, o_correo_electronico, o_telefono_domicilio,
+           o_telefono_trabajo, o_telefono_celular, f_ingreso
+    FROM socio
+    WHERE f_retiro IS NULL 
+    AND o_causal_retiro IS NULL;
+
+CURSOR c_estado_cuenta_aporte(pc_identificacion socio.k_identificacion%TYPE) IS
+    SELECT v_aporte AS v_ultimo_aporte,
+           f_consignacion AS f_ultimo_aporte,
+           (SELECT SUM(v_aporte) 
+             FROM aporte a 
+             WHERE a.k_identificacion = pc_identificacion
+            ) AS v_total_aportes
+    FROM aporte
+    WHERE k_identificacion = pc_identificacion
+    AND f_consignacion IN (SELECT MAX(f_consignacion) 
+                              FROM aporte ap
+                              WHERE ap.k_identificacion = pc_identificacion);
+
+CURSOR c_estado_cuenta_credito(pc_identificacion socio.k_identificacion%TYPE) IS
+    SELECT c.k_id_credito AS k_id_credito,
+           c.v_saldo AS v_saldo,
+           pp.f_aconsignar AS f_siguiente_pago,
+           (pp.v_xinteres + pp.v_xcapital - (SELECT SUM(v_pago)
+                                            FROM pago p
+                                            WHERE (pp.k_id_plan - 1 = p.k_id_plan OR 
+                                            (pp.k_id_plan = p.k_id_plan AND pp.q_cuota = 1))
+                                            AND  p.f_pago < pp.f_aconsignar))
+           AS v_siguiente_pago,
+           c.f_ultimo_pago AS f_ultimo_pago,
+           c.v_ultimo_pago AS v_ultimo_pago
+    FROM credito c, planpagos pp
+    WHERE c.k_identificacion = pc_identificacion
+    AND c.k_id_credito = pp.k_id_credito
+    AND c.q_cuota = pp.q_cuota
+    AND c.i_estado = 'V';
+
+PROCEDURE pr_escribir_en_archivo(n_directorio VARCHAR,
+                                 n_archivo VARCHAR,
+                                 n_cadena_a_grabar VARCHAR) IS
+
+fl_archivo UTL_FILE.file_type;
+
 BEGIN
+    
+    fl_archivo := UTL_FILE.fopen(UPPER(n_directorio),n_archivo,'w');
+    UTL_FILE.put_line(fl_archivo,n_cadena_a_grabar);
+    UTL_FILE.fclose(fl_archivo);
 
-    NULL;
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE(sqlerrm);
+        UTL_FILE.fclose(fl_archivo);
+        RAISE_APPLICATION_ERROR(sqlcode,sqlerrm);
 
+END pr_escribir_en_archivo;
+
+
+BEGIN
+    FOR r_c_estado_cuenta_socio IN c_estado_cuenta_socio LOOP
+        n_cadena_a_grabar := 'Datos basicos del socio;'||CHR(10);
+        n_cadena_a_grabar := n_cadena_a_grabar || 'Identificacion;'||
+                                r_c_estado_cuenta_socio.k_identificacion||
+                                ';'||CHR(10);
+        n_cadena_a_grabar := n_cadena_a_grabar || 'Nombre;'||
+                                r_c_estado_cuenta_socio.n_nombre||' '||
+                                r_c_estado_cuenta_socio.n_apellido||';'||CHR(10);
+        n_cadena_a_grabar := n_cadena_a_grabar || 'Estado civil;';
+        CASE r_c_estado_cuenta_socio.i_estado_civil
+            WHEN 'S' THEN n_cadena_a_grabar := n_cadena_a_grabar || 'Soltero;'||CHR(10);
+            WHEN 'C' THEN n_cadena_a_grabar := n_cadena_a_grabar || 'Casado;' ||CHR(10);
+            WHEN 'D' THEN n_cadena_a_grabar := n_cadena_a_grabar || 'Divorciado;' ||CHR(10);
+            WHEN 'V' THEN n_cadena_a_grabar := n_cadena_a_grabar || 'Viudo;' ||CHR(10);
+            ELSE n_cadena_a_grabar := n_cadena_a_grabar || 'No definido;' ||CHR(10);
+        END CASE;
+        n_cadena_a_grabar := n_cadena_a_grabar || 'Ocupacion;'||
+                                r_c_estado_cuenta_socio.n_ocupacion||
+                                ';'||CHR(10);
+        n_cadena_a_grabar := n_cadena_a_grabar || 'Tarjeta profesional;'||
+                                r_c_estado_cuenta_socio.o_tarjeta_profesional||
+                                ';'||CHR(10);
+        n_cadena_a_grabar := n_cadena_a_grabar || 'Genero;';
+        CASE r_c_estado_cuenta_socio.i_genero
+            WHEN 'F' THEN n_cadena_a_grabar := n_cadena_a_grabar || 'Femenino;'||CHR(10);
+            WHEN 'M' THEN n_cadena_a_grabar := n_cadena_a_grabar || 'Masculino;' ||CHR(10);
+            ELSE n_cadena_a_grabar := n_cadena_a_grabar || 'No definido;' ||CHR(10);
+        END CASE;
+        n_cadena_a_grabar := n_cadena_a_grabar || 'Direccion de domicilio;'||
+                                r_c_estado_cuenta_socio.o_direccion_domicilio||
+                                ';'||CHR(10);
+        n_cadena_a_grabar := n_cadena_a_grabar || 'Direccion de trabajo;'||
+                                r_c_estado_cuenta_socio.o_direccion_trabajo||
+                                ';'||CHR(10);
+        n_cadena_a_grabar := n_cadena_a_grabar || 'Correo electronico;'||
+                                r_c_estado_cuenta_socio.o_correo_electronico||
+                                ';'||CHR(10);
+        n_cadena_a_grabar := n_cadena_a_grabar || 'Telefono de domicilio;'||
+                                r_c_estado_cuenta_socio.o_telefono_domicilio||
+                                ';'||CHR(10);
+        n_cadena_a_grabar := n_cadena_a_grabar || 'Telefono de trabajo;'||
+                                r_c_estado_cuenta_socio.o_telefono_trabajo||
+                                ';'||CHR(10);
+        n_cadena_a_grabar := n_cadena_a_grabar || 'Telefono celular;'||
+                                r_c_estado_cuenta_socio.o_telefono_celular||
+                                ';'||CHR(10);
+        n_cadena_a_grabar := n_cadena_a_grabar || 'Fecha de ingreso;'||
+                                r_c_estado_cuenta_socio.f_ingreso||
+                                ';'||CHR(10);
+        n_cadena_a_grabar := n_cadena_a_grabar || ';;'||CHR(10)||
+                                'Estado de aportes;'||CHR(10);
+        FOR r_c_estado_cuenta_aporte IN c_estado_cuenta_aporte(r_c_estado_cuenta_socio.k_identificacion) LOOP
+            n_cadena_a_grabar := n_cadena_a_grabar || 'Valor del ultimo aporte;'||
+                                    r_c_estado_cuenta_aporte.v_ultimo_aporte||
+                                    ';'||CHR(10);
+            n_cadena_a_grabar := n_cadena_a_grabar || 'Fecha del ultimo aporte;'||
+                                    r_c_estado_cuenta_aporte.f_ultimo_aporte||
+                                    ';'||CHR(10);
+            n_cadena_a_grabar := n_cadena_a_grabar || 'Suma total de aportes;'||
+                                    r_c_estado_cuenta_aporte.v_total_aportes||
+                                    ';'||CHR(10);
+        END LOOP;
+        n_cadena_a_grabar := n_cadena_a_grabar || ';;'||CHR(10);
+        n_cadena_a_grabar := n_cadena_a_grabar || 'Estado de creditos;' ||CHR(10);
+        n_cadena_a_grabar := n_cadena_a_grabar || 'Numero de credito;' ||
+                                'Saldo del credito;' || 'Fecha del ultimo pago;' ||
+                                'Valor del ultimo pago;' || 'Fecha del siguiente pago;' ||
+                                'Valor del siguiente pago;' ||CHR(10);
+        FOR r_c_estado_cuenta_credito IN c_estado_cuenta_credito(r_c_estado_cuenta_socio.k_identificacion) LOOP
+            n_cadena_a_grabar := n_cadena_a_grabar || 
+                                    r_c_estado_cuenta_credito.k_id_credito ||
+                                    ';'||
+                                    r_c_estado_cuenta_credito.v_saldo ||
+                                    ';'||
+                                    r_c_estado_cuenta_credito.f_ultimo_pago ||
+                                    ';'||
+                                    r_c_estado_cuenta_credito.v_ultimo_pago ||
+                                    ';'||
+                                    r_c_estado_cuenta_credito.f_siguiente_pago ||
+                                    ';'||
+                                    r_c_estado_cuenta_credito.v_siguiente_pago ||
+                                    ';'||CHR(10);
+        END LOOP;
+        pr_escribir_en_archivo('dir_estados_cuenta','ec-'||
+                                r_c_estado_cuenta_socio.k_identificacion||'-'||
+                                TO_CHAR(sysdate,'mm-yyyy')||'.csv',n_cadena_a_grabar);
+    END LOOP;
+    
 EXCEPTION
     WHEN OTHERS THEN
         pc_error := sqlcode;
