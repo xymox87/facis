@@ -15,10 +15,19 @@ start C:\xampp\htdocs\facis\bd\pt\aportes\pk_aportes_head.sql
 start C:\xampp\htdocs\facis\bd\pt\creditos\pk_creditos_head.sql
 start C:\xampp\htdocs\facis\bd\pt\rendimientos\pk_rendimientos_head.sql
 
+--INICIALIZANDO OBJETOS EN SOCIO
+
+start C:\xampp\htdocs\facis\bd\pt\aportes\tr_fecha_ingreso_socio.sql
+start C:\xampp\htdocs\facis\bd\pt\aportes\tr_fecha_retiro_socio.sql
+--start C:\xampp\htdocs\facis\bd\pt\aportes\tr_telefonos_socio.sql
+start C:\xampp\htdocs\facis\bd\pt\aportes\tr_correo_electronico_socio.sql
+
 --INICIALIZANDO OBJETOS APORTES
 
 start C:\xampp\htdocs\facis\bd\pt\aportes\pk_aportes_bod.sql
 start C:\xampp\htdocs\facis\bd\pt\aportes\tr_sumar_rendimiento_aporte.sql
+start C:\xampp\htdocs\facis\bd\pt\aportes\tr_multas_en_aporte.sql
+start C:\xampp\htdocs\facis\bd\pt\aportes\tr_min_max_v_aporte.sql
 
 --INICIALIZANDO OBJETOS CREDITOS
 
