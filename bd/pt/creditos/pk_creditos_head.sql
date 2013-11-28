@@ -50,7 +50,17 @@ PROCEDURE pr_act_rendimiento_pago(pc_error OUT NUMBER,
 PROCEDURE pr_act_rendimiento_credito(pv_credito credito.v_credito%TYPE,
                                     pc_error OUT NUMBER,
                                     pm_error OUT VARCHAR);
+/*--------------------------------------------------------------------------
+    Procedimiento que crea los registros correspondientes al plan de pagos 
+    Se llama despues de que un credito cambia su estado en plan de pagos 
+       
+    Parámetros de entrada:
+        pk_credito          Identificador del Credito
 
+    Parámetros de salida:
+        
+ ------------------------------------------------------------------*/
+ PROCEDURE PR_CREAR_PLANPAGOS(P_K_ID_CREDITO IN CREDITO.K_ID_CREDITO%TYPE);
 END pk_creditos;
 /
 /*
