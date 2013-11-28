@@ -83,7 +83,6 @@ class CREDITOController extends Controller {
                 'model' => $model,
             ));
         } catch (Exception $e) {
-            //throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
             //var_dump($e);
             throw new CHttpException(500,$e->getMessage());
         }
