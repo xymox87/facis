@@ -4,7 +4,7 @@ body
 	padding: 0;
 	color: #555;
 	font: normal 10pt Arial,Helvetica,sans-serif;
-	background: #EFEFEF;
+	background: black;
 }
 
 #page
@@ -56,11 +56,13 @@ body
 {
 	padding:6px 20px 5px 20px;
 	margin:0px;
+	text-align: center;
 }
 
 #mainmenu ul li
 {
 	display: inline;
+	
 }
 
 #mainmenu ul li a
