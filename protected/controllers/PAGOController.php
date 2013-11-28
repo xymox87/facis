@@ -186,5 +186,23 @@ class PAGOController extends Controller {
             throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
         }
     }
+    
+    
+    
+    public function actionProcedure() {
+            try {
+            $model = new PAGO('search');
+            $model->unsetAttributes();  // clear any default values
+            if (isset($_GET['PAGO']))
+                $model->attributes = $_GET['PAGO'];
+
+            $this->render('admin', array(
+                'model' => $model,
+            ));
+        } catch (Exception $e) {
+            //throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
+            throw new CHttpException(500, $e->getMessage());
+        }
+    }
 
 }
