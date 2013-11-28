@@ -141,7 +141,7 @@ class APORTEController extends Controller {
     public function actionProcedure() {
         try {
             $dataProvider = new CActiveDataProvider('APORTE');
-            $valorRendimientoTotal = 232; //out 
+            $valorRendimientoTotal ; //out 
             $numeroSocios;  //  out
             $this->render('procedure', array(
                 'dataProvider' => $dataProvider,

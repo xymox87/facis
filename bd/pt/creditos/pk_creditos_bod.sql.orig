@@ -174,13 +174,12 @@ END pr_act_rendimiento_credito;
     Parámetros de salida:
         
  ------------------------------------------------------------------*/
+create or replace 
 <<<<<<< HEAD
 
-PROCEDURE         PR_CREAR_PLANPAGOS
 =======
-create or replace 
-PROCEDURE         "PR_CREAR_PLANPAGOS"
->>>>>>> Nicolas/master
+>>>>>>> Rafael/master
+PROCEDURE         PR_CREAR_PLANPAGOS
 (
   P_K_ID_CREDITO IN CREDITO.K_ID_CREDITO%TYPE
 ) AS
@@ -227,7 +226,7 @@ WHERE K_ID_DESCRIPCION = L_K_ID_DESCRIPCION;
     )
     VALUES
     (
-      seq_planpagos.nextval,
+      facis.seq_planpagos.nextval,
       l_numcuota,
       L_V_XINTERES,
       L_V_XCAPITAL,
