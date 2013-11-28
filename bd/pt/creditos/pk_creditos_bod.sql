@@ -174,7 +174,7 @@ END pr_act_rendimiento_credito;
     Parámetros de salida:
         
  ------------------------------------------------------------------*/
-create or replace 
+
 PROCEDURE         "PR_CREAR_PLANPAGOS"
 (
   P_K_ID_CREDITO IN CREDITO.K_ID_CREDITO%TYPE
@@ -236,6 +236,43 @@ WHERE K_ID_DESCRIPCION = L_K_ID_DESCRIPCION;
   COMMIT;
 
 END PR_CREAR_PLANPAGOS;
+/*--------------------------------------------------------------------------
+    Función que valida que el valor del pago ingresado
+  coincida con el valor del plan de pagos. 
+  si es correcto devuelve verdadero caso contrario devuelve falso.
+
+  Se ejecuta al realizar el pago.
+    Parámetros de entrada:
+        v_pago    Valor total del Pago
+        k_id_plan  Pan de pagos al que pertenece el PAgo
+    Retorno: BOOLEAN que indica si el pago cubre el valor del plan pago o no
+             
+--------------------------------------------------------------------------*/
+FUNCTION   FU_VALIDAR_VALOR_PAGO(  P_V_PAGO IN PAGO.V_PAGO%TYPE
+                                  , P_K_ID_PLAN IN PLANPAGOS.K_ID_PLAN%TYPE
+                                    ) RETURN BOOLEAN AS
+
+  L_V_TOTAL_CUOTA NUMBER(15,2);
+
+
+BEGIN
+
+  SELECT V_XINTERES + V_XCAPITAL
+  INTO   L_V_TOTAL_CUOTA
+  FROM PLANPAGOS
+  WHERE K_ID_PLAN = P_K_ID_PLAN;
+
+  IF P_V_PAGO = L_V_TOTAL_CUOTA THEN
+    RETURN TRUE;
+  ELSE
+    RETURN FALSE;
+  END IF;
+
+EXCEPTION
+WHEN NO_DATA_FOUND THEN
+  RETURN FALSE;
+END FU_VALIDAR_VALOR_PAGO;
+
 
 END pk_creditos;
 /

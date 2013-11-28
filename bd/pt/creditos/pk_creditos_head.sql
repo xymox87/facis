@@ -61,6 +61,22 @@ PROCEDURE pr_act_rendimiento_credito(pv_credito credito.v_credito%TYPE,
         
  ------------------------------------------------------------------*/
  PROCEDURE PR_CREAR_PLANPAGOS(P_K_ID_CREDITO IN CREDITO.K_ID_CREDITO%TYPE);
+
+/*--------------------------------------------------------------------------
+    Función que valida que el valor del pago ingresado
+  coincida con el valor del plan de pagos. 
+  si es correcto devuelve verdadero caso contrario devuelve falso.
+
+  Se ejecuta al realizar el pago.
+    Parámetros de entrada:
+        v_pago    Valor total del Pago
+        k_id_plan  Pan de pagos al que pertenece el PAgo
+    Retorno: BOOLEAN que indica si el pago cubre el valor del plan pago o no
+             
+--------------------------------------------------------------------------*/
+FUNCTION   FU_VALIDAR_VALOR_PAGO(  P_V_PAGO IN PAGO.V_PAGO%TYPE
+                                , P_K_ID_PLAN IN PLANPAGOS.K_ID_PLAN%TYPE
+                                ) RETURN BOOLEAN;
 END pk_creditos;
 /
 /*
