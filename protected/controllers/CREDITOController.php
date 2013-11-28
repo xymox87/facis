@@ -72,17 +72,18 @@ class CREDITOController extends Controller {
                 $model->attributes = $_POST['CREDITO'];
                 //$model->K_ID_CREDITO = 'sequence_credito.nextval';
                 $model->K_ID_CREDITO = new CDbExpression('facis.sequence_credito.nextval');
-                $model->K_ID_CREDITO=new CDbExpression('facis.sequence_credito.nextval');
+                
                 if ($model->save())
                     $this->redirect(array('view', 'id' => $model->K_ID_CREDITO));
                 }
                 
-            }
+            
 
             $this->render('create', array(
                 'model' => $model,
             ));
         } catch (Exception $e) {
+            //var_dump($e);
             throw new CHttpException(500,$e->getMessage());
         }
     }
