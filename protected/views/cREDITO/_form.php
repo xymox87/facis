@@ -23,8 +23,13 @@
         
         <div class="row">
                 <?php echo $form->labelEx($model,'K_IDENTIFICACION'); ?>
-		<?php echo CHtml::dropDownList("TIPO_CREDITO[K_IDENTIFICADOR]",  TIPOCREDITO::model()->K_IDENTIFICADOR ,CHtml::listData(TIPOCREDITO::model()->findAll(), "K_IDENTIFICADOR", "I_TIPO")); ?>
+		<?php echo CHtml::dropDownList("CREDITO[K_IDENTIFICACION]",  SOCIO::model()->K_IDENTIFICACION ,CHtml::listData(SOCIO::model()->findAll(), "K_IDENTIFICACION", "K_IDENTIFICACION")); ?>
 		<?php echo $form->error($model,'K_IDENTIFICACION'); ?>
+        </div>
+        <div class="row">
+                <?php echo $form->labelEx($model,'Tipo de credito'); ?>
+		<?php echo CHtml::dropDownList("CREDITO[K_IDENTIFICADOR]",  TIPOCREDITO::model()->K_IDENTIFICADOR ,CHtml::listData(TIPOCREDITO::model()->findAll(), "K_IDENTIFICADOR", "I_TIPO")); ?>
+		<?php echo $form->error($model,'K_IDENTIFICADOR'); ?>
         </div>
         
 	<!--<div class="row">
@@ -63,23 +68,23 @@
 		<?php echo $form->error($model,'V_CREDITO'); ?>
 	</div>
 
-	<!--<div class="row">
-		<?php //echo $form->labelEx($model,'V_SALDO'); ?>
-		<?php //echo $form->textField($model,'V_SALDO'); ?>
-		<?php //echo $form->error($model,'V_SALDO'); ?>
+	<div class="row">
+		<?php echo $form->labelEx($model,'V_SALDO'); ?>
+		<?php echo $form->textField($model,'V_SALDO'); ?>
+		<?php echo $form->error($model,'V_SALDO'); ?>
 	</div>
          
         <?php
-          /*$listE["A"]="Aprobado";
+          $listE["A"]="Aprobado";
           $listE["V"]="Vigente";
-          $listE["C"]="Cancelado";*/                   
+          $listE["C"]="Cancelado";                   
         ?>
 
 	<div class="row">
-		<?php //echo $form->labelEx($model,'I_ESTADO'); ?>
-                <?php //echo CHtml::dropDownList('CREDITO[I_ESTADO]',$model->I_ESTADO,$listE);?>
-                <?php //echo $form->error($model,'I_ESTADO'); ?>
-	</div>-->
+		<?php echo $form->labelEx($model,'I_ESTADO'); ?>
+                <?php echo CHtml::dropDownList('CREDITO[I_ESTADO]',$model->I_ESTADO,$listE);?>
+                <?php echo $form->error($model,'I_ESTADO'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Q_CUOTAS'); ?>

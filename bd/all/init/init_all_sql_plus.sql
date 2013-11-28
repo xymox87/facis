@@ -1,7 +1,7 @@
 set serveroutput on
 
-connect system/123456
---start C:\xampp\htdocs\facis\bd\all\init\init_facis_user.sql
+connect system/123345
+start C:\xampp\htdocs\facis\bd\all\init\init_facis_user.sql
 connect facis/facis
 start C:\xampp\htdocs\facis\bd\all\init\init_objects_facis.sql
 connect system/123456
@@ -51,7 +51,7 @@ start C:\xampp\htdocs\facis\bd\pt\creditos\tr_sumar_rendimiento_credito.sql
 start C:\xampp\htdocs\facis\bd\pt\creditos\tr_sumar_rendimiento_pago.sql
 start C:\xampp\htdocs\facis\bd\pt\creditos\tr_update_saldo_credito.sql
 start C:\xampp\htdocs\facis\bd\pt\creditos\tr_no_delete_creditos.sql
---start C:\xampp\htdocs\facis\bd\pt\creditos\tr_crear_planpagos.sql
+start C:\xampp\htdocs\facis\bd\pt\creditos\tr_crear_planpagos.sql
 
 --INICIALIZANDO OBJETOS RENDIMIENTOS
 
