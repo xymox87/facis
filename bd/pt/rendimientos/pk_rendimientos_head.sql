@@ -114,15 +114,4 @@ SELECT c.k_id_credito AS k_id_credito,
     AND c.k_id_credito = pp.k_id_credito
     AND c.q_cuota = pp.q_cuota;
 
-declare
-
-c number;
-m varchar(300);
-
-begin
-    pk_rendimientos.pr_generar_estados_cuenta(c,m);
-exception
-when others then
-    dbms_output.put_line(c||' '||m);
-end;
 */
