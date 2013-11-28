@@ -45,6 +45,11 @@
 		<?php echo $form->label($model,'K_FPAGO'); ?>
 		<?php echo $form->textField($model,'K_FPAGO'); ?>
 	</div>
+    
+        <div class="row">
+		<?php echo $form->label($model,'V_MULTA'); ?>
+		<?php echo $form->textField($model,'V_MULTA'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>

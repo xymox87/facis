@@ -46,11 +46,13 @@ $('.search-form form').submit(function(){
 		'K_DESCAPORTE',
 		'K_IDENTIFICACION',
 		'K_CUENTA',
+                'V_MULTA',
 		/*
 		'K_FPAGO',
 		*/
 		array(
 			'class'=>'CButtonColumn',
+                        'template'=>'{view}'
 		),
 	),
 )); ?>

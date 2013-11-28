@@ -58,7 +58,7 @@ class APORTEController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-        try {
+        //try {
             $model = new APORTE;
 
             // Uncomment the following line if AJAX validation is needed
@@ -66,22 +66,19 @@ class APORTEController extends Controller {
 
             if (isset($_POST['APORTE'])) {
                 $model->attributes = $_POST['APORTE'];
-                $descaporte = new DESCRIPCIONAPORTE;
-                $model->attributes = $_POST['APORTE'];
-                date_default_timezone_set("America/Bogota");
-                $model->F_CONSIGNACION = date("j/n/y");
-                $model->K_DESCAPORTE = (int) $descaporte->count();
-                //$model->K_NUMCONSIGNACION = $_POST['APORTE']['K_NUMCONSIGNACION'];
-                ; //FALTA LA COLUMNA DE MULTA
+                $model->K_DESCAPORTE = DESCRIPCIONAPORTE::model()->count();
+                print_r($model->attributes);
+                if($model->V_MULTA != NULL)
+                    $model->V_APORTE -= $model->V_MULTA;
                 if ($model->save())
                     $this->redirect(array('view', 'id' => $model->K_NUMCONSIGNACION));
             }
             $this->render('create', array(
                 'model' => $model,
             ));
-        } catch (Exception $e) {
-            throw new CHttpException(500, $e->getMessage());
-        }
+        //} catch (Exception $e) {
+            //throw new CHttpException(500, $e->getMessage());
+        //}
     }
 
     /**

@@ -49,6 +49,7 @@ class CREDITOController extends Controller {
                 'model' => $this->loadModel($id),
             ));
         } catch (Exception $e) {
+            CHtml::error($model, $e->getMessage());
             throw new CHttpException(500, 'No tiene permisos para realizar esta acción.');
             throw new CHttpException(500,$e->getMessage());
         }
@@ -61,16 +62,21 @@ class CREDITOController extends Controller {
     public function actionCreate() {
         try {
             $model = new CREDITO;
+            
 
             // Uncomment the following line if AJAX validation is needed
             // $this->performAjaxValidation($model);
+            
 
             if (isset($_POST['CREDITO'])) {
                 $model->attributes = $_POST['CREDITO'];
+                //$model->K_ID_CREDITO = 'sequence_credito.nextval';
                 $model->K_ID_CREDITO = new CDbExpression('facis.sequence_credito.nextval');
                 $model->K_ID_CREDITO=new CDbExpression('facis.sequence_credito.nextval');
                 if ($model->save())
                     $this->redirect(array('view', 'id' => $model->K_ID_CREDITO));
+                }
+                
             }
 
             $this->render('create', array(

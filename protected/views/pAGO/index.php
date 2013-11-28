@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create PAGO', 'url'=>array('create')),
-	array('label'=>'Manage PAGO', 'url'=>array('admin')),
+	array('label'=>'Crear pago de creditos', 'url'=>array('create')),
+	array('label'=>'Gestionar pago de creditos', 'url'=>array('admin')),
 );
 ?>
 

@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update APORTE <?php echo $model->K_NUMCONSIGNACION; ?></h1>
+<!--<h1>Update APORTE <?php //echo $model->K_NUMCONSIGNACION; ?></h1>-->
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
