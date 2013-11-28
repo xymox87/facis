@@ -22,7 +22,7 @@ BEGIN
 
     f_final := TO_DATE(q_dias_da,'dd');
     
-IF :new.f_consignacion BETWEEN f_inicio_mes AND f_final THEN
+    IF NOT :new.f_consignacion BETWEEN f_inicio_mes AND f_final THEN
             IF :new.v_multa IS NULL THEN
                 RAISE excepcion_multa_nula;
             ELSIF :new.v_multa < v_minaporte_da*v_interes_multa_da THEN

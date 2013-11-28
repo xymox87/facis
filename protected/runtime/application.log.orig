@@ -6752,8 +6752,6 @@ Stack trace:
 REQUEST_URI=/facis/index.php/site/login
 in C:\xampp\htdocs\facis\protected\models\LoginForm.php (71)
 in C:\xampp\htdocs\facis\protected\controllers\SiteController.php (91)
-2013/11/23 02:14:36 [warning] [application] Error al definir unsafe el atributo "F_ULTIMO_PAGO" de "CREDITO".
-in C:\xampp\htdocs\facis\protected\controllers\CREDITOController.php (69)
 in C:\xampp\htdocs\facis\index.php (13)
 2013/11/28 04:29:58 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
 Stack trace:
@@ -7145,6 +7143,9 @@ Stack trace:
 REQUEST_URI=/facis/index.php/pago/admin
 HTTP_REFERER=http://localhost/facis/index.php/credito/create
 ---
+<<<<<<< HEAD
+=======
+>>>>>>> origin/master
 2013/11/28 04:43:18 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No tiene permisos para realizar esta acción.' in C:\xampp\htdocs\facis\protected\controllers\PAGOController.php:153
 Stack trace:
 #0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): PAGOController->actionAdmin()
@@ -7278,163 +7279,4 @@ Stack trace:
 REQUEST_URI=/facis/index.php/pago/admin
 HTTP_REFERER=http://localhost/facis/index.php/pago/admin
 ---
-2013/11/28 06:22:38 [warning] [application] Error al definir unsafe el atributo "K_IDENTIFICADOR" de "CREDITO".
-in C:\xampp\htdocs\facis\protected\controllers\CREDITOController.php (72)
-in C:\xampp\htdocs\facis\index.php (13)
-2013/11/28 06:22:38 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 942 OCIStmtExecute: ORA-00942: table or view does not exist
- (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "CREDITO" ("K_IDENTIFICACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "Q_CUOTA", "K_ID_CREDITO", "K_ID_DESCRIPCION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, facis.sequence_credito.nextval, :yp7) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
-in C:\xampp\htdocs\facis\protected\controllers\CREDITOController.php (76)
-in C:\xampp\htdocs\facis\index.php (13)
-2013/11/28 06:22:38 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 942 OCIStmtExecute: ORA-00942: table or view does not exist
- (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "CREDITO" ("K_IDENTIFICACION", "F_DESEMBOLSO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "Q_CUOTA", "K_ID_CREDITO", "K_ID_DESCRIPCION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, facis.sequence_credito.nextval, :yp7) RETURNING "K_ID_CREDITO" INTO :RETURN_ID' in C:\xampp\htdocs\facis\protected\controllers\CREDITOController.php:87
-Stack trace:
-#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): CREDITOController->actionCreate()
-#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
-#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('create')
-#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
-#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
-#13 {main}
-REQUEST_URI=/facis/index.php/credito/create
-HTTP_REFERER=http://localhost/facis/index.php/credito/create
----
-2013/11/28 06:24:25 [warning] [application] Error al definir unsafe el atributo "K_IDENTIFICADOR" de "CREDITO".
-in C:\xampp\htdocs\facis\protected\controllers\CREDITOController.php (72)
-in C:\xampp\htdocs\facis\index.php (13)
-2013/11/28 06:24:25 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 942 OCIStmtExecute: ORA-00942: table or view does not exist
- (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: INSERT INTO "CREDITO" ("K_IDENTIFICACION", "F_DESEMBOLSO", "F_ULTIMO_PAGO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "Q_CUOTA", "K_ID_CREDITO", "K_ID_DESCRIPCION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, facis.sequence_credito.nextval, :yp8) RETURNING "K_ID_CREDITO" INTO :RETURN_ID.
-in C:\xampp\htdocs\facis\protected\controllers\CREDITOController.php (76)
-in C:\xampp\htdocs\facis\index.php (13)
-2013/11/28 06:24:25 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 942 OCIStmtExecute: ORA-00942: table or view does not exist
- (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "CREDITO" ("K_IDENTIFICACION", "F_DESEMBOLSO", "F_ULTIMO_PAGO", "V_CREDITO", "V_SALDO", "I_ESTADO", "Q_CUOTAS", "Q_CUOTA", "K_ID_CREDITO", "K_ID_DESCRIPCION") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, facis.sequence_credito.nextval, :yp8) RETURNING "K_ID_CREDITO" INTO :RETURN_ID' in C:\xampp\htdocs\facis\protected\controllers\CREDITOController.php:87
-Stack trace:
-#0 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): CREDITOController->actionCreate()
-#1 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#2 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#3 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#4 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#5 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#6 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#7 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
-#8 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#9 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('create')
-#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
-#11 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#12 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
-#13 {main}
-REQUEST_URI=/facis/index.php/credito/create
-HTTP_REFERER=http://localhost/facis/index.php/credito/create
----
-2013/11/28 06:37:14 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 6550 OCIStmtExecute: ORA-06550: line 4, column 29:
-PLS-00201: identifier 'PR_RENDIMIENTOS' must be declared
-ORA-06550: line 4, column 29:
-PL/SQL: Statement ignored
- (ext\pdo_oci\oci_statement.c:148). La sentencia SQL ejecutada fue: 
-                            DECLARE
-                            begin
-                            PR_RENDIMIENTOS(:rendimientoTotal,:numeroSocios);
-                            end;         
-                    .
-in C:\xampp\htdocs\facis\protected\controllers\APORTEController.php (153)
-in C:\xampp\htdocs\facis\index.php (13)
-2013/11/28 06:37:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 6550 OCIStmtExecute: ORA-06550: line 4, column 29:
-PLS-00201: identifier 'PR_RENDIMIENTOS' must be declared
-ORA-06550: line 4, column 29:
-PL/SQL: Statement ignored
- (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: 
-                            DECLARE
-                            begin
-                            PR_RENDIMIENTOS(:rendimientoTotal,:numeroSocios);
-                            end;         
-                    ' in C:\xampp\htdocs\facis\framework\db\CDbCommand.php:357
-Stack trace:
-#0 C:\xampp\htdocs\facis\protected\controllers\APORTEController.php(153): CDbCommand->execute()
-#1 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
-#2 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#3 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#4 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#5 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#6 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#7 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#8 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
-#9 C:\xampp\htdocs\facis\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#10 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): CController->run('procedure')
-#11 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController('aporte/procedur...')
-#12 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#13 C:\xampp\htdocs\facis\index.php(13): CApplication->run()
-#14 {main}
-REQUEST_URI=/facis/index.php/aporte/procedure
-HTTP_REFERER=http://localhost/facis/index.php/socio/admin
----
-2013/11/28 06:42:30 [error] [php] include(Informe de creditos.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\facis\framework\YiiBase.php:421)
-Stack trace:
-#0 C:\xampp\htdocs\facis\framework\db\ar\CActiveRecord.php(387): spl_autoload_call()
-#1 C:\xampp\htdocs\facis\framework\web\CActiveDataProvider.php(74): model()
-#2 C:\xampp\htdocs\facis\protected\controllers\APORTEController.php(143): CActiveDataProvider->__construct()
-#3 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
-#4 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams()
-#5 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): APORTEController->runAction()
-#6 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#7 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CAccessControlFilter->filter()
-#8 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): APORTEController->filterAccessControl()
-#9 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
-#10 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
-#11 C:\xampp\htdocs\facis\framework\web\CController.php(265): APORTEController->runActionWithFilters()
-#12 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): APORTEController->run()
-#13 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#14 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#15 C:\xampp\htdocs\facis\index.php(13): CWebApplication->run()
-REQUEST_URI=/facis/index.php/aporte/procedure
-in C:\xampp\htdocs\facis\protected\controllers\APORTEController.php (143)
-in C:\xampp\htdocs\facis\index.php (13)
-2013/11/28 06:51:30 [error] [php] Undefined variable: valorRendimientoTotal (C:\xampp\htdocs\facis\protected\views\aPORTE\procedure.php:16)
-Stack trace:
-#0 C:\xampp\htdocs\facis\framework\web\CController.php(869): APORTEController->renderFile()
-#1 C:\xampp\htdocs\facis\framework\web\CController.php(782): APORTEController->renderPartial()
-#2 C:\xampp\htdocs\facis\protected\controllers\APORTEController.php(148): APORTEController->render()
-#3 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
-#4 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams()
-#5 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): APORTEController->runAction()
-#6 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#7 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CAccessControlFilter->filter()
-#8 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): APORTEController->filterAccessControl()
-#9 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
-#10 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
-#11 C:\xampp\htdocs\facis\framework\web\CController.php(265): APORTEController->runActionWithFilters()
-#12 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): APORTEController->run()
-#13 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#14 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#15 C:\xampp\htdocs\facis\index.php(13): CWebApplication->run()
-REQUEST_URI=/facis/index.php/aporte/procedure
-in C:\xampp\htdocs\facis\protected\views\aPORTE\procedure.php (16)
-in C:\xampp\htdocs\facis\protected\controllers\APORTEController.php (148)
-in C:\xampp\htdocs\facis\index.php (13)
-2013/11/28 06:51:45 [error] [php] Undefined variable: valorRendimientoTotal (C:\xampp\htdocs\facis\protected\views\aPORTE\procedure.php:16)
-Stack trace:
-#0 C:\xampp\htdocs\facis\framework\web\CController.php(869): APORTEController->renderFile()
-#1 C:\xampp\htdocs\facis\framework\web\CController.php(782): APORTEController->renderPartial()
-#2 C:\xampp\htdocs\facis\protected\controllers\APORTEController.php(148): APORTEController->render()
-#3 C:\xampp\htdocs\facis\framework\web\actions\CInlineAction.php(49): APORTEController->actionProcedure()
-#4 C:\xampp\htdocs\facis\framework\web\CController.php(308): CInlineAction->runWithParams()
-#5 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(133): APORTEController->runAction()
-#6 C:\xampp\htdocs\facis\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#7 C:\xampp\htdocs\facis\framework\web\CController.php(1145): CAccessControlFilter->filter()
-#8 C:\xampp\htdocs\facis\framework\web\filters\CInlineFilter.php(58): APORTEController->filterAccessControl()
-#9 C:\xampp\htdocs\facis\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
-#10 C:\xampp\htdocs\facis\framework\web\CController.php(291): CFilterChain->run()
-#11 C:\xampp\htdocs\facis\framework\web\CController.php(265): APORTEController->runActionWithFilters()
-#12 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(282): APORTEController->run()
-#13 C:\xampp\htdocs\facis\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#14 C:\xampp\htdocs\facis\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#15 C:\xampp\htdocs\facis\index.php(13): CWebApplication->run()
-REQUEST_URI=/facis/index.php/aporte/procedure
-in C:\xampp\htdocs\facis\protected\views\aPORTE\procedure.php (16)
-in C:\xampp\htdocs\facis\protected\controllers\APORTEController.php (148)
-in C:\xampp\htdocs\facis\index.php (13)
+>>>>>>> David/master
