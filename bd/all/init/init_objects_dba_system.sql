@@ -40,10 +40,6 @@ CREATE PUBLIC SYNONYM pk_aportes FOR facis.pk_aportes;
 CREATE PUBLIC SYNONYM pk_creditos FOR facis.pk_creditos;
 CREATE PUBLIC SYNONYM pk_socios FOR facis.pk_socios;
 
---CREANDO SINONIMOS DE SEQUENCIAS
-DROP PUBLIC SYNONYM seq_credito;
-DROP PUBLIC SYNONYM seq_ganancia;
-DROP PUBLIC SYNONYM seq_formapago;
 DROP DIRECTORY dir_estados_cuenta;
 
 CREATE OR REPLACE DIRECTORY dir_estados_cuenta AS 'C:\TEMP\estados-cuenta';
