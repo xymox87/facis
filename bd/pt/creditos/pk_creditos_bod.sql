@@ -164,6 +164,154 @@ EXCEPTION
         pm_error := sqlerrm;
 
 END pr_act_rendimiento_credito;
+/*--------------------------------------------------------------------------
+    Procedimiento que crea los registros correspondientes al plan de pagos 
+    Se llama despues de que un credito cambia su estado en plan de pagos 
+       
+    Parámetros de entrada:
+        pk_credito          Identificador del Credito
+
+    Parámetros de salida:
+        
+ ------------------------------------------------------------------*/
+
+PROCEDURE         "PR_CREAR_PLANPAGOS"
+(
+  P_K_ID_CREDITO IN CREDITO.K_ID_CREDITO%TYPE
+) AS
+
+  
+
+  L_F_APROBACION CREDITO.F_APROBACION%TYPE;
+  L_V_CREDITO CREDITO.V_CREDITO%TYPE;
+  L_Q_CUOTAS  CREDITO.Q_CUOTAS%TYPE;
+
+  L_V_XINTERES PLANPAGOS.V_XINTERES%TYPE;
+  L_V_XCAPITAL PLANPAGOS.V_XCAPITAL%TYPE;
+
+  L_K_ID_DESCRIPCION DESCRIPCION_TIPO_CREDITO.K_ID_DESCRIPCION%TYPE;
+  L_V_TASA_INTERES DESCRIPCION_TIPO_CREDITO.V_TASA_INTERES%TYPE;
+
+BEGIN
+
+
+
+  SELECT V_CREDITO, Q_CUOTAS,F_APROBACION, K_ID_DESCRIPCION
+  INTO   L_V_CREDITO, L_Q_CUOTAS, L_F_APROBACION, L_K_ID_DESCRIPCION
+  FROM CREDITO
+  WHERE K_ID_CREDITO = P_K_ID_CREDITO;
+
+  SELECT  V_TASA_INTERES
+  INTO    L_V_TASA_INTERES
+FROM DESCRIPCION_TIPO_CREDITO
+WHERE K_ID_DESCRIPCION = L_K_ID_DESCRIPCION;
+
+
+  L_V_XCAPITAL := L_V_CREDITO / L_Q_CUOTAS;
+  L_V_XINTERES := L_V_XCAPITAL * L_V_TASA_INTERES;
+
+  FOR l_numcuota IN 1 .. L_Q_CUOTAS LOOP
+
+    INSERT INTO PLANPAGOS(
+      K_ID_PLAN,
+      Q_CUOTA,
+      V_XINTERES,
+      V_XCAPITAL,
+      F_ACONSIGNAR,
+      K_ID_CREDITO
+    )
+    VALUES
+    (
+      seq_planpagos.nextval,
+      l_numcuota,
+      L_V_XINTERES,
+      L_V_XCAPITAL,
+      ADD_MONTHS(L_F_APROBACION,L_NUMCUOTA),
+      P_K_ID_CREDITO
+    );
+
+
+  END LOOP;
+
+  COMMIT;
+
+END PR_CREAR_PLANPAGOS;
+/*--------------------------------------------------------------------------
+    Función que valida que el valor del pago ingresado
+  coincida con el valor del plan de pagos. 
+  si es correcto devuelve verdadero caso contrario devuelve falso.
+
+  Se ejecuta al realizar el pago.
+    Parámetros de entrada:
+        v_pago    Valor total del Pago
+        k_id_plan  Pan de pagos al que pertenece el PAgo
+    Retorno: BOOLEAN que indica si el pago cubre el valor del plan pago o no
+             
+--------------------------------------------------------------------------*/
+FUNCTION   FU_VALIDAR_VALOR_PAGO(  P_V_PAGO IN PAGO.V_PAGO%TYPE
+                                  , P_K_ID_PLAN IN PLANPAGOS.K_ID_PLAN%TYPE
+                                    ) RETURN BOOLEAN AS
+
+  L_V_TOTAL_CUOTA NUMBER(15,2);
+
+
+BEGIN
+
+  SELECT V_XINTERES + V_XCAPITAL
+  INTO   L_V_TOTAL_CUOTA
+  FROM PLANPAGOS
+  WHERE K_ID_PLAN = P_K_ID_PLAN;
+
+  IF P_V_PAGO = L_V_TOTAL_CUOTA THEN
+    RETURN TRUE;
+  ELSE
+    RETURN FALSE;
+  END IF;
+
+EXCEPTION
+WHEN NO_DATA_FOUND THEN
+  RETURN FALSE;
+END FU_VALIDAR_VALOR_PAGO;
+/*--------------------------------------------------------------------------
+    Procedimiento que actualiza el sado de un credito 
+    Este procedimiento  se llama cada vez que se realiza el pago a un credito
+       
+    Parámetros de entrada:
+        pk_numconsignación         Identificador del recibo de pago o numero de consignacion
+
+    Parámetros de salida:
+        
+ ------------------------------------------------------------------*/
+PROCEDURE         "PR_UPDATE_SALDO_CREDITO"
+(
+  P_K_NUMCONSIGNACION IN PAGO.K_NUMCONSIGNACION%TYPE
+) AS
+
+
+  L_K_ID_CREDITO CREDITO.K_ID_CREDITO%TYPE;
+  L_V_CAPITAL PLANPAGOS.V_XCAPITAL%TYPE;
+
+BEGIN
+
+  SELECT PP.K_ID_CREDITO
+  INTO  L_K_ID_CREDITO
+  FROM PLANPAGOS PP, PAGO P
+  WHERE PP.K_ID_PLAN = P.K_ID_PLAN
+  AND   P.K_NUMCONSIGNACION = P_K_NUMCONSIGNACION;
+
+  SELECT SUM(PP.V_XCAPITAL)
+  INTO L_V_CAPITAL
+  FROM PLANPAGOS PP, PAGO P
+  WHERE PP.K_ID_PLAN = P.K_ID_PLAN
+  AND   PP.K_ID_CREDITO = L_K_ID_CREDITO;
+
+  UPDATE CREDITO C
+  SET V_SALDO = V_CREDITO - L_V_CAPITAL
+  WHERE K_ID_CREDITO = L_K_ID_CREDITO;
+
+  COMMIT;
+
+END PR_UPDATE_SALDO_CREDITO;
 
 END pk_creditos;
 /
