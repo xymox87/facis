@@ -100,7 +100,8 @@
         
         <div class="row">
 		<?php echo $form->labelEx($model,'K_ID_DESCRIPCION'); ?>
-		<?php echo $form->textField($model,'K_ID_DESCRIPCION'); ?>
+                <?php echo CHtml::dropDownList("CREDITO[K_ID_DESCRIPCION]",  DESCRIPCIONTIPOCREDITO::model()->K_ID_DESCRIPCION ,CHtml::listData(DESCRIPCIONTIPOCREDITO::model()->findAll(), "K_ID_DESCRIPCION", "K_ID_DESCRIPCION")); ?>
+		<?php // echo $form->textField($model,'K_ID_DESCRIPCION');?>
 		<?php echo $form->error($model,'K_ID_DESCRIPCION'); ?>
 	</div>
 
