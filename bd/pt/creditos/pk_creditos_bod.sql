@@ -272,7 +272,46 @@ EXCEPTION
 WHEN NO_DATA_FOUND THEN
   RETURN FALSE;
 END FU_VALIDAR_VALOR_PAGO;
+/*--------------------------------------------------------------------------
+    Procedimiento que actualiza el sado de un credito 
+    Este procedimiento  se llama cada vez que se realiza el pago a un credito
+       
+    Parámetros de entrada:
+        pk_numconsignación         Identificador del recibo de pago o numero de consignacion
 
+    Parámetros de salida:
+        
+ ------------------------------------------------------------------*/
+PROCEDURE         "PR_UPDATE_SALDO_CREDITO"
+(
+  P_K_NUMCONSIGNACION IN PAGO.K_NUMCONSIGNACION%TYPE
+) AS
+
+
+  L_K_ID_CREDITO CREDITO.K_ID_CREDITO%TYPE;
+  L_V_CAPITAL PLANPAGOS.V_XCAPITAL%TYPE;
+
+BEGIN
+
+  SELECT PP.K_ID_CREDITO
+  INTO  L_K_ID_CREDITO
+  FROM PLANPAGOS PP, PAGO P
+  WHERE PP.K_ID_PLAN = P.K_ID_PLAN
+  AND   P.K_NUMCONSIGNACION = P_K_NUMCONSIGNACION;
+
+  SELECT SUM(PP.V_XCAPITAL)
+  INTO L_V_CAPITAL
+  FROM PLANPAGOS PP, PAGO P
+  WHERE PP.K_ID_PLAN = P.K_ID_PLAN
+  AND   PP.K_ID_CREDITO = L_K_ID_CREDITO;
+
+  UPDATE CREDITO C
+  SET V_SALDO = V_CREDITO - L_V_CAPITAL
+  WHERE K_ID_CREDITO = L_K_ID_CREDITO;
+
+  COMMIT;
+
+END PR_UPDATE_SALDO_CREDITO;
 
 END pk_creditos;
 /

@@ -77,7 +77,21 @@ PROCEDURE pr_act_rendimiento_credito(pv_credito credito.v_credito%TYPE,
 FUNCTION   FU_VALIDAR_VALOR_PAGO(  P_V_PAGO IN PAGO.V_PAGO%TYPE
                                 , P_K_ID_PLAN IN PLANPAGOS.K_ID_PLAN%TYPE
                                 ) RETURN BOOLEAN;
+/*--------------------------------------------------------------------------
+    Procedimiento que actualiza el sado de un credito 
+    Este procedimiento  se llama cada vez que se realiza el pago a un credito
+       
+    Parámetros de entrada:
+        pk_numconsignación         Identificador del recibo de pago o numero de consignacion
+
+    Parámetros de salida:
+        
+ ------------------------------------------------------------------*/
+ PROCEDURE   PR_UPDATE_SALDO_CREDITO ( P_K_NUMCONSIGNACION IN PAGO.K_NUMCONSIGNACION%TYPE);
+
+
 END pk_creditos;
+
 /
 /*
 declare
