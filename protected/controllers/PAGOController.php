@@ -63,12 +63,12 @@ class PAGOController extends Controller {
             // Uncomment the following line if AJAX validation is needed
             // $this->performAjaxValidation($model);
             if (isset($_POST['PAGO'])) {
+                $variables=$_POST['PAGO'];
                 $model->attributes = $_POST['PAGO'];
-                
+                $model->F_PAGO=$variables["F_PAGO"];
                 if ($model->save())
                     $this->redirect(array('view', 'id' => $model->K_NUMCONSIGNACION));
                 
-                var_dump($model);
             }
             $this->render('create', array(
                 'model' => $model,
