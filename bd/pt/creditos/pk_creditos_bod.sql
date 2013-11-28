@@ -175,7 +175,7 @@ END pr_act_rendimiento_credito;
         
  ------------------------------------------------------------------*/
 create or replace 
-PROCEDURE         "PR_CREAR_PLANPAGOS"
+PROCEDURE         PR_CREAR_PLANPAGOS
 (
   P_K_ID_CREDITO IN CREDITO.K_ID_CREDITO%TYPE
 ) AS
