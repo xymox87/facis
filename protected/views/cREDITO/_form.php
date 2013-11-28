@@ -50,17 +50,17 @@
 		<?php echo $form->error($model,'F_DESEMBOLSO'); ?>
 	</div>
 
-	<!--<div class="row">
-		<?php //echo $form->labelEx($model,'F_ULTIMO_PAGO'); ?>
-		<?php //echo $form->textField($model,'F_ULTIMO_PAGO'); ?>
-		<?php //echo $form->error($model,'F_ULTIMO_PAGO'); ?>
+	<div class="row">
+		<?php echo $form->labelEx($model,'F_ULTIMO_PAGO'); ?>
+		<?php echo $form->textField($model,'F_ULTIMO_PAGO'); ?>
+		<?php echo $form->error($model,'F_ULTIMO_PAGO'); ?>
 	</div>
 
 	<div class="row">
 		<?php //echo $form->labelEx($model,'V_ULTIMO_PAGO'); ?>
 		<?php //echo $form->textField($model,'V_ULTIMO_PAGO'); ?>
 		<?php //echo $form->error($model,'V_ULTIMO_PAGO'); ?>
-	</div>-->
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'V_CREDITO'); ?>
